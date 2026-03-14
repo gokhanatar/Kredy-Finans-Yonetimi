@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gizlilik Politikası — Kredy</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a0a; color: #d4d4d8; line-height: 1.7; padding: 2rem; }
+    .container { max-width: 720px; margin: 0 auto; }
+    h1 { font-size: 2rem; color: #f4f4f5; margin-bottom: 0.25rem; }
+    .date { color: #71717a; margin-bottom: 2rem; font-size: 0.9rem; }
+    h2 { font-size: 1.25rem; color: #f4f4f5; margin: 1.75rem 0 0.5rem; }
+    p, li { margin-bottom: 0.5rem; }
+    ul { padding-left: 1.25rem; }
+    a { color: #3b82f6; }
+    .back { display: inline-block; margin-bottom: 1.5rem; color: #3b82f6; text-decoration: none; font-size: 0.9rem; }
+    hr { border: none; border-top: 1px solid #27272a; margin: 2rem 0; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a class="back" href="index.html">← Ana Sayfa</a>
+    <h1>Gizlilik Politikası</h1>
+    <p class="date">Son güncelleme: 14 Mart 2026</p>
+
+    <p>Kredy ("Uygulama"), Finans Atlas tarafından geliştirilmiş bir kişisel finans yönetim uygulamasıdır. Gizliliğinizi ciddiye alıyoruz. Bu politika, verilerinizin nasıl toplandığını, kullanıldığını ve korunduğunu açıklar.</p>
+
+    <h2>1. Toplanan Veriler</h2>
+    <p><strong>Cihazda Saklanan Veriler (Yerel):</strong></p>
+    <ul>
+      <li>Kredi kartı bilgileri (kart adı, son kullanma tarihi, ekstre kesim tarihi, limit)</li>
+      <li>Gelir ve gider kayıtları</li>
+      <li>Bütçe hedefleri ve fatura bilgileri</li>
+      <li>Yatırım ve varlık bilgileri</li>
+      <li>Uygulama ayarları ve tercihler</li>
+    </ul>
+    <p>Bu veriler yalnızca cihazınızda (localStorage) saklanır ve sunucularımıza gönderilmez.</p>
+
+    <p><strong>Bulut Senkronizasyon (İsteğe Bağlı):</strong></p>
+    <ul>
+      <li>Firebase Authentication ile giriş yaptığınızda: e-posta adresi, ad ve profil fotoğrafı URL'si</li>
+      <li>Bulut yedekleme etkinleştirildiğinde: finansal verilerinizin şifrelenmiş kopyası Firebase Realtime Database'de saklanır</li>
+      <li>Aile senkronizasyonu kullanıldığında: aile grubu verileri Firebase üzerinden paylaşılır</li>
+    </ul>
+
+    <p><strong>Push Bildirimler:</strong></p>
+    <ul>
+      <li>APNs cihaz token'ı (iOS) veya FCM token'ı (Android) — yalnızca bildirim göndermek için kullanılır</li>
+    </ul>
+
+    <h2>2. Verilerin Kullanımı</h2>
+    <ul>
+      <li>Finansal takip ve analiz hizmetleri sunmak</li>
+      <li>AI destekli harcama analizi ve bütçe önerileri oluşturmak (Gemini API)</li>
+      <li>Fiş tarama özelliği için görsel işleme (Gemini Vision API — görsel işlendikten sonra saklanmaz)</li>
+      <li>Bildirim göndermek (kart vadesi, fatura hatırlatmaları)</li>
+      <li>Aile üyeleri arasında finansal veri senkronizasyonu sağlamak</li>
+    </ul>
+
+    <h2>3. Üçüncü Taraf Hizmetler</h2>
+    <ul>
+      <li><strong>Firebase (Google):</strong> Kimlik doğrulama, veritabanı, bildirimler</li>
+      <li><strong>Google Gemini API:</strong> AI analiz ve fiş tarama</li>
+      <li><strong>ExchangeRate API:</strong> Döviz kurları</li>
+      <li><strong>CoinGecko API:</strong> Kripto para fiyatları</li>
+      <li><strong>Yahoo Finance:</strong> Hisse senedi fiyatları</li>
+      <li><strong>Apple StoreKit / Google Play Billing:</strong> Abonelik yönetimi</li>
+    </ul>
+    <p>Bu hizmetlerin kendi gizlilik politikaları geçerlidir.</p>
+
+    <h2>4. Veri Güvenliği</h2>
+    <ul>
+      <li>Finansal veriler öncelikli olarak cihazınızda saklanır</li>
+      <li>Bulut yedeklemeleri Firebase güvenlik kuralları ile korunur</li>
+      <li>Uygulama PIN kilidi ve biyometrik doğrulama (Face ID / parmak izi) ile korunabilir</li>
+      <li>Gizlilik modu ile tutarlar gizlenebilir</li>
+    </ul>
+
+    <h2>5. Veri Paylaşımı</h2>
+    <p>Kişisel verilerinizi üçüncü taraflarla satmıyor, kiralamıyor veya ticari amaçla paylaşmıyoruz. Veriler yalnızca yukarıda belirtilen hizmetler aracılığıyla işlenir.</p>
+
+    <h2>6. Veri Silme</h2>
+    <p>Uygulama içinden tüm verilerinizi silebilirsiniz. Bulut yedeklemelerinizi hesabınızı silerek kaldırabilirsiniz. Veri silme talebi için <a href="https://owebsite.wordpress.com/contact/">bize ulaşın</a>.</p>
+
+    <h2>7. Çocukların Gizliliği</h2>
+    <p>Uygulamamız 13 yaşın altındaki çocuklara yönelik değildir. Bilerek çocuklardan kişisel veri toplamıyoruz.</p>
+
+    <h2>8. Değişiklikler</h2>
+    <p>Bu politika zaman zaman güncellenebilir. Önemli değişiklikler uygulama içinden bildirilecektir.</p>
+
+    <h2>9. İletişim</h2>
+    <p>Sorularınız için: <a href="https://owebsite.wordpress.com/contact/">owebsite.wordpress.com/contact</a></p>
+
+    <hr>
+
+    <h1>Privacy Policy</h1>
+    <p class="date">Last updated: March 14, 2026</p>
+
+    <p>Kredy ("App") is a personal finance management application developed by Finans Atlas. We take your privacy seriously. This policy explains how your data is collected, used, and protected.</p>
+
+    <h2>1. Data Collected</h2>
+    <p><strong>Locally Stored Data:</strong></p>
+    <ul>
+      <li>Credit card information (card name, expiry date, statement date, limit)</li>
+      <li>Income and expense records</li>
+      <li>Budget goals and bill information</li>
+      <li>Investment and asset information</li>
+      <li>App settings and preferences</li>
+    </ul>
+    <p>This data is stored only on your device (localStorage) and is not sent to our servers.</p>
+
+    <p><strong>Cloud Sync (Optional):</strong></p>
+    <ul>
+      <li>When you sign in with Firebase Authentication: email address, name, and profile photo URL</li>
+      <li>When cloud backup is enabled: an encrypted copy of your financial data is stored in Firebase Realtime Database</li>
+      <li>When family sync is used: family group data is shared via Firebase</li>
+    </ul>
+
+    <p><strong>Push Notifications:</strong></p>
+    <ul>
+      <li>APNs device token (iOS) or FCM token (Android) — used solely for sending notifications</li>
+    </ul>
+
+    <h2>2. Use of Data</h2>
+    <ul>
+      <li>Provide financial tracking and analysis services</li>
+      <li>Generate AI-powered spending analysis and budget recommendations (Gemini API)</li>
+      <li>Process images for receipt scanning (Gemini Vision API — images are not stored after processing)</li>
+      <li>Send notifications (card due dates, bill reminders)</li>
+      <li>Sync financial data between family members</li>
+    </ul>
+
+    <h2>3. Third-Party Services</h2>
+    <ul>
+      <li><strong>Firebase (Google):</strong> Authentication, database, notifications</li>
+      <li><strong>Google Gemini API:</strong> AI analysis and receipt scanning</li>
+      <li><strong>ExchangeRate API:</strong> Currency exchange rates</li>
+      <li><strong>CoinGecko API:</strong> Cryptocurrency prices</li>
+      <li><strong>Yahoo Finance:</strong> Stock prices</li>
+      <li><strong>Apple StoreKit / Google Play Billing:</strong> Subscription management</li>
+    </ul>
+    <p>These services are governed by their own privacy policies.</p>
+
+    <h2>4. Data Security</h2>
+    <ul>
+      <li>Financial data is primarily stored on your device</li>
+      <li>Cloud backups are protected by Firebase security rules</li>
+      <li>The app can be protected with PIN lock and biometric authentication (Face ID / fingerprint)</li>
+      <li>Privacy mode allows hiding amounts</li>
+    </ul>
+
+    <h2>5. Data Sharing</h2>
+    <p>We do not sell, rent, or share your personal data with third parties for commercial purposes. Data is only processed through the services listed above.</p>
+
+    <h2>6. Data Deletion</h2>
+    <p>You can delete all your data from within the app. You can remove cloud backups by deleting your account. For data deletion requests, <a href="https://owebsite.wordpress.com/contact/">contact us</a>.</p>
+
+    <h2>7. Children's Privacy</h2>
+    <p>Our app is not intended for children under 13. We do not knowingly collect personal data from children.</p>
+
+    <h2>8. Changes</h2>
+    <p>This policy may be updated from time to time. Significant changes will be communicated through the app.</p>
+
+    <h2>9. Contact</h2>
+    <p>For questions: <a href="https://owebsite.wordpress.com/contact/">owebsite.wordpress.com/contact</a></p>
+  </div>
+</body>
+</html>

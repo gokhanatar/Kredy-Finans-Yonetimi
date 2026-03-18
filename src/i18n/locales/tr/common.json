@@ -1,0 +1,186 @@
+{
+  "appName": "Kredy - Bütçe & Finans",
+  "greeting": {
+    "morning": "Günaydın",
+    "afternoon": "İyi günler",
+    "evening": "İyi akşamlar",
+    "night": "İyi geceler"
+  },
+  "nav": {
+    "home": "Ana Sayfa",
+    "cards": "Kartlar",
+    "calendar": "Takvim",
+    "finance": "Finans",
+    "family": "Aile",
+    "investments": "Yatırım",
+    "profile": "Profil",
+    "loanSimulator": "Kredi Simülatörü",
+    "assetManagement": "Varlık Yönetimi",
+    "more": "Daha Fazla",
+    "wallet": "Cüzdan",
+    "analytics": "Analiz",
+    "menu": "Menü"
+  },
+  "actions": {
+    "save": "Kaydet",
+    "cancel": "İptal",
+    "delete": "Sil",
+    "edit": "Düzenle",
+    "add": "Ekle",
+    "close": "Kapat",
+    "back": "Geri",
+    "continue": "Devam",
+    "skip": "Atla",
+    "confirm": "Onayla",
+    "search": "Ara",
+    "export": "Dışa Aktar",
+    "import": "Geri Yükle",
+    "retry": "Tekrar Dene",
+    "apply": "Uygula",
+    "send": "Gönder",
+    "create": "Oluştur",
+    "update": "Güncelle",
+    "yes": "Evet",
+    "no": "Hayır",
+    "refresh": "Yenile"
+  },
+  "status": {
+    "loading": "Yükleniyor...",
+    "error": "Hata",
+    "success": "Başarılı",
+    "online": "Çevrimiçi",
+    "offline": "Çevrimdışı",
+    "active": "Aktif",
+    "inactive": "Pasif"
+  },
+  "time": {
+    "days": "gün",
+    "hours": "saat",
+    "minutes": "dakika",
+    "today": "Bugün",
+    "yesterday": "Dün",
+    "thisMonth": "Bu Ay",
+    "thisYear": "Bu Yıl",
+    "perDay": "/gün",
+    "perWeek": "/hafta",
+    "perMonth": "/ay",
+    "perYear": "/yıl"
+  },
+  "days": {
+    "short": [
+      "Pz",
+      "Pt",
+      "Sa",
+      "Ça",
+      "Pe",
+      "Cu",
+      "Ct"
+    ],
+    "long": [
+      "Pazar",
+      "Pazartesi",
+      "Salı",
+      "Çarşamba",
+      "Perşembe",
+      "Cuma",
+      "Cumartesi"
+    ]
+  },
+  "months": {
+    "long": [
+      "Ocak",
+      "Şubat",
+      "Mart",
+      "Nisan",
+      "Mayıs",
+      "Haziran",
+      "Temmuz",
+      "Ağustos",
+      "Eylül",
+      "Ekim",
+      "Kasım",
+      "Aralık"
+    ],
+    "short": [
+      "Oca",
+      "Şub",
+      "Mar",
+      "Nis",
+      "May",
+      "Haz",
+      "Tem",
+      "Ağu",
+      "Eyl",
+      "Eki",
+      "Kas",
+      "Ara"
+    ]
+  },
+  "currency": {
+    "TRY": "Türk Lirası (₺)",
+    "USD": "Amerikan Doları ($)",
+    "EUR": "Euro (€)",
+    "GBP": "İngiliz Sterlini (£)",
+    "RUB": "Rus Rublesi (₽)",
+    "SAR": "Suudi Riyali (﷼)",
+    "AED": "BAE Dirhemi (د.إ)",
+    "IQD": "Irak Dinarı (د.ع)"
+  },
+  "theme": {
+    "light": "Açık",
+    "dark": "Koyu",
+    "sepia": "Okuma Modu",
+    "system": "Sistem",
+    "elderly": "Kolay Okuma",
+    "girls": "Pembe",
+    "high-contrast": "Yüksek Kontrast",
+    "corporate": "Kurumsal"
+  },
+  "language": {
+    "tr": "Türkçe",
+    "en": "English",
+    "ar": "العربية",
+    "ru": "Русский",
+    "uk": "Українська"
+  },
+  "errors": {
+    "generic": "Bir hata oluştu",
+    "unexpected": "Beklenmeyen bir hata oluştu.",
+    "tryAgain": "Lütfen tekrar deneyin",
+    "notFound": "Bulunamadı",
+    "required": "Bu alan zorunludur",
+    "pageNotFound": "Sayfa bulunamadı",
+    "returnHome": "Ana Sayfaya Dön"
+  },
+  "confirm": {
+    "title": "Emin misiniz?",
+    "cannotUndo": "Bu işlem geri alınamaz.",
+    "yesDelete": "Evet, Sil"
+  },
+  "empty": {
+    "noData": "Henüz veri eklenmemiş",
+    "noResults": "Sonuç bulunamadı"
+  },
+  "aria": {
+    "showAmounts": "Tutarları göster",
+    "hideAmounts": "Tutarları gizle",
+    "lock": "Kilitle",
+    "delete": "Sil",
+    "close": "Kapat",
+    "menu": "Menü"
+  },
+  "all": "Tümü",
+  "other": "Diğer",
+  "total": "Toplam",
+  "unknown": "Bilinmeyen",
+  "defaultUser": "Kullanıcı",
+  "fab": {
+    "addExpense": "Harcama Ekle",
+    "addIncome": "Gelir Ekle",
+    "payBill": "Fatura Öde"
+  },
+  "legal": {
+    "privacyPolicy": "Gizlilik Politikası",
+    "termsOfUse": "Kullanım Koşulları"
+  }
+}

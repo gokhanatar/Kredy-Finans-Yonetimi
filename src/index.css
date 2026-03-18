@@ -1,0 +1,738 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* FinansAtlasPro Design System - Light Mode */
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 222 89% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 222 89% 55%;
+
+    --radius: 1rem;
+
+    /* Custom tokens for FinansAtlasPro */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    --success-muted: 142 71% 95%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --warning-muted: 38 92% 95%;
+
+    --danger: 0 84% 60%;
+    --danger-foreground: 0 0% 100%;
+    --danger-muted: 0 84% 95%;
+
+    --info: 199 89% 48%;
+    --info-foreground: 0 0% 100%;
+
+    /* Glassmorphism effects */
+    --glass-bg: 0 0% 100% / 0.7;
+    --glass-border: 0 0% 100% / 0.2;
+    --glass-shadow: 222 47% 11% / 0.1;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(222 89% 55%), hsl(262 83% 58%));
+    --gradient-success: linear-gradient(135deg, hsl(142 71% 45%), hsl(160 84% 39%));
+    --gradient-warning: linear-gradient(135deg, hsl(38 92% 50%), hsl(25 95% 53%));
+    --gradient-danger: linear-gradient(135deg, hsl(0 84% 60%), hsl(350 89% 60%));
+    --gradient-card: linear-gradient(135deg, hsl(222 47% 20%), hsl(222 47% 11%));
+    --gradient-gold: linear-gradient(135deg, hsl(45 93% 47%), hsl(36 100% 50%));
+  }
+
+  .dark {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 222 89% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 212 27% 84%;
+
+    --success-muted: 142 71% 15%;
+    --warning-muted: 38 92% 15%;
+    --danger-muted: 0 84% 15%;
+
+    --glass-bg: 222 47% 11% / 0.8;
+    --glass-border: 0 0% 100% / 0.1;
+    --glass-shadow: 0 0% 0% / 0.3;
+  }
+
+  .sepia {
+    --background: 40 35% 94%;
+    --foreground: 30 25% 12%;
+
+    --card: 38 30% 97%;
+    --card-foreground: 30 25% 12%;
+
+    --popover: 38 30% 97%;
+    --popover-foreground: 30 25% 12%;
+
+    --primary: 28 65% 42%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 38 25% 88%;
+    --secondary-foreground: 30 25% 12%;
+
+    --muted: 38 20% 88%;
+    --muted-foreground: 30 12% 40%;
+
+    --accent: 38 25% 88%;
+    --accent-foreground: 30 25% 12%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 35 22% 80%;
+    --input: 35 22% 80%;
+    --ring: 28 65% 42%;
+
+    --success: 142 50% 40%;
+    --success-foreground: 0 0% 100%;
+    --success-muted: 142 40% 92%;
+
+    --warning: 38 70% 48%;
+    --warning-foreground: 0 0% 100%;
+    --warning-muted: 38 60% 92%;
+
+    --danger: 0 65% 52%;
+    --danger-foreground: 0 0% 100%;
+    --danger-muted: 0 60% 93%;
+
+    --info: 199 55% 45%;
+    --info-foreground: 0 0% 100%;
+
+    --glass-bg: 38 30% 97% / 0.8;
+    --glass-border: 35 25% 78% / 0.25;
+    --glass-shadow: 30 25% 12% / 0.1;
+  }
+
+  /* Sepia/reading mode - visible borders and lines */
+  .sepia .border-border {
+    border-color: hsl(35 22% 78%);
+  }
+
+  .sepia .shadow-soft {
+    box-shadow: 0 2px 8px -2px hsla(30, 25%, 20%, 0.12),
+                0 1px 3px -1px hsla(30, 25%, 20%, 0.08);
+  }
+
+  .sepia [class*="rounded-2xl"] {
+    border-width: 1px;
+    border-color: hsl(35 22% 78%);
+  }
+
+  /* Elderly - Large fonts, high readability */
+  .elderly {
+    --background: 210 15% 97%;
+    --foreground: 220 30% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 10%;
+
+    --primary: 220 70% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 20% 93%;
+    --secondary-foreground: 220 30% 10%;
+
+    --muted: 210 20% 93%;
+    --muted-foreground: 215 15% 35%;
+
+    --accent: 210 20% 93%;
+    --accent-foreground: 220 30% 10%;
+
+    --destructive: 0 80% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 25% 85%;
+    --input: 214 25% 85%;
+    --ring: 220 70% 45%;
+
+    --success: 142 60% 38%;
+    --success-foreground: 0 0% 100%;
+    --success-muted: 142 50% 92%;
+
+    --warning: 38 85% 45%;
+    --warning-foreground: 0 0% 100%;
+    --warning-muted: 38 70% 92%;
+
+    --danger: 0 80% 50%;
+    --danger-foreground: 0 0% 100%;
+    --danger-muted: 0 70% 93%;
+
+    --info: 199 70% 42%;
+    --info-foreground: 0 0% 100%;
+
+    --glass-bg: 0 0% 100% / 0.85;
+    --glass-border: 0 0% 100% / 0.3;
+    --glass-shadow: 220 30% 10% / 0.12;
+  }
+
+  /* Girls - Princess Pink/Purple theme */
+  .girls {
+    --background: 330 45% 96%;
+    --foreground: 310 25% 12%;
+
+    --card: 330 50% 98%;
+    --card-foreground: 310 25% 12%;
+
+    --popover: 330 50% 98%;
+    --popover-foreground: 310 25% 12%;
+
+    --primary: 330 80% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 300 35% 92%;
+    --secondary-foreground: 310 25% 12%;
+
+    --muted: 320 30% 91%;
+    --muted-foreground: 310 15% 42%;
+
+    --accent: 290 45% 90%;
+    --accent-foreground: 310 25% 12%;
+
+    --destructive: 350 80% 52%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 330 35% 86%;
+    --input: 330 35% 86%;
+    --ring: 330 80% 55%;
+
+    --success: 160 60% 40%;
+    --success-foreground: 0 0% 100%;
+    --success-muted: 160 50% 91%;
+
+    --warning: 38 85% 50%;
+    --warning-foreground: 0 0% 100%;
+    --warning-muted: 38 70% 91%;
+
+    --danger: 350 80% 52%;
+    --danger-foreground: 0 0% 100%;
+    --danger-muted: 350 65% 92%;
+
+    --info: 270 65% 55%;
+    --info-foreground: 0 0% 100%;
+
+    --glass-bg: 330 50% 98% / 0.8;
+    --glass-border: 330 50% 88% / 0.3;
+    --glass-shadow: 310 25% 12% / 0.06;
+
+    --gradient-primary: linear-gradient(135deg, hsl(330 80% 55%), hsl(290 70% 55%));
+    --gradient-success: linear-gradient(135deg, hsl(160 60% 40%), hsl(140 65% 38%));
+    --gradient-warning: linear-gradient(135deg, hsl(38 85% 50%), hsl(25 90% 52%));
+    --gradient-danger: linear-gradient(135deg, hsl(350 80% 52%), hsl(330 75% 50%));
+    --gradient-card: linear-gradient(135deg, hsl(330 40% 22%), hsl(290 35% 16%));
+    --gradient-gold: linear-gradient(135deg, hsl(330 80% 55%), hsl(290 70% 55%));
+  }
+
+  /* Girls theme - extra princess styling */
+  .girls .shadow-soft {
+    box-shadow: 0 2px 12px -2px hsla(330, 50%, 50%, 0.15),
+                0 1px 4px -1px hsla(330, 50%, 50%, 0.1);
+  }
+
+  .girls button:active {
+    transform: scale(0.97);
+  }
+
+  /* High Contrast - Maximum readability */
+  .high-contrast {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+
+    --primary: 220 100% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 92%;
+    --secondary-foreground: 0 0% 0%;
+
+    --muted: 0 0% 92%;
+    --muted-foreground: 0 0% 25%;
+
+    --accent: 0 0% 92%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 100% 40%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 0%;
+    --input: 0 0% 70%;
+    --ring: 220 100% 35%;
+
+    --success: 142 100% 28%;
+    --success-foreground: 0 0% 100%;
+    --success-muted: 142 80% 90%;
+
+    --warning: 38 100% 40%;
+    --warning-foreground: 0 0% 0%;
+    --warning-muted: 38 80% 90%;
+
+    --danger: 0 100% 40%;
+    --danger-foreground: 0 0% 100%;
+    --danger-muted: 0 80% 90%;
+
+    --info: 199 100% 35%;
+    --info-foreground: 0 0% 100%;
+
+    --glass-bg: 0 0% 100% / 0.95;
+    --glass-border: 0 0% 0% / 0.3;
+    --glass-shadow: 0 0% 0% / 0.2;
+  }
+
+  /* Corporate - Professional business theme */
+  .corporate {
+    --background: 220 15% 96%;
+    --foreground: 220 25% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 12%;
+
+    --primary: 215 50% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 12% 92%;
+    --secondary-foreground: 220 25% 12%;
+
+    --muted: 220 12% 92%;
+    --muted-foreground: 220 10% 42%;
+
+    --accent: 220 12% 92%;
+    --accent-foreground: 220 25% 12%;
+
+    --destructive: 0 65% 48%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 12% 87%;
+    --input: 220 12% 87%;
+    --ring: 215 50% 35%;
+
+    --success: 160 45% 38%;
+    --success-foreground: 0 0% 100%;
+    --success-muted: 160 35% 93%;
+
+    --warning: 38 65% 48%;
+    --warning-foreground: 0 0% 100%;
+    --warning-muted: 38 50% 93%;
+
+    --danger: 0 65% 48%;
+    --danger-foreground: 0 0% 100%;
+    --danger-muted: 0 50% 93%;
+
+    --info: 210 45% 42%;
+    --info-foreground: 0 0% 100%;
+
+    --glass-bg: 0 0% 100% / 0.8;
+    --glass-border: 220 12% 87% / 0.25;
+    --glass-shadow: 220 25% 12% / 0.08;
+
+    --gradient-primary: linear-gradient(135deg, hsl(215 50% 35%), hsl(210 45% 28%));
+    --gradient-success: linear-gradient(135deg, hsl(160 45% 38%), hsl(150 40% 35%));
+    --gradient-warning: linear-gradient(135deg, hsl(38 65% 48%), hsl(30 60% 45%));
+    --gradient-danger: linear-gradient(135deg, hsl(0 65% 48%), hsl(350 60% 45%));
+    --gradient-card: linear-gradient(135deg, hsl(215 35% 22%), hsl(220 30% 15%));
+    --gradient-gold: linear-gradient(135deg, hsl(38 50% 45%), hsl(30 45% 40%));
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  button, a, [role="button"], input, select, textarea {
+    touch-action: manipulation;
+  }
+
+  /* RTL support for Arabic */
+  [dir="rtl"] body {
+    font-family: 'Noto Sans Arabic', 'Inter', system-ui, sans-serif;
+  }
+
+  [dir="rtl"] {
+    text-align: right;
+  }
+
+  /* Flip directional icons in RTL */
+  [dir="rtl"] .rtl-flip {
+    transform: scaleX(-1);
+  }
+
+  /* Logical margin/padding helpers for RTL */
+  [dir="rtl"] .ml-auto {
+    margin-left: unset;
+    margin-right: auto;
+  }
+
+  [dir="rtl"] .mr-auto {
+    margin-right: unset;
+    margin-left: auto;
+  }
+
+  /* Logo is never affected by theme - always rendered as-is with transparent bg */
+  img[src*="logo"] {
+    filter: none !important;
+    mix-blend-mode: normal !important;
+    opacity: 1 !important;
+    background: transparent !important;
+    isolation: isolate;
+  }
+
+  /* Elderly theme - larger text across all elements */
+  .elderly body {
+    font-size: 1.2em;
+    letter-spacing: 0.01em;
+    line-height: 1.7;
+  }
+
+  .elderly button,
+  .elderly input,
+  .elderly select,
+  .elderly textarea,
+  .elderly label {
+    font-size: 1.1em;
+  }
+
+  .elderly h1 { font-size: 2.2rem; }
+  .elderly h2 { font-size: 1.8rem; }
+  .elderly h3 { font-size: 1.5rem; }
+
+  /* High Contrast - stronger borders and outlines */
+  .high-contrast *:focus-visible {
+    outline: 3px solid hsl(220 100% 35%);
+    outline-offset: 2px;
+  }
+
+  .high-contrast button {
+    border-width: 2px;
+    font-weight: 600;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-card/70 backdrop-blur-xl border border-white/20 shadow-lg;
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-success {
+    background: var(--gradient-success);
+  }
+
+  .gradient-warning {
+    background: var(--gradient-warning);
+  }
+
+  .gradient-danger {
+    background: var(--gradient-danger);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .gradient-gold {
+    background: var(--gradient-gold);
+  }
+
+  .text-gradient-primary {
+    @apply bg-clip-text text-transparent;
+    background: var(--gradient-primary);
+  }
+
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background: var(--gradient-gold);
+  }
+
+  /* Animated progress bar */
+  .progress-animated {
+    @apply relative overflow-hidden;
+  }
+
+  .progress-animated::after {
+    content: '';
+    @apply absolute inset-0 -translate-x-full;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    );
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  /* Pulse animation for alerts */
+  .pulse-soft {
+    animation: pulse-soft 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-soft {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+
+  /* Floating animation */
+  .float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+
+  /* Card hover effect */
+  .card-hover {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .card-hover:hover {
+    @apply -translate-y-1 shadow-xl;
+  }
+
+  /* Safe area padding for mobile */
+  .safe-area-top {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  /* Content padding that clears bottom nav + safe area */
+  .pb-safe-nav {
+    padding-bottom: calc(7rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  /* Responsive app container */
+  :root {
+    --app-max-width: 100%;
+  }
+
+  /* Tablet portrait (768-1023px): centered column */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    :root {
+      --app-max-width: 600px;
+    }
+
+    html {
+      background-color: hsl(var(--background));
+    }
+
+    body {
+      max-width: var(--app-max-width);
+      margin: 0 auto;
+      border-left: 1px solid hsl(var(--border));
+      border-right: 1px solid hsl(var(--border));
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    #root {
+      box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.1);
+    }
+
+    nav.fixed,
+    .fixed.bottom-0:not([role="dialog"]) {
+      max-width: var(--app-max-width);
+      left: 50% !important;
+      right: auto !important;
+      transform: translateX(-50%);
+    }
+
+    .sticky.top-0 {
+      max-width: var(--app-max-width);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .fixed.top-20.right-4 {
+      right: calc(50% - var(--app-max-width) / 2 + 1rem) !important;
+    }
+  }
+
+  /* lg+ (1024px): Full-width layout with sidebar */
+  @media (min-width: 1024px) {
+    body {
+      max-width: 100%;
+      margin: 0;
+      border: none;
+    }
+  }
+
+  /* Page container — responsive max-width */
+  .page-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 42rem; /* max-w-2xl */
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  @media (min-width: 1024px) {
+    .page-container {
+      max-width: 960px;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .page-container {
+      max-width: 1200px;
+    }
+  }
+
+  /* iPhone 13 mini specific - smaller font adjustments */
+  @media (max-width: 375px) {
+    .text-2xl { font-size: 1.375rem; }
+    .text-xl { font-size: 1.15rem; }
+    .text-lg { font-size: 1.05rem; }
+    .px-5 { padding-left: 1rem; padding-right: 1rem; }
+  }
+
+  /* Scrollbar styling */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .animate-shake {
+    animation: shake 0.5s ease-in-out;
+  }
+
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-8px); }
+    40% { transform: translateX(8px); }
+    60% { transform: translateX(-4px); }
+    80% { transform: translateX(4px); }
+  }
+
+  .animate-count-up {
+    animation: count-up 0.6s ease-out;
+  }
+
+  @keyframes count-up {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* PIN unlock animations */
+  .animate-fade-out {
+    animation: fade-out 0.8s ease-in-out 0.6s forwards;
+  }
+
+  @keyframes fade-out {
+    from { opacity: 1; }
+    to { opacity: 0; pointer-events: none; }
+  }
+
+  .animate-unlock-bounce {
+    animation: unlock-bounce 0.5s ease-out;
+  }
+
+  @keyframes unlock-bounce {
+    0% { transform: scale(0.3); opacity: 0; }
+    60% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
+  }
+
+  .animate-check-pop {
+    animation: check-pop 0.4s ease-out 0.15s both;
+  }
+
+  @keyframes check-pop {
+    0% { transform: scale(0) rotate(-45deg); opacity: 0; }
+    70% { transform: scale(1.15) rotate(5deg); }
+    100% { transform: scale(1) rotate(0); opacity: 1; }
+  }
+}

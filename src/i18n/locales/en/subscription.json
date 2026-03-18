@@ -1,0 +1,109 @@
+{
+  "pro": "PRO",
+  "proBadge": "PRO",
+  "proButton": "Unlock with PRO",
+  "title": "Go PRO",
+  "subtitle": "Unlimited access to all financial tools",
+  "trial": {
+    "daysLabel": "Days Free Trial!",
+    "noPayment": "No payment info required - All features unlocked",
+    "startButton": "Start Free",
+    "activeLabel": "Trial Active",
+    "featuresEnabled": "All features unlocked"
+  },
+  "features": {
+    "unlimitedCards": "Unlimited credit cards",
+    "unlimitedAccounts": "Unlimited accounts",
+    "unlimitedBills": "Unlimited recurring payments",
+    "unlimitedGoals": "Unlimited savings goals",
+    "unlimitedBudgets": "Category-based budget planning",
+    "unlimitedTransactions": "Unlimited monthly transactions",
+    "fullHistory": "Full transaction history",
+    "multiCurrency": "Multi-currency support & live rates",
+    "exportData": "CSV & PDF export",
+    "investments": "Investment portfolio management",
+    "assets": "Property & vehicle tracking",
+    "simulators": "Debt transfer & restructuring",
+    "familyAdmin": "Family group creation & management",
+    "receiptScanner": "Scan receipts and auto-fill",
+    "templates": "Transaction templates",
+    "commercialMode": "Commercial card analysis",
+    "widgets": "Home screen widgets (5 widgets)"
+  },
+  "categories": {
+    "creditCard": "Credit Card Management",
+    "familyFinance": "Family Finance",
+    "analyticsSecurity": "Analytics & Security",
+    "limitBased": "Remove Limits",
+    "proOnly": "PRO Only"
+  },
+  "perMonth": "/mo",
+  "plans": {
+    "title": "Choose a Plan",
+    "mostPopular": "Most Popular",
+    "purchaseWith": "Upgrade to PRO via",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "yearlyPerMonth": "{{price}}/mo",
+    "savings": "Save {{percent}}%",
+    "recommended": "Recommended",
+    "perMonth": "/mo",
+    "perYear": "/yr"
+  },
+  "actions": {
+    "subscribe": "Subscribe",
+    "subscribeTo": "Subscribe — {{price}}",
+    "restore": "Restore Purchases",
+    "restoring": "Restoring...",
+    "restored": "Purchases restored!",
+    "noRestore": "No purchases to restore",
+    "purchaseSuccess": "Subscription active!",
+    "manageSubscription": "Manage Subscription",
+    "redeemCode": "Promo Code",
+    "redeeming": "Checking...",
+    "redeemSuccess": "Code redeemed!"
+  },
+  "errors": {
+    "purchaseFailed": "Purchase failed. Please try again.",
+    "purchaseCancelled": "Purchase cancelled.",
+    "notAvailable": "Purchases are not available right now.",
+    "redeemFailed": "Code could not be redeemed"
+  },
+  "restore": "Restore purchases",
+  "terms": "Payment will be charged to your Apple/Google account. Subscription automatically renews unless cancelled at least 24 hours before the end of the current period. You can manage your subscription in your account settings.",
+  "webOnly": {
+    "title": "Subscribe via Mobile App",
+    "description": "Pro subscription can be purchased from the iOS and Android app."
+  },
+  "limits": {
+    "reached": "Limit Reached",
+    "freeLimit": "Free plan allows {{limit}} {{feature}}",
+    "current": "{{current}}/{{limit}}",
+    "cards": "cards",
+    "accounts": "accounts",
+    "bills": "recurring payments",
+    "goals": "goals",
+    "budgets": "budgets",
+    "transactions": "transactions"
+  },
+  "proActive": {
+    "title": "You're PRO",
+    "subtitle": "You have access to all premium features",
+    "plan": "Active Plan",
+    "lifetime": "Lifetime Premium",
+    "trial": "Trial",
+    "trialRemaining": "trial remaining",
+    "yearly": "Yearly Subscription",
+    "monthly": "Monthly Subscription",
+    "expiresAt": "Expires: {{date}}",
+    "noExpiry": "No expiry",
+    "allFeatures": "All Your Features",
+    "close": "Got It"
+  },
+  "orSeparator": "or",
+  "mobileOnly": "This feature is available through the mobile app.",
+  "familyContext": {
+    "title": "PRO Benefits in Family Group",
+    "description": "Unlimited transactions, budget management, create accounts and goals"
+  }
+}

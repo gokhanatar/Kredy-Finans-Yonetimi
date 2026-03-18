@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="com.android.vending.BILLING" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode|navigation|density"
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.NoActionBarLaunch"
+            android:launchMode="singleTask"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <!-- Deep linking: kredy:// URL scheme (matches iOS) -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="kredy" />
+            </intent-filter>
+
+        </activity>
+
+        <!-- FCM push notification handler (mirrors iOS AppDelegate push handling) -->
+        <service
+            android:name=".KredyMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"></meta-data>
+        </provider>
+
+        <!-- Home Screen Widgets (matching iOS KredyWidgets) -->
+
+        <!-- Debt Status Widget (1x1) — Credit card utilization -->
+        <receiver
+            android:name=".DebtStatusWidget"
+            android:exported="true"
+            android:label="@string/widget_debt_status_name">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_debt_status_info" />
+        </receiver>
+
+        <!-- Wallet Barometer Widget (1x1) — Financial health -->
+        <receiver
+            android:name=".WalletBarometerWidget"
+            android:exported="true"
+            android:label="@string/widget_wallet_barometer_name">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_wallet_barometer_info" />
+        </receiver>
+
+        <!-- Next Payment Widget (2x1) — Upcoming payment countdown -->
+        <receiver
+            android:name=".NextPaymentWidget"
+            android:exported="true"
+            android:label="@string/widget_next_payment_name">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_next_payment_info" />
+        </receiver>
+
+        <!-- Account Balance Widget (2x1) — Bank accounts overview -->
+        <receiver
+            android:name=".AccountBalanceWidget"
+            android:exported="true"
+            android:label="@string/widget_account_balance_name">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_account_balance_info" />
+        </receiver>
+
+        <!-- Savings Goal Widget (2x1) — Goal progress -->
+        <receiver
+            android:name=".SavingsGoalWidget"
+            android:exported="true"
+            android:label="@string/widget_savings_goal_name">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_savings_goal_info" />
+        </receiver>
+
+        <!-- Portfolio Widget (1x1) — Investment P&L -->
+        <receiver
+            android:name=".PortfolioWidget"
+            android:exported="true"
+            android:label="@string/widget_portfolio_name">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_portfolio_info" />
+        </receiver>
+
+    </application>
+
+    <!-- Permissions -->
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- Android 13+ photo/media access (matches iOS NSPhotoLibraryUsageDescription) -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+</manifest>

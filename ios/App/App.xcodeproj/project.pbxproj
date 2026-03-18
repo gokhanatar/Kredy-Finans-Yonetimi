@@ -1,0 +1,688 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 60;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2FAD9763203C412B000D30F8 /* config.xml in Resources */ = {isa = PBXBuildFile; fileRef = 2FAD9762203C412B000D30F8 /* config.xml */; };
+		4D22ABE92AF431CB00220026 /* CapApp-SPM in Frameworks */ = {isa = PBXBuildFile; productRef = 4D22ABE82AF431CB00220026 /* CapApp-SPM */; };
+		50379B232058CBB4000EE86E /* capacitor.config.json in Resources */ = {isa = PBXBuildFile; fileRef = 50379B222058CBB4000EE86E /* capacitor.config.json */; };
+		504EC3081FED79650016851F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504EC3071FED79650016851F /* AppDelegate.swift */; };
+		504EC30D1FED79650016851F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 504EC30B1FED79650016851F /* Main.storyboard */; };
+		504EC30F1FED79650016851F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 504EC30E1FED79650016851F /* Assets.xcassets */; };
+		504EC3121FED79650016851F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 504EC3101FED79650016851F /* LaunchScreen.storyboard */; };
+		50B271D11FEDC1A000F3C39B /* public in Resources */ = {isa = PBXBuildFile; fileRef = 50B271D01FEDC1A000F3C39B /* public */; };
+		A1B2C3D51234567800AABB02 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D41234567800AABB01 /* PrivacyInfo.xcprivacy */; };
+		A632958E2F65069B0035B9C0 /* PortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A632958D2F65069B0035B9C0 /* PortfolioView.swift */; };
+		A63295902F6506B00035B9C0 /* PortfolioProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A632958F2F6506B00035B9C0 /* PortfolioProvider.swift */; };
+		C1D2E3F41234567800EEFF01 /* AppleSignInPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D2E3F31234567800EEFF01 /* AppleSignInPlugin.swift */; };
+		E1F0B00100000000CCDD0001 /* WidgetBridgePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F0A00100000000CCDD0001 /* WidgetBridgePlugin.swift */; };
+		E1F0B00100000000CCDD0002 /* KredyWidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E1F0A00100000000CCDD0002 /* KredyWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E1F0B00100000000CCDD0003 /* KredyWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F0A00100000000CCDD0003 /* KredyWidgetBundle.swift */; };
+		E1F0B00100000000CCDD0004 /* WidgetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F0A00100000000CCDD0004 /* WidgetData.swift */; };
+		E1F0B00100000000CCDD0005 /* WidgetConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F0A00100000000CCDD0005 /* WidgetConstants.swift */; };
+		E1F0B00100000000CCDD0006 /* DebtStatusProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F0A00100000000CCDD0006 /* DebtStatusProvider.swift */; };
+		E1F0B00100000000CCDD0007 /* WalletBarometerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F0A00100000000CCDD0007 /* WalletBarometerProvider.swift */; };
+		E1F0B00100000000CCDD0008 /* NextPaymentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F0A00100000000CCDD0008 /* NextPaymentProvider.swift */; };
+		E1F0B00100000000CCDD0009 /* AccountBalanceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F0A00100000000CCDD0009 /* AccountBalanceProvider.swift */; };
+		E1F0B00100000000CCDD000A /* SavingsGoalProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F0A00100000000CCDD000A /* SavingsGoalProvider.swift */; };
+		E1F0B00100000000CCDD000B /* DebtStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F0A00100000000CCDD000B /* DebtStatusView.swift */; };
+		E1F0B00100000000CCDD000C /* WalletBarometerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F0A00100000000CCDD000C /* WalletBarometerView.swift */; };
+		E1F0B00100000000CCDD000D /* NextPaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F0A00100000000CCDD000D /* NextPaymentView.swift */; };
+		E1F0B00100000000CCDD000E /* AccountBalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F0A00100000000CCDD000E /* AccountBalanceView.swift */; };
+		E1F0B00100000000CCDD000F /* SavingsGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F0A00100000000CCDD000F /* SavingsGoalView.swift */; };
+		E1F0B00100000000CCDD0010 /* SharedComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F0A00100000000CCDD0010 /* SharedComponents.swift */; };
+		E1F0B00100000000CCDD0011 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1F0A00100000000CCDD0013 /* Assets.xcassets */; };
+		F1A2B3C40000000000BB0001 /* kredy_positive.wav in Resources */ = {isa = PBXBuildFile; fileRef = F1A2B3C40000000000AA0001 /* kredy_positive.wav */; };
+		F1A2B3C40000000000BB0002 /* kredy_info.wav in Resources */ = {isa = PBXBuildFile; fileRef = F1A2B3C40000000000AA0002 /* kredy_info.wav */; };
+		F1A2B3C40000000000BB0003 /* kredy_reminder.wav in Resources */ = {isa = PBXBuildFile; fileRef = F1A2B3C40000000000AA0003 /* kredy_reminder.wav */; };
+		F1A2B3C40000000000BB0004 /* kredy_warning.wav in Resources */ = {isa = PBXBuildFile; fileRef = F1A2B3C40000000000AA0004 /* kredy_warning.wav */; };
+		F1A2B3C40000000000BB0005 /* kredy_urgent.wav in Resources */ = {isa = PBXBuildFile; fileRef = F1A2B3C40000000000AA0005 /* kredy_urgent.wav */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E1F0FF0100000000CCDD0001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 504EC2FC1FED79650016851F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E1F0F00100000000CCDD0001;
+			remoteInfo = KredyWidgetsExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E1F0D00100000000CCDD0004 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E1F0B00100000000CCDD0002 /* KredyWidgetsExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2FAD9762203C412B000D30F8 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = config.xml; sourceTree = "<group>"; };
+		50379B222058CBB4000EE86E /* capacitor.config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = capacitor.config.json; sourceTree = "<group>"; };
+		504EC3041FED79650016851F /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		504EC3071FED79650016851F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		504EC30C1FED79650016851F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		504EC30E1FED79650016851F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		504EC3111FED79650016851F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		504EC3131FED79650016851F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50B271D01FEDC1A000F3C39B /* public */ = {isa = PBXFileReference; lastKnownFileType = folder; path = public; sourceTree = "<group>"; };
+		958DCC722DB07C7200EA8C5F /* debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = debug.xcconfig; path = ../debug.xcconfig; sourceTree = SOURCE_ROOT; };
+		A1B2C3D41234567800AABB01 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		A632958D2F65069B0035B9C0 /* PortfolioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioView.swift; sourceTree = "<group>"; };
+		A632958F2F6506B00035B9C0 /* PortfolioProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioProvider.swift; sourceTree = "<group>"; };
+		A6EB7F242F4DD86D00B07333 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
+		A6EB7F252F4DD86D00B07333 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		A6EB7F262F4DD87600B07333 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		A6EB7F272F4DD87600B07333 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		B1C2D3E41234567800CCDD01 /* App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = App.entitlements; sourceTree = "<group>"; };
+		C1D2E3F31234567800EEFF01 /* AppleSignInPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignInPlugin.swift; sourceTree = "<group>"; };
+		E1F0A00100000000CCDD0001 /* WidgetBridgePlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetBridgePlugin.swift; sourceTree = "<group>"; };
+		E1F0A00100000000CCDD0002 /* KredyWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = KredyWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1F0A00100000000CCDD0003 /* KredyWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KredyWidgetBundle.swift; sourceTree = "<group>"; };
+		E1F0A00100000000CCDD0004 /* WidgetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetData.swift; sourceTree = "<group>"; };
+		E1F0A00100000000CCDD0005 /* WidgetConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetConstants.swift; sourceTree = "<group>"; };
+		E1F0A00100000000CCDD0006 /* DebtStatusProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebtStatusProvider.swift; sourceTree = "<group>"; };
+		E1F0A00100000000CCDD0007 /* WalletBarometerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletBarometerProvider.swift; sourceTree = "<group>"; };
+		E1F0A00100000000CCDD0008 /* NextPaymentProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextPaymentProvider.swift; sourceTree = "<group>"; };
+		E1F0A00100000000CCDD0009 /* AccountBalanceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountBalanceProvider.swift; sourceTree = "<group>"; };
+		E1F0A00100000000CCDD000A /* SavingsGoalProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsGoalProvider.swift; sourceTree = "<group>"; };
+		E1F0A00100000000CCDD000B /* DebtStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebtStatusView.swift; sourceTree = "<group>"; };
+		E1F0A00100000000CCDD000C /* WalletBarometerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletBarometerView.swift; sourceTree = "<group>"; };
+		E1F0A00100000000CCDD000D /* NextPaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextPaymentView.swift; sourceTree = "<group>"; };
+		E1F0A00100000000CCDD000E /* AccountBalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountBalanceView.swift; sourceTree = "<group>"; };
+		E1F0A00100000000CCDD000F /* SavingsGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsGoalView.swift; sourceTree = "<group>"; };
+		E1F0A00100000000CCDD0010 /* SharedComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedComponents.swift; sourceTree = "<group>"; };
+		E1F0A00100000000CCDD0011 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1F0A00100000000CCDD0012 /* KredyWidgets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KredyWidgets.entitlements; sourceTree = "<group>"; };
+		E1F0A00100000000CCDD0013 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F1A2B3C40000000000AA0001 /* kredy_positive.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = kredy_positive.wav; sourceTree = "<group>"; };
+		F1A2B3C40000000000AA0002 /* kredy_info.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = kredy_info.wav; sourceTree = "<group>"; };
+		F1A2B3C40000000000AA0003 /* kredy_reminder.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = kredy_reminder.wav; sourceTree = "<group>"; };
+		F1A2B3C40000000000AA0004 /* kredy_warning.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = kredy_warning.wav; sourceTree = "<group>"; };
+		F1A2B3C40000000000AA0005 /* kredy_urgent.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = kredy_urgent.wav; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		504EC3011FED79650016851F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D22ABE92AF431CB00220026 /* CapApp-SPM in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1F0D00100000000CCDD0002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		504EC2FB1FED79650016851F = {
+			isa = PBXGroup;
+			children = (
+				958DCC722DB07C7200EA8C5F /* debug.xcconfig */,
+				504EC3061FED79650016851F /* App */,
+				E1F0C00100000000CCDD0001 /* KredyWidgets */,
+				504EC3051FED79650016851F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		504EC3051FED79650016851F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				504EC3041FED79650016851F /* App.app */,
+				E1F0A00100000000CCDD0002 /* KredyWidgetsExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		504EC3061FED79650016851F /* App */ = {
+			isa = PBXGroup;
+			children = (
+				50379B222058CBB4000EE86E /* capacitor.config.json */,
+				504EC3071FED79650016851F /* AppDelegate.swift */,
+				C1D2E3F31234567800EEFF01 /* AppleSignInPlugin.swift */,
+				E1F0A00100000000CCDD0001 /* WidgetBridgePlugin.swift */,
+				504EC30B1FED79650016851F /* Main.storyboard */,
+				504EC30E1FED79650016851F /* Assets.xcassets */,
+				504EC3101FED79650016851F /* LaunchScreen.storyboard */,
+				504EC3131FED79650016851F /* Info.plist */,
+				B1C2D3E41234567800CCDD01 /* App.entitlements */,
+				A1B2C3D41234567800AABB01 /* PrivacyInfo.xcprivacy */,
+				2FAD9762203C412B000D30F8 /* config.xml */,
+				50B271D01FEDC1A000F3C39B /* public */,
+				F1A2B3C40000000000AA0001 /* kredy_positive.wav */,
+				F1A2B3C40000000000AA0002 /* kredy_info.wav */,
+				F1A2B3C40000000000AA0003 /* kredy_reminder.wav */,
+				F1A2B3C40000000000AA0004 /* kredy_warning.wav */,
+				F1A2B3C40000000000AA0005 /* kredy_urgent.wav */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		E1F0C00100000000CCDD0001 /* KredyWidgets */ = {
+			isa = PBXGroup;
+			children = (
+				A632958F2F6506B00035B9C0 /* PortfolioProvider.swift */,
+				A632958D2F65069B0035B9C0 /* PortfolioView.swift */,
+				E1F0A00100000000CCDD0003 /* KredyWidgetBundle.swift */,
+				E1F0C00100000000CCDD0002 /* Models */,
+				E1F0C00100000000CCDD0003 /* Providers */,
+				E1F0C00100000000CCDD0004 /* Views */,
+				E1F0A00100000000CCDD0013 /* Assets.xcassets */,
+				E1F0A00100000000CCDD0011 /* Info.plist */,
+				E1F0A00100000000CCDD0012 /* KredyWidgets.entitlements */,
+			);
+			path = KredyWidgets;
+			sourceTree = "<group>";
+		};
+		E1F0C00100000000CCDD0002 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E1F0A00100000000CCDD0004 /* WidgetData.swift */,
+				E1F0A00100000000CCDD0005 /* WidgetConstants.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E1F0C00100000000CCDD0003 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				E1F0A00100000000CCDD0006 /* DebtStatusProvider.swift */,
+				E1F0A00100000000CCDD0007 /* WalletBarometerProvider.swift */,
+				E1F0A00100000000CCDD0008 /* NextPaymentProvider.swift */,
+				E1F0A00100000000CCDD0009 /* AccountBalanceProvider.swift */,
+				E1F0A00100000000CCDD000A /* SavingsGoalProvider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		E1F0C00100000000CCDD0004 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E1F0A00100000000CCDD000B /* DebtStatusView.swift */,
+				E1F0A00100000000CCDD000C /* WalletBarometerView.swift */,
+				E1F0A00100000000CCDD000D /* NextPaymentView.swift */,
+				E1F0A00100000000CCDD000E /* AccountBalanceView.swift */,
+				E1F0A00100000000CCDD000F /* SavingsGoalView.swift */,
+				E1F0A00100000000CCDD0010 /* SharedComponents.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		504EC3031FED79650016851F /* App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 504EC3161FED79650016851F /* Build configuration list for PBXNativeTarget "App" */;
+			buildPhases = (
+				504EC3001FED79650016851F /* Sources */,
+				504EC3011FED79650016851F /* Frameworks */,
+				504EC3021FED79650016851F /* Resources */,
+				E1F0D00100000000CCDD0004 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E1F0FF0100000000CCDD0002 /* PBXTargetDependency */,
+			);
+			name = App;
+			packageProductDependencies = (
+				4D22ABE82AF431CB00220026 /* CapApp-SPM */,
+			);
+			productName = App;
+			productReference = 504EC3041FED79650016851F /* App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E1F0F00100000000CCDD0001 /* KredyWidgetsExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1F0E00100000000CCDD0003 /* Build configuration list for PBXNativeTarget "KredyWidgetsExtension" */;
+			buildPhases = (
+				E1F0D00100000000CCDD0001 /* Sources */,
+				E1F0D00100000000CCDD0002 /* Frameworks */,
+				E1F0D00100000000CCDD0003 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KredyWidgetsExtension;
+			productName = KredyWidgetsExtension;
+			productReference = E1F0A00100000000CCDD0002 /* KredyWidgetsExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		504EC2FC1FED79650016851F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 2620;
+				TargetAttributes = {
+					504EC3031FED79650016851F = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1100;
+						ProvisioningStyle = Automatic;
+					};
+					E1F0F00100000000CCDD0001 = {
+						CreatedOnToolsVersion = 15.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 504EC2FF1FED79650016851F /* Build configuration list for PBXProject "App" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				tr,
+				ar,
+			);
+			mainGroup = 504EC2FB1FED79650016851F;
+			packageReferences = (
+				D4C12C0A2AAA248700AAC8A2 /* XCLocalSwiftPackageReference "CapApp-SPM" */,
+			);
+			productRefGroup = 504EC3051FED79650016851F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				504EC3031FED79650016851F /* App */,
+				E1F0F00100000000CCDD0001 /* KredyWidgetsExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		504EC3021FED79650016851F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				504EC3121FED79650016851F /* LaunchScreen.storyboard in Resources */,
+				50B271D11FEDC1A000F3C39B /* public in Resources */,
+				504EC30F1FED79650016851F /* Assets.xcassets in Resources */,
+				50379B232058CBB4000EE86E /* capacitor.config.json in Resources */,
+				504EC30D1FED79650016851F /* Main.storyboard in Resources */,
+				2FAD9763203C412B000D30F8 /* config.xml in Resources */,
+				A1B2C3D51234567800AABB02 /* PrivacyInfo.xcprivacy in Resources */,
+				F1A2B3C40000000000BB0001 /* kredy_positive.wav in Resources */,
+				F1A2B3C40000000000BB0002 /* kredy_info.wav in Resources */,
+				F1A2B3C40000000000BB0003 /* kredy_reminder.wav in Resources */,
+				F1A2B3C40000000000BB0004 /* kredy_warning.wav in Resources */,
+				F1A2B3C40000000000BB0005 /* kredy_urgent.wav in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1F0D00100000000CCDD0003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1F0B00100000000CCDD0011 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		504EC3001FED79650016851F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				504EC3081FED79650016851F /* AppDelegate.swift in Sources */,
+				C1D2E3F41234567800EEFF01 /* AppleSignInPlugin.swift in Sources */,
+				E1F0B00100000000CCDD0001 /* WidgetBridgePlugin.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1F0D00100000000CCDD0001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1F0B00100000000CCDD0003 /* KredyWidgetBundle.swift in Sources */,
+				A632958E2F65069B0035B9C0 /* PortfolioView.swift in Sources */,
+				E1F0B00100000000CCDD0004 /* WidgetData.swift in Sources */,
+				E1F0B00100000000CCDD0005 /* WidgetConstants.swift in Sources */,
+				E1F0B00100000000CCDD0006 /* DebtStatusProvider.swift in Sources */,
+				E1F0B00100000000CCDD0007 /* WalletBarometerProvider.swift in Sources */,
+				E1F0B00100000000CCDD0008 /* NextPaymentProvider.swift in Sources */,
+				E1F0B00100000000CCDD0009 /* AccountBalanceProvider.swift in Sources */,
+				E1F0B00100000000CCDD000A /* SavingsGoalProvider.swift in Sources */,
+				E1F0B00100000000CCDD000B /* DebtStatusView.swift in Sources */,
+				E1F0B00100000000CCDD000C /* WalletBarometerView.swift in Sources */,
+				A63295902F6506B00035B9C0 /* PortfolioProvider.swift in Sources */,
+				E1F0B00100000000CCDD000D /* NextPaymentView.swift in Sources */,
+				E1F0B00100000000CCDD000E /* AccountBalanceView.swift in Sources */,
+				E1F0B00100000000CCDD000F /* SavingsGoalView.swift in Sources */,
+				E1F0B00100000000CCDD0010 /* SharedComponents.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E1F0FF0100000000CCDD0002 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E1F0F00100000000CCDD0001 /* KredyWidgetsExtension */;
+			targetProxy = E1F0FF0100000000CCDD0001 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		504EC30B1FED79650016851F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				504EC30C1FED79650016851F /* Base */,
+				A6EB7F242F4DD86D00B07333 /* tr */,
+				A6EB7F262F4DD87600B07333 /* ar */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		504EC3101FED79650016851F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				504EC3111FED79650016851F /* Base */,
+				A6EB7F252F4DD86D00B07333 /* tr */,
+				A6EB7F272F4DD87600B07333 /* ar */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		504EC3141FED79650016851F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 958DCC722DB07C7200EA8C5F /* debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 59ZAKYY5YZ;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		504EC3151FED79650016851F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 59ZAKYY5YZ;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		504EC3171FED79650016851F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 958DCC722DB07C7200EA8C5F /* debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = App/App.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = App/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = KredY;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DDEBUG\"";
+				PRODUCT_BUNDLE_IDENTIFIER = com.finansatlas.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		504EC3181FED79650016851F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = App/App.Release.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = App/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = KredY;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.finansatlas.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E1F0E00100000000CCDD0001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = KredyWidgets/KredyWidgets.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = KredyWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Kredy;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.finansatlas.app.KredyWidgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E1F0E00100000000CCDD0002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = KredyWidgets/KredyWidgets.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = KredyWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Kredy;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.finansatlas.app.KredyWidgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		504EC2FF1FED79650016851F /* Build configuration list for PBXProject "App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				504EC3141FED79650016851F /* Debug */,
+				504EC3151FED79650016851F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		504EC3161FED79650016851F /* Build configuration list for PBXNativeTarget "App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				504EC3171FED79650016851F /* Debug */,
+				504EC3181FED79650016851F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E1F0E00100000000CCDD0003 /* Build configuration list for PBXNativeTarget "KredyWidgetsExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1F0E00100000000CCDD0001 /* Debug */,
+				E1F0E00100000000CCDD0002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		D4C12C0A2AAA248700AAC8A2 /* XCLocalSwiftPackageReference "CapApp-SPM" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "CapApp-SPM";
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4D22ABE82AF431CB00220026 /* CapApp-SPM */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D4C12C0A2AAA248700AAC8A2 /* XCLocalSwiftPackageReference "CapApp-SPM" */;
+			productName = "CapApp-SPM";
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 504EC2FC1FED79650016851F /* Project object */;
+}

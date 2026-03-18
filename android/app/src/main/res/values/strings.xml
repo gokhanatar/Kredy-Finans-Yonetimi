@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Kredy - Bütçe &amp; Finans</string>
+    <string name="title_activity_main">Kredy - Bütçe &amp; Finans</string>
+    <string name="package_name">com.finansatlas.app</string>
+    <string name="custom_url_scheme">kredy</string>
+
+    <!-- Widget names -->
+    <string name="widget_debt_status_name">Borç Durumu</string>
+    <string name="widget_debt_status_desc">Kredi kartı borç kullanım oranı</string>
+    <string name="widget_wallet_barometer_name">Cüzdan Barometresi</string>
+    <string name="widget_wallet_barometer_desc">Finansal sağlık göstergesi</string>
+    <string name="widget_next_payment_name">Sonraki Ödeme</string>
+    <string name="widget_next_payment_desc">Yaklaşan kart ödeme geri sayımı</string>
+    <string name="widget_account_balance_name">Hesaplar</string>
+    <string name="widget_account_balance_desc">Banka hesap bakiyeleri özeti</string>
+    <string name="widget_savings_goal_name">Birikim Hedefi</string>
+    <string name="widget_savings_goal_desc">Birikim hedefi ilerleme durumu</string>
+    <string name="widget_portfolio_name">Portföy</string>
+    <string name="widget_portfolio_desc">Yatırım portföy değeri ve kar/zarar</string>
+</resources>

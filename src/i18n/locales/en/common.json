@@ -1,0 +1,186 @@
+{
+  "appName": "Kredy - Budget & Finance",
+  "greeting": {
+    "morning": "Good morning",
+    "afternoon": "Good afternoon",
+    "evening": "Good evening",
+    "night": "Good night"
+  },
+  "nav": {
+    "home": "Home",
+    "cards": "Cards",
+    "calendar": "Calendar",
+    "finance": "Finance",
+    "family": "Family",
+    "investments": "Investments",
+    "profile": "Profile",
+    "loanSimulator": "Loan Simulator",
+    "assetManagement": "Asset Management",
+    "more": "More",
+    "wallet": "Wallet",
+    "analytics": "Analytics",
+    "menu": "Menu"
+  },
+  "actions": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "close": "Close",
+    "back": "Back",
+    "continue": "Continue",
+    "skip": "Skip",
+    "confirm": "Confirm",
+    "search": "Search",
+    "export": "Export",
+    "import": "Restore",
+    "retry": "Retry",
+    "apply": "Apply",
+    "send": "Send",
+    "create": "Create",
+    "update": "Update",
+    "yes": "Yes",
+    "no": "No",
+    "refresh": "Refresh"
+  },
+  "status": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "online": "Online",
+    "offline": "Offline",
+    "active": "Active",
+    "inactive": "Inactive"
+  },
+  "time": {
+    "days": "days",
+    "hours": "hours",
+    "minutes": "minutes",
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "thisMonth": "This Month",
+    "thisYear": "This Year",
+    "perDay": "/day",
+    "perWeek": "/week",
+    "perMonth": "/month",
+    "perYear": "/year"
+  },
+  "days": {
+    "short": [
+      "Sun",
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu",
+      "Fri",
+      "Sat"
+    ],
+    "long": [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ]
+  },
+  "months": {
+    "long": [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ],
+    "short": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec"
+    ]
+  },
+  "currency": {
+    "TRY": "Turkish Lira (₺)",
+    "USD": "US Dollar ($)",
+    "EUR": "Euro (€)",
+    "GBP": "British Pound (£)",
+    "RUB": "Russian Ruble (₽)",
+    "SAR": "Saudi Riyal (﷼)",
+    "AED": "UAE Dirham (د.إ)",
+    "IQD": "Iraqi Dinar (د.ع)"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "sepia": "Reading Mode",
+    "system": "System",
+    "elderly": "Easy Read",
+    "girls": "Pink",
+    "high-contrast": "High Contrast",
+    "corporate": "Corporate"
+  },
+  "language": {
+    "tr": "Türkçe",
+    "en": "English",
+    "ar": "العربية",
+    "ru": "Русский",
+    "uk": "Українська"
+  },
+  "errors": {
+    "generic": "An error occurred",
+    "unexpected": "An unexpected error occurred.",
+    "tryAgain": "Please try again",
+    "notFound": "Not found",
+    "required": "This field is required",
+    "pageNotFound": "Page not found",
+    "returnHome": "Return to Home"
+  },
+  "confirm": {
+    "title": "Are you sure?",
+    "cannotUndo": "This action cannot be undone.",
+    "yesDelete": "Yes, Delete"
+  },
+  "empty": {
+    "noData": "No data added yet",
+    "noResults": "No results found"
+  },
+  "aria": {
+    "showAmounts": "Show amounts",
+    "hideAmounts": "Hide amounts",
+    "lock": "Lock",
+    "delete": "Delete",
+    "close": "Close",
+    "menu": "Menu"
+  },
+  "all": "All",
+  "other": "Other",
+  "total": "Total",
+  "unknown": "Unknown",
+  "defaultUser": "User",
+  "fab": {
+    "addExpense": "Add Expense",
+    "addIncome": "Add Income",
+    "payBill": "Pay Bill"
+  },
+  "legal": {
+    "privacyPolicy": "Privacy Policy",
+    "termsOfUse": "Terms of Use"
+  }
+}

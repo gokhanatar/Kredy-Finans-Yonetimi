@@ -1,0 +1,146 @@
+{
+  "title": "Widget Galerisi",
+  "categories": {
+    "all": "Tümü",
+    "ciddi": "Ciddi",
+    "komik": "Komik",
+    "eglenceli": "Eğlenceli"
+  },
+  "widgets": {
+    "debt-status": {
+      "name": "Borç Durumu",
+      "description": "Toplam borç özetinizi görün"
+    },
+    "payment-reminder": {
+      "name": "Ödeme Hatırlatıcı",
+      "description": "Bir sonraki ödeme geri sayımı"
+    },
+    "golden-window": {
+      "name": "Altın Pencere",
+      "description": "Altın pencere durumunuz"
+    },
+    "budget-status": {
+      "name": "Bütçe Durumu",
+      "description": "Aylık bütçe kullanım durumu"
+    },
+    "wallet-barometer": {
+      "name": "Cüzdan Barometresi",
+      "description": "Cüzdanınızın ruh hali"
+    },
+    "salary-countdown": {
+      "name": "Maaş Geri Sayım",
+      "description": "Maaşa kaç gün kaldı?"
+    },
+    "money-quotes": {
+      "name": "Para Sözleri",
+      "description": "Komik finansal sözler"
+    },
+    "savings-goal": {
+      "name": "Birikim Hedefi",
+      "description": "Hedefine ne kadar yakınsın?"
+    },
+    "daily-tip": {
+      "name": "Günlük İpucu",
+      "description": "Her gün yeni bir finansal ipucu"
+    },
+    "findeks-score": {
+      "name": "Findeks Skoru",
+      "description": "Tahmini Findeks skorunuz"
+    },
+    "bank-account": {
+      "name": "Banka Hesabı",
+      "description": "Bakiye + KMH kullanım durumu"
+    },
+    "portfolio-value": {
+      "name": "Portföy Değeri",
+      "description": "Yatırım portföyünüzün toplam değeri"
+    }
+  },
+  "quotes": [
+    "Paranın konuştuğu yerde herkes sağır olur.",
+    "Bütçe yapmak: Paranıza nereye gideceğini söylemek.",
+    "Kredi kartı: Banka ile aranızdaki aşk hikayesi.",
+    "Tasarruf: Gelecekteki ben'e hediye.",
+    "Faiz: Bankanın sana \"teşekkür ederim\" deme şekli.",
+    "Borç: Geçmişin hediyesi, geleceğin kabuslu rüyası.",
+    "Zenginlik: Paraya sahip olmak değil, paranın sana sahip olmaması.",
+    "Maaş günü: Ayın en güzel 5 dakikası."
+  ],
+  "tips": {
+    "1": {
+      "title": "Altın Kural",
+      "text": "Gelirinin %50'si ihtiyaç, %30'u istek, %20'si tasarruf."
+    },
+    "2": {
+      "title": "Taksit Tuzağı",
+      "text": "Taksitli alışveriş ödenen toplam tutarı artırır. Mümkünse peşin ödeme yapın."
+    },
+    "3": {
+      "title": "Hesap Kesimi",
+      "text": "Hesap kesim tarihinden hemen sonra yapılan alışverişler en uzun vadeyi sağlar."
+    },
+    "4": {
+      "title": "Asgari Tuzak",
+      "text": "Asgari ödeme yaparak kartınızın %95'ini faize kaptırırsınız."
+    },
+    "5": {
+      "title": "Altın Pencere",
+      "text": "Son ödeme ile hesap kesimi arası \"altın pencere\"dir. Bu dönemde harcama yapmak en avantajlısıdır."
+    },
+    "6": {
+      "title": "Borç Kartopu",
+      "text": "En küçük borcu önce kapatıp motivasyon kazanın, sonra büyüklere geçin."
+    },
+    "7": {
+      "title": "Acil Fon",
+      "text": "3-6 aylık giderleriniz kadar acil fon oluşturun. Kredi kartına güvenmeyin."
+    },
+    "8": {
+      "title": "Limit Kullanımı",
+      "text": "Kredi kartı limitinin %30'undan fazlasını kullanmak Findeks skorunuzu düşürür."
+    }
+  },
+  "barometer": {
+    "levels": {
+      "0": "Rahat",
+      "20": "İyi",
+      "40": "Dikkat",
+      "60": "Tehlike",
+      "80": "Acil"
+    }
+  },
+  "preview": {
+    "totalDebt": "Toplam Borç",
+    "nextPayment": "Sonraki Ödeme",
+    "days": "gün",
+    "goldenWindow": "Altın Pencere",
+    "active": "AKTİF",
+    "monthlyBudget": "Aylık Bütçe",
+    "spent": "harcandı",
+    "usage": "kullanım",
+    "daysLeft": "gün kaldı",
+    "vacationFund": "Tatil Fonu",
+    "estimatedScore": "Tahmini Skor",
+    "newTipDaily": "Her gün yeni ipucu"
+  },
+  "setupGuide": {
+    "ios": {
+      "title": "iOS",
+      "step1": "Ana ekranda boş bir alana uzun basın",
+      "step2": "Sol üstteki + butonuna dokunun",
+      "step3": "Arama çubuğuna \"Kredy\" yazın",
+      "step4": "İstediğiniz widget boyutunu seçin",
+      "step5": "\"Widget Ekle\" butonuna dokunun",
+      "step6": "Widget'ı istediğiniz konuma sürükleyin"
+    },
+    "android": {
+      "title": "Android",
+      "step1": "Ana ekranda boş bir alana uzun basın",
+      "step2": "\"Widget'lar\" seçeneğine dokunun",
+      "step3": "\"Kredy\" uygulamasını bulun",
+      "step4": "İstediğiniz widget'ı basılı tutup ana ekrana sürükleyin",
+      "step5": "Bırakarak konumlandırın"
+    },
+    "note": "Widget desteği yakında gelecek. Şimdilik uygulamadan bu önizlemeleri inceleyebilirsiniz."
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "rules": {
+    "families": {
+      ".read": false,
+      ".write": false,
+
+      "$familyId": {
+        ".read": "auth != null",
+        ".write": "auth != null",
+
+        ".validate": "newData.hasChildren(['createdAt', 'members'])",
+
+        "createdAt": {
+          ".validate": "newData.isNumber()"
+        },
+
+        "gracePeriodStartedAt": {
+          ".validate": "newData.isNumber()"
+        },
+
+        "dissolveScheduledAt": {
+          ".validate": "newData.isNumber()"
+        },
+
+        "members": {
+          "$memberId": {
+            ".validate": "newData.hasChildren(['name', 'joinedAt', 'lastSeen'])",
+            "name": {
+              ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 50"
+            },
+            "joinedAt": {
+              ".validate": "newData.isNumber()"
+            },
+            "lastSeen": {
+              ".validate": "newData.isNumber()"
+            },
+            "fcmToken": {
+              ".validate": "newData.isString()"
+            },
+            "pushToken": {
+              ".validate": "newData.hasChildren(['token', 'platform'])",
+              "token": {
+                ".validate": "newData.isString()"
+              },
+              "platform": {
+                ".validate": "newData.isString() && (newData.val() === 'ios' || newData.val() === 'android')"
+              }
+            }
+          }
+        },
+
+        "data": {
+          "$key": {
+            ".validate": "newData.hasChildren(['value', 'updatedBy', 'updatedAt'])",
+            "updatedBy": {
+              ".validate": "newData.isString()"
+            },
+            "updatedAt": {
+              ".validate": "newData.isNumber()"
+            }
+          }
+        }
+      }
+    },
+
+    "backups": {
+      ".read": false,
+      ".write": false,
+
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        ".write": "auth != null && auth.uid === $uid",
+
+        ".validate": "newData.hasChildren(['version', 'timestamp', 'data']) && newData.val().length < 5000000",
+        "version": {
+          ".validate": "newData.isNumber()"
+        },
+        "timestamp": {
+          ".validate": "newData.isString()"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "pro": "PRO",
+  "proBadge": "PRO",
+  "proButton": "فتح مع PRO",
+  "title": "الترقية إلى PRO",
+  "subtitle": "وصول غير محدود لجميع الأدوات المالية",
+  "trial": {
+    "daysLabel": "أيام تجربة مجانية!",
+    "noPayment": "لا حاجة لمعلومات الدفع • جميع الميزات متاحة",
+    "startButton": "ابدأ مجاناً",
+    "activeLabel": "النسخة التجريبية مفعّلة",
+    "featuresEnabled": "جميع الميزات متاحة"
+  },
+  "features": {
+    "unlimitedCards": "بطاقات ائتمان غير محدودة",
+    "unlimitedAccounts": "حسابات غير محدودة",
+    "unlimitedBills": "مدفوعات متكررة غير محدودة",
+    "unlimitedGoals": "أهداف ادخار غير محدودة",
+    "unlimitedBudgets": "خطة ميزانية حسب الفئة",
+    "unlimitedTransactions": "معاملات شهرية غير محدودة",
+    "fullHistory": "سجل المعاملات الكامل",
+    "multiCurrency": "دعم العملات المتعددة وأسعار الصرف الفورية",
+    "exportData": "تصدير CSV و PDF",
+    "investments": "إدارة محفظة الاستثمار",
+    "assets": "تتبع العقارات والمركبات",
+    "simulators": "تحويل الديون وإعادة الهيكلة",
+    "familyAdmin": "إنشاء وإدارة مجموعة عائلية",
+    "receiptScanner": "مسح الفواتير والتعبئة التلقائية",
+    "templates": "قوالب المعاملات",
+    "commercialMode": "تحليل البطاقات التجارية",
+    "widgets": "أدوات الشاشة الرئيسية (5 أدوات)"
+  },
+  "categories": {
+    "creditCard": "إدارة بطاقات الائتمان",
+    "familyFinance": "المالية العائلية",
+    "analyticsSecurity": "التحليلات والأمان",
+    "limitBased": "إزالة الحدود",
+    "proOnly": "PRO فقط"
+  },
+  "plans": {
+    "title": "اختر خطة",
+    "mostPopular": "الأكثر شيوعاً",
+    "purchaseWith": "ترقية إلى PRO عبر",
+    "monthly": "شهري",
+    "yearly": "سنوي",
+    "yearlyPerMonth": "{{price}}/شهر",
+    "savings": "وفر {{percent}}%",
+    "recommended": "موصى به",
+    "perMonth": "/شهر",
+    "perYear": "/سنة"
+  },
+  "actions": {
+    "subscribe": "اشترك",
+    "subscribeTo": "اشترك — {{price}}",
+    "restore": "استعادة المشتريات",
+    "restoring": "جاري الاستعادة...",
+    "restored": "تم استعادة المشتريات!",
+    "noRestore": "لا توجد مشتريات للاستعادة",
+    "purchaseSuccess": "الاشتراك مفعّل!",
+    "manageSubscription": "إدارة الاشتراك",
+    "redeemCode": "رمز ترويجي",
+    "redeeming": "جارٍ التحقق...",
+    "redeemSuccess": "تم استخدام الرمز!"
+  },
+  "errors": {
+    "purchaseFailed": "فشلت عملية الشراء. يرجى المحاولة مرة أخرى.",
+    "purchaseCancelled": "تم إلغاء عملية الشراء.",
+    "notAvailable": "عمليات الشراء غير متاحة حالياً.",
+    "redeemFailed": "تعذر استخدام الرمز"
+  },
+  "restore": "استعادة المشتريات",
+  "terms": "يتم تحصيل الدفع من حساب Apple/Google الخاص بك. يتم تجديد الاشتراك تلقائياً في نهاية كل فترة. تتم عملية التجديد قبل 24 ساعة من انتهاء الفترة. يمكنك إلغاء الاشتراك في أي وقت من إعدادات الحساب.",
+  "webOnly": {
+    "title": "اشترك عبر تطبيق الهاتف",
+    "description": "يمكن شراء اشتراك Pro من تطبيق iOS و Android."
+  },
+  "limits": {
+    "reached": "تم الوصول إلى الحد",
+    "freeLimit": "الخطة المجانية تتيح {{limit}} {{feature}}",
+    "current": "{{current}}/{{limit}}",
+    "cards": "بطاقات",
+    "accounts": "حسابات",
+    "bills": "مدفوعات متكررة",
+    "goals": "أهداف",
+    "budgets": "ميزانيات",
+    "transactions": "معاملات"
+  },
+  "proActive": {
+    "title": "أنت PRO",
+    "subtitle": "لديك حق الوصول إلى جميع الميزات المميزة",
+    "plan": "الخطة النشطة",
+    "lifetime": "بريميوم مدى الحياة",
+    "trial": "نسخة تجريبية",
+    "trialRemaining": "تجربة متبقية",
+    "yearly": "اشتراك سنوي",
+    "monthly": "اشتراك شهري",
+    "expiresAt": "ينتهي: {{date}}",
+    "noExpiry": "بدون انتهاء",
+    "allFeatures": "جميع ميزاتك",
+    "close": "فهمت"
+  },
+  "orSeparator": "أو",
+  "mobileOnly": "هذه الميزة متاحة فقط عبر تطبيق الهاتف.",
+  "perMonth": "شهرياً",
+  "familyContext": {
+    "title": "مزايا PRO في المجموعة العائلية",
+    "description": "معاملات غير محدودة وإدارة الميزانية وإنشاء الحسابات والأهداف"
+  }
+}

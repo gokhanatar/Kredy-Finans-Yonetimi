@@ -1,0 +1,109 @@
+{
+  "pro": "PRO",
+  "proBadge": "PRO",
+  "proButton": "PRO ile Aç",
+  "title": "PRO'ya Geç",
+  "subtitle": "Tüm finansal araçlara sınırsız erişim",
+  "trial": {
+    "daysLabel": "Gün Ücretsiz Deneyin!",
+    "noPayment": "Ödeme bilgisi gerekmez • Tüm özellikler açık",
+    "startButton": "Ücretsiz Başla",
+    "activeLabel": "Deneme Sürümü Aktif",
+    "featuresEnabled": "Tüm özellikler açık"
+  },
+  "features": {
+    "unlimitedCards": "Sınırsız kredi kartı",
+    "unlimitedAccounts": "Sınırsız hesap",
+    "unlimitedBills": "Sınırsız düzenli ödeme",
+    "unlimitedGoals": "Sınırsız tasarruf hedefi",
+    "unlimitedBudgets": "Kategori bazlı bütçe planı",
+    "unlimitedTransactions": "Sınırsız aylık işlem",
+    "fullHistory": "Tüm işlem geçmişi",
+    "multiCurrency": "Çoklu döviz desteği & anlık kur",
+    "exportData": "CSV & PDF dışa aktarma",
+    "investments": "Yatırım portföyü yönetimi",
+    "assets": "Gayrimenkul & araç takibi",
+    "simulators": "Borç aktarma & yapılandırma",
+    "familyAdmin": "Aile grubu oluşturma & yönetim",
+    "receiptScanner": "Fiş tarayıp otomatik doldurma",
+    "templates": "İşlem şablonları",
+    "commercialMode": "Ticari kart analizi",
+    "widgets": "Ana ekran widget'ları (5 widget)"
+  },
+  "categories": {
+    "creditCard": "Kredi Kartı Yönetimi",
+    "familyFinance": "Aile Finansı",
+    "analyticsSecurity": "Analiz & Güvenlik",
+    "limitBased": "Sınırları Kaldır",
+    "proOnly": "Sadece PRO"
+  },
+  "perMonth": "/ay",
+  "plans": {
+    "title": "Plan Seçin",
+    "mostPopular": "En Popüler",
+    "purchaseWith": "PRO'ya geç",
+    "monthly": "Aylık",
+    "yearly": "Yıllık",
+    "yearlyPerMonth": "{{price}}/ay",
+    "savings": "%{{percent}} Tasarruf",
+    "recommended": "Önerilen",
+    "perMonth": "/ay",
+    "perYear": "/yıl"
+  },
+  "actions": {
+    "subscribe": "Abone Ol",
+    "subscribeTo": "Abone Ol — {{price}}",
+    "restore": "Satın Almaları Geri Yükle",
+    "restoring": "Geri yükleniyor...",
+    "restored": "Satın almalar geri yüklendi!",
+    "noRestore": "Geri yüklenecek satın alma bulunamadı",
+    "purchaseSuccess": "Abonelik aktif!",
+    "manageSubscription": "Aboneliği Yönet",
+    "redeemCode": "Promosyon Kodu",
+    "redeeming": "Kontrol ediliyor...",
+    "redeemSuccess": "Kod kullanıldı!"
+  },
+  "errors": {
+    "purchaseFailed": "Satın alma başarısız oldu. Lütfen tekrar deneyin.",
+    "purchaseCancelled": "Satın alma iptal edildi.",
+    "notAvailable": "Satın alma şu anda kullanılamıyor.",
+    "redeemFailed": "Kod kullanılamadı"
+  },
+  "restore": "Satın almaları geri yükle",
+  "terms": "Ödeme Apple/Google hesabınızdan tahsil edilir. Abonelik dönem sonunda otomatik olarak yenilenir. Yenileme işlemi dönemin sona ermesinden 24 saat öncesinde gerçekleşir. Aboneliğinizi istediğiniz zaman hesap ayarlarından iptal edebilirsiniz.",
+  "webOnly": {
+    "title": "Mobil Uygulamadan Abone Olun",
+    "description": "Pro abonelik iOS ve Android uygulamasından satın alınabilir."
+  },
+  "limits": {
+    "reached": "Limite Ulaşıldı",
+    "freeLimit": "Ücretsiz planda {{limit}} {{feature}} hakkınız var",
+    "current": "{{current}}/{{limit}}",
+    "cards": "kart",
+    "accounts": "hesap",
+    "bills": "düzenli ödeme",
+    "goals": "hedef",
+    "budgets": "bütçe",
+    "transactions": "işlem"
+  },
+  "proActive": {
+    "title": "PRO Üyesisiniz",
+    "subtitle": "Tüm premium özelliklere erişiminiz var",
+    "plan": "Aktif Plan",
+    "lifetime": "Ömür Boyu Premium",
+    "trial": "Deneme Sürümü",
+    "trialRemaining": "deneme kaldı",
+    "yearly": "Yıllık Abonelik",
+    "monthly": "Aylık Abonelik",
+    "expiresAt": "Bitiş: {{date}}",
+    "noExpiry": "Süresiz",
+    "allFeatures": "Tüm Özellikleriniz",
+    "close": "Tamam, Anladım"
+  },
+  "orSeparator": "veya",
+  "mobileOnly": "Bu özellik mobil uygulama üzerinden kullanılabilir.",
+  "familyContext": {
+    "title": "Aile Grubunda PRO Avantajları",
+    "description": "Sınırsız işlem, bütçe yönetimi, hesap ve hedef oluşturma"
+  }
+}

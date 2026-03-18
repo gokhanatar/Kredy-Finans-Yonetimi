@@ -1,0 +1,146 @@
+{
+  "title": "Widget Gallery",
+  "categories": {
+    "all": "All",
+    "ciddi": "Serious",
+    "komik": "Funny",
+    "eglenceli": "Fun"
+  },
+  "widgets": {
+    "debt-status": {
+      "name": "Debt Status",
+      "description": "View your total debt summary"
+    },
+    "payment-reminder": {
+      "name": "Payment Reminder",
+      "description": "Next payment countdown"
+    },
+    "golden-window": {
+      "name": "Golden Window",
+      "description": "Your golden window status"
+    },
+    "budget-status": {
+      "name": "Budget Status",
+      "description": "Monthly budget utilization"
+    },
+    "wallet-barometer": {
+      "name": "Wallet Barometer",
+      "description": "Your wallet's mood"
+    },
+    "salary-countdown": {
+      "name": "Salary Countdown",
+      "description": "How many days until payday?"
+    },
+    "money-quotes": {
+      "name": "Money Quotes",
+      "description": "Funny financial quotes"
+    },
+    "savings-goal": {
+      "name": "Savings Goal",
+      "description": "How close are you to your goal?"
+    },
+    "daily-tip": {
+      "name": "Daily Tip",
+      "description": "A new financial tip every day"
+    },
+    "findeks-score": {
+      "name": "Findeks Score",
+      "description": "Your estimated Findeks score"
+    },
+    "bank-account": {
+      "name": "Bank Account",
+      "description": "Balance + overdraft usage status"
+    },
+    "portfolio-value": {
+      "name": "Portfolio Value",
+      "description": "Total value of your investment portfolio"
+    }
+  },
+  "quotes": [
+    "Where money talks, everyone else is deaf.",
+    "Budgeting: telling your money where to go.",
+    "Credit card: the love story between you and the bank.",
+    "Savings: a gift to your future self.",
+    "Interest: the bank's way of saying \"thank you\".",
+    "Debt: the past's gift, the future's nightmare.",
+    "Wealth: not having money, but money not having you.",
+    "Payday: the best 5 minutes of the month."
+  ],
+  "tips": {
+    "1": {
+      "title": "The Golden Rule",
+      "text": "50% of income for needs, 30% for wants, 20% for savings."
+    },
+    "2": {
+      "title": "The Installment Trap",
+      "text": "Installment purchases increase the total amount paid. Pay in full when possible."
+    },
+    "3": {
+      "title": "Statement Closing",
+      "text": "Purchases made right after the statement closing date give you the longest payment term."
+    },
+    "4": {
+      "title": "The Minimum Payment Trap",
+      "text": "By making only minimum payments, you lose 95% of your balance to interest."
+    },
+    "5": {
+      "title": "Golden Window",
+      "text": "The period between the due date and statement closing is the \"golden window\". Shopping during this time is most advantageous."
+    },
+    "6": {
+      "title": "Debt Snowball",
+      "text": "Pay off the smallest debt first for motivation, then move to larger ones."
+    },
+    "7": {
+      "title": "Emergency Fund",
+      "text": "Build an emergency fund covering 3-6 months of expenses. Don't rely on credit cards."
+    },
+    "8": {
+      "title": "Limit Utilization",
+      "text": "Using more than 30% of your credit card limit lowers your Findeks score."
+    }
+  },
+  "barometer": {
+    "levels": {
+      "0": "Relaxed",
+      "20": "Good",
+      "40": "Caution",
+      "60": "Danger",
+      "80": "Urgent"
+    }
+  },
+  "preview": {
+    "totalDebt": "Total Debt",
+    "nextPayment": "Next Payment",
+    "days": "days",
+    "goldenWindow": "Golden Window",
+    "active": "ACTIVE",
+    "monthlyBudget": "Monthly Budget",
+    "spent": "spent",
+    "usage": "usage",
+    "daysLeft": "days left",
+    "vacationFund": "Vacation Fund",
+    "estimatedScore": "Estimated Score",
+    "newTipDaily": "New tip every day"
+  },
+  "setupGuide": {
+    "ios": {
+      "title": "iOS",
+      "step1": "Long press on an empty area of the home screen",
+      "step2": "Tap the + button in the top left",
+      "step3": "Type \"Kredy\" in the search bar",
+      "step4": "Select your desired widget size",
+      "step5": "Tap \"Add Widget\"",
+      "step6": "Drag the widget to your desired location"
+    },
+    "android": {
+      "title": "Android",
+      "step1": "Long press on an empty area of the home screen",
+      "step2": "Tap \"Widgets\"",
+      "step3": "Find the \"Kredy\" app",
+      "step4": "Long press the desired widget and drag it to the home screen",
+      "step5": "Release to position it"
+    },
+    "note": "Widget support is coming soon. For now, you can preview these widgets within the app."
+  }
+}

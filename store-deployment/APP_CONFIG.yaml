@@ -1,0 +1,44 @@
+app_name: Kredy
+bundle_id: com.finansatlas.app
+app_id: "6759491761"
+sku: kredy-finansatlas-2024
+version: "1.0.0"
+build_number: "1"
+category: FINANCE
+secondary_category: PRODUCTIVITY
+primary_language: tr
+
+ios:
+  asc_key_id: 3Y4L9XJC76
+  asc_issuer_id: 7927d78f-7f09-4ff0-bad9-6c36b8afcaf5
+  asc_key_file: /Users/neslihan/Desktop/uygulama/Kredy/AuthKey_3Y4L9XJC76.p8
+  team_id: 59ZAKYY5YZ
+  version_id: 33d8c9a6-81aa-446c-939f-3f9a86a632f8
+
+privacy_policy_url: https://gokhanatar.github.io/Kredy/privacy-policy.html
+terms_of_use_url: https://gokhanatar.github.io/Kredy/terms-of-use.html
+
+store:
+  privacy_url: https://gokhanatar.github.io/Kredy/privacy-policy.html
+  privacy_policy_url: https://gokhanatar.github.io/Kredy/privacy-policy.html
+  terms_url: https://gokhanatar.github.io/Kredy/terms-of-use.html
+
+contact:
+  first_name: Gokhan
+  last_name: Atar
+  email: support@finansatlas.com
+  phone: "+90 555 000 0000"
+
+monetization:
+  monthly_product_id: com.finansatlas.app.pro.monthly
+  yearly_product_id: com.finansatlas.app.pro.yearly
+  monthly_price_usd: "1.99"
+  yearly_price_usd: "9.99"
+  trial_days: "7"
+
+languages:
+  - tr
+  - en-US
+  - ar-SA
+  - ru
+  - uk

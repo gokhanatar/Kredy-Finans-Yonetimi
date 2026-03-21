@@ -1,27 +1,207 @@
-import { useState } from 'react';
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { MobileNav } from '@/components/MobileNav';
 import { PremiumLockOverlay } from '@/components/PremiumLockOverlay';
 import { WidgetPreviewCard } from '@/components/widgets/WidgetPreviewCard';
 import { WidgetSetupGuide } from '@/components/widgets/WidgetSetupGuide';
 import { widgets, CATEGORY_LABEL_KEYS, type WidgetCategory } from '@/data/widgetData';
 import { cn } from '@/lib/utils';
-
+ 
 type FilterTab = 'all' | WidgetCategory;
-
+ 
 const TAB_IDS: FilterTab[] = ['all', 'ciddi', 'komik', 'eglenceli'];
-
+ 
 export default function WidgetGallery() {
   const navigate = useNavigate();
   const { t } = useTranslation(['widgets', 'common']);
   const [filter, setFilter] = useState<FilterTab>('all');
-
+ 
   const filtered = filter === 'all' ? widgets : widgets.filter((w) => w.category === filter);
-
+ 
   return (
-    <div className="min-h-screen bg-background pb-safe-nav lg:pb-6">
+    <div className="min-h-screen bg-background pb-safe-nav">
       {/* Header */}
       <div className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur-xl">
         <div className="flex h-14 items-center gap-4 px-4">
@@ -31,7 +211,7 @@ export default function WidgetGallery() {
           <h1 className="text-lg font-semibold">{t('title')}</h1>
         </div>
       </div>
-
+ 
       <div className="px-4 pt-4 space-y-5">
         {/* FREE: Filter tabs + widget preview cards */}
         <div className="flex gap-2">
@@ -50,7 +230,7 @@ export default function WidgetGallery() {
             </button>
           ))}
         </div>
-
+ 
         {/* Category sections */}
         {filter === 'all' ? (
           (['ciddi', 'komik', 'eglenceli'] as WidgetCategory[]).map((cat) => {
@@ -75,13 +255,15 @@ export default function WidgetGallery() {
             ))}
           </div>
         )}
-
+ 
         {/* LOCKED: Setup guide */}
         <PremiumLockOverlay>
           <WidgetSetupGuide />
         </PremiumLockOverlay>
       </div>
-
+ 
+      <MobileNav activeTab="profile" />
     </div>
   );
 }
+ 

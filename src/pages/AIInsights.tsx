@@ -1,19 +1,292 @@
-import { Suspense, lazy } from 'react';
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ import { Suspense, lazy } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ArrowLeft, Brain, Lightbulb, PiggyBank, Scale, MessageSquare, Camera } from 'lucide-react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-
+import { MobileNav } from '@/components/MobileNav';
 import { PremiumLockOverlay } from '@/components/PremiumLockOverlay';
 import { useSubscriptionContext } from '@/contexts/SubscriptionContext';
-
+ 
 const SpendingInsights = lazy(() => import('@/components/SpendingInsights'));
 const BudgetSuggestionCard = lazy(() => import('@/components/BudgetSuggestionCard'));
 const DebtStrategyAdvisor = lazy(() => import('@/components/DebtStrategyAdvisor'));
 const QuickExpenseInput = lazy(() => import('@/components/QuickExpenseInput'));
-
+ 
 function PageLoader() {
   return (
     <div className="flex items-center justify-center py-12">
@@ -21,12 +294,12 @@ function PageLoader() {
     </div>
   );
 }
-
+ 
 const AIInsights = () => {
   const { t } = useTranslation(['ai', 'common']);
   const navigate = useNavigate();
   const { isPremium } = useSubscriptionContext();
-
+ 
   const tabs = [
     { id: 'insights', labelKey: 'ai:tabs.insights', icon: Lightbulb },
     { id: 'budget', labelKey: 'ai:tabs.budget', icon: PiggyBank },
@@ -34,12 +307,12 @@ const AIInsights = () => {
     { id: 'nlp', labelKey: 'ai:tabs.nlp', icon: MessageSquare },
     { id: 'receipt', labelKey: 'ai:tabs.receipt', icon: Camera },
   ];
-
+ 
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
       <div className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="page-container">
+        <div className="mx-auto max-w-2xl">
           <div className="flex h-14 items-center gap-3 px-4">
             <button
               onClick={() => navigate(-1)}
@@ -54,11 +327,11 @@ const AIInsights = () => {
           </div>
         </div>
       </div>
-
+ 
       <PremiumLockOverlay>
-        <main className="page-container py-4 pb-safe-nav lg:pb-6">
+        <main className="mx-auto max-w-2xl px-4 py-4 pb-safe-nav">
           <p className="mb-4 text-sm text-muted-foreground">{t('ai:subtitle')}</p>
-
+ 
           <Tabs defaultValue="insights" className="w-full">
             <TabsList className="mb-4 flex w-full overflow-x-auto no-scrollbar">
               {tabs.map((tab) => {
@@ -76,31 +349,31 @@ const AIInsights = () => {
                 );
               })}
             </TabsList>
-
+ 
             <TabsContent value="insights">
               <Suspense fallback={<PageLoader />}>
                 <SpendingInsights />
               </Suspense>
             </TabsContent>
-
+ 
             <TabsContent value="budget">
               <Suspense fallback={<PageLoader />}>
                 <BudgetSuggestionCard />
               </Suspense>
             </TabsContent>
-
+ 
             <TabsContent value="debt">
               <Suspense fallback={<PageLoader />}>
                 <DebtStrategyAdvisor />
               </Suspense>
             </TabsContent>
-
+ 
             <TabsContent value="nlp">
               <Suspense fallback={<PageLoader />}>
                 <QuickExpenseInput />
               </Suspense>
             </TabsContent>
-
+ 
             <TabsContent value="receipt">
               <Card>
                 <CardContent className="flex flex-col items-center gap-4 py-8">
@@ -127,9 +400,11 @@ const AIInsights = () => {
           </Tabs>
         </main>
       </PremiumLockOverlay>
-
+ 
+      <MobileNav activeTab="menu" />
     </div>
   );
 };
-
+ 
 export default AIInsights;
+ 

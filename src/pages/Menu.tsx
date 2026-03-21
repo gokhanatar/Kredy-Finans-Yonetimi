@@ -1,7 +1,693 @@
-import { useState } from 'react';
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Crown, TrendingUp } from 'lucide-react';
+import { MobileNav } from '@/components/MobileNav';
 import { FamilySyncSetup } from '@/components/FamilySyncSetup';
 import { DebtRollingSimulator } from '@/components/DebtRollingSimulator';
 import { RestructuringSimulator } from '@/components/RestructuringSimulator';
@@ -15,32 +701,32 @@ import { useSubscriptionContext } from '@/contexts/SubscriptionContext';
 import { useFamilySyncedStorage } from '@/hooks/useFamilySyncedStorage';
 import { useSimpleMode } from '@/contexts/SimpleModeContext';
 import { CreditCard } from '@/types/finance';
-
+ 
 const Menu = () => {
   const { t } = useTranslation(['cards', 'common']);
   const navigate = useNavigate();
   const { profile } = useUserProfile();
   const { isPremium, isTrialActive, trialDaysLeft, subscriptionPlan, isScreenshotMode } = useSubscriptionContext();
   const [cards] = useFamilySyncedStorage<CreditCard[]>('kredi-pusula-cards', [] as CreditCard[]);
-
+ 
   const { isSimpleMode, toggleSimpleMode } = useSimpleMode();
   const [showSimulator, setShowSimulator] = useState(false);
   const [showRestructuring, setShowRestructuring] = useState(false);
   const [showInstallment, setShowInstallment] = useState(false);
   const [showPaywall, setShowPaywall] = useState(false);
-
+ 
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
       <div className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="page-container">
+        <div className="mx-auto max-w-2xl">
           <div className="flex h-14 items-center gap-4 px-4">
             <h1 className="text-lg font-semibold">{t('common:nav.menu', 'Menü')}</h1>
           </div>
         </div>
       </div>
-
-      <main className="page-container py-4 pb-safe-nav lg:pb-6">
+ 
+      <main className="mx-auto max-w-2xl px-5 py-4 pb-safe-nav">
         <div className="space-y-4">
           {/* 1. Kompakt kullanıcı kartı */}
           <div className="flex items-center gap-4 rounded-2xl bg-card p-4 shadow-soft">
@@ -64,7 +750,7 @@ const Menu = () => {
               </span>
             )}
           </div>
-
+ 
           {/* 2. PRO upgrade banner — free ve trial kullanıcılarına göster */}
           {(!isPremium || isTrialActive) && !isScreenshotMode && (
             <button
@@ -83,17 +769,17 @@ const Menu = () => {
               </div>
             </button>
           )}
-
+ 
           {/* 3. Aile Paylaşımı */}
           <FamilySyncSetup />
-
+ 
           {/* 3.5 Basit Mod Toggle */}
           <button
             onClick={() => {
               toggleSimpleMode();
               if (!isSimpleMode) {
                 // Switching TO simple mode — navigate to simple summary
-                navigate('/');
+                setTimeout(() => navigate('/'), 50);
               }
             }}
             className="flex w-full items-center justify-between rounded-xl bg-card p-4 shadow-soft"
@@ -119,7 +805,7 @@ const Menu = () => {
               />
             </div>
           </button>
-
+ 
           {/* 4. VARLIKLARIM bölümü */}
           <div className="space-y-2">
             <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">{t('profile.myAssets')}</p>
@@ -161,7 +847,7 @@ const Menu = () => {
               <span className="text-muted-foreground">→</span>
             </button>
           </div>
-
+ 
           {/* 5. ARAÇLAR bölümü */}
           <div className="space-y-2">
             <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">{t('profile.tools')}</p>
@@ -231,7 +917,7 @@ const Menu = () => {
               <span className="text-muted-foreground">→</span>
             </button>
           </div>
-
+ 
           {/* 6. UYGULAMA bölümü */}
           <div className="space-y-2">
             <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">{t('profile.application')}</p>
@@ -277,24 +963,12 @@ const Menu = () => {
               <span className="font-medium">❓ {t('profile.helpSupport')}</span>
               <span className="text-muted-foreground">→</span>
             </button>
-            <button
-              onClick={() => window.open('https://gokhanatar.github.io/Kredy-Finans-Yonetimi/privacy-policy.html', '_blank')}
-              className="flex w-full items-center justify-between rounded-xl bg-card p-4 shadow-soft"
-            >
-              <span className="font-medium">🔒 {t('common:legal.privacyPolicy', 'Gizlilik Politikası')}</span>
-              <span className="text-muted-foreground">→</span>
-            </button>
-            <button
-              onClick={() => window.open('https://gokhanatar.github.io/Kredy-Finans-Yonetimi/terms-of-use.html', '_blank')}
-              className="flex w-full items-center justify-between rounded-xl bg-card p-4 shadow-soft"
-            >
-              <span className="font-medium">📋 {t('common:legal.termsOfUse', 'Kullanım Koşulları')}</span>
-              <span className="text-muted-foreground">→</span>
-            </button>
           </div>
         </div>
       </main>
-
+ 
+      <MobileNav activeTab="menu" />
+ 
       {/* Simulator Modal */}
       <Dialog open={showSimulator} onOpenChange={setShowSimulator}>
         <DialogContent className="max-h-[90vh] max-w-md overflow-y-auto p-0">
@@ -309,7 +983,7 @@ const Menu = () => {
           </PremiumLockOverlay>
         </DialogContent>
       </Dialog>
-
+ 
       {/* Restructuring Modal */}
       <Dialog open={showRestructuring} onOpenChange={setShowRestructuring}>
         <DialogContent className="max-h-[90vh] max-w-md overflow-y-auto p-0">
@@ -321,7 +995,7 @@ const Menu = () => {
           </PremiumLockOverlay>
         </DialogContent>
       </Dialog>
-
+ 
       {/* Installment Calculator Modal */}
       <Dialog open={showInstallment} onOpenChange={setShowInstallment}>
         <DialogContent className="max-h-[90vh] max-w-md overflow-y-auto p-0">
@@ -333,7 +1007,7 @@ const Menu = () => {
           </PremiumLockOverlay>
         </DialogContent>
       </Dialog>
-
+ 
       {/* Paywall Dialog */}
       <Dialog open={showPaywall} onOpenChange={setShowPaywall}>
         <DialogContent className="max-h-[95vh] max-w-md overflow-y-auto p-0">
@@ -349,5 +1023,6 @@ const Menu = () => {
     </div>
   );
 };
-
+ 
 export default Menu;
+ 

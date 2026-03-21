@@ -141,6 +141,14 @@ export async function signOut(): Promise<void> {
   await auth.signOut();
 }
 
+export async function deleteCurrentUser(): Promise<void> {
+  const auth = await getAuth();
+  const user = auth.currentUser;
+  if (!user) throw new Error('No user logged in');
+  const { deleteUser } = await import('firebase/auth');
+  await deleteUser(user);
+}
+
 export async function getCurrentUser(): Promise<User | null> {
   const auth = await getAuth();
   return new Promise((resolve) => {

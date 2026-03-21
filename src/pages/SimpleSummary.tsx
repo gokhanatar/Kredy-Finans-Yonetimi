@@ -1,19 +1,421 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ import { useState } from 'react';
+import { motion } from 'framer-motion';
 import {
   Bell, Eye, EyeOff, Crown, Plus, Minus,
   CreditCard, BarChart3, Wallet, Target,
   Repeat, Landmark, TrendingUp, Building2,
-  CalendarDays, Calculator, ArrowRightLeft, ChevronDown,
 } from 'lucide-react';
 import { useNavigate, Navigate } from 'react-router-dom';
-
+import { MobileNav } from '@/components/MobileNav';
 import { HomeSafeToSpend } from '@/components/HomeSafeToSpend';
 import { SimpleCardCarousel } from '@/components/SimpleCardCarousel';
-import { PaymentCalendar } from '@/components/PaymentCalendar';
-import { MonthlyCalendar } from '@/components/MonthlyCalendar';
-import { SimpleLoanCalculator } from '@/components/SimpleLoanCalculator';
-import { DebtRollingSimulator } from '@/components/DebtRollingSimulator';
 import { SimpleUpcomingPayments } from '@/components/SimpleUpcomingPayments';
 import { SimpleRecentTransactions } from '@/components/SimpleRecentTransactions';
 import { SimpleQuickAdd } from '@/components/SimpleQuickAdd';
@@ -29,7 +431,7 @@ import { CreditCard as CreditCardType } from '@/types/finance';
 import { PERSONAL_STORAGE_KEYS } from '@/types/familyFinance';
 import { containerVariants, itemVariants } from '@/lib/simpleAnimations';
 import type { LucideIcon } from 'lucide-react';
-
+ 
 function getGreeting(): string {
   const hour = new Date().getHours();
   if (hour >= 5 && hour < 12) return 'Günaydın';
@@ -37,7 +439,7 @@ function getGreeting(): string {
   if (hour >= 18 && hour < 22) return 'İyi akşamlar';
   return 'İyi geceler';
 }
-
+ 
 interface QuickNavItem {
   icon: LucideIcon;
   label: string;
@@ -45,7 +447,7 @@ interface QuickNavItem {
   gradient: string;
   isPro?: boolean;
 }
-
+ 
 const PERSONAL_NAV_ITEMS: QuickNavItem[] = [
   { icon: CreditCard,  label: 'Kartlarım',         path: '/wallet?tab=kartlar',   gradient: 'from-sky-500 to-blue-600' },
   { icon: BarChart3,    label: 'Analitik',           path: '/analytics',            gradient: 'from-blue-500 to-cyan-500' },
@@ -56,7 +458,7 @@ const PERSONAL_NAV_ITEMS: QuickNavItem[] = [
   { icon: TrendingUp,   label: 'Yatırım Portföyü',   path: '/investments',          gradient: 'from-violet-500 to-purple-600', isPro: true },
   { icon: Building2,    label: 'Emlak & Araçlar',     path: '/assets',               gradient: 'from-teal-500 to-emerald-600', isPro: true },
 ];
-
+ 
 const SimpleSummary = () => {
   const navigate = useNavigate();
   const { profile } = useUserProfile();
@@ -64,28 +466,25 @@ const SimpleSummary = () => {
   const { isPrivate, toggle: togglePrivacy } = usePrivacyMode();
   const { isPremium, isTrialActive, trialDaysLeft, isScreenshotMode } = useSubscriptionContext();
   const [quickAddType, setQuickAddType] = useState<'income' | 'expense' | null>(null);
-  const [showCalendar, setShowCalendar] = useState(false);
-  const [showLoanCalc, setShowLoanCalc] = useState(false);
-  const [showDebtRolling, setShowDebtRolling] = useState(false);
-
+ 
   // Data — same sources as the real app
   const [cards] = useFamilySyncedStorage<CreditCardType[]>('kredi-pusula-cards', []);
   const billHook = useRecurringBills(PERSONAL_STORAGE_KEYS.MONTHLY_BILLS);
   const subHook = useSubscriptions(PERSONAL_STORAGE_KEYS.SUBSCRIPTIONS);
   const { transactions } = useTransactions(PERSONAL_STORAGE_KEYS.TRANSACTIONS, 'personal');
-
+ 
   // Kişisel finans kapalıysa → aile sayfasına yönlendir (hook'lardan SONRA)
   if (familyId && profile.hidePersonalFinance) {
     return <Navigate to="/simple-family" replace />;
   }
-
+ 
   const firstName = profile.name?.split(' ')[0] || 'Kullanıcı';
-
+ 
   return (
     <div className="min-h-screen bg-background">
       {/* Header — gradient glass */}
       <header className="sticky top-0 z-40 bg-gradient-to-r from-primary/8 via-background/90 to-primary/5 backdrop-blur-xl safe-area-top border-b border-border/40">
-        <div className="page-container flex items-center justify-between py-3">
+        <div className="mx-auto max-w-2xl flex items-center justify-between px-5 py-3">
           <div className="flex-1 min-w-0">
             <p className="text-xs font-medium text-muted-foreground">{getGreeting()}</p>
             <p className="text-lg font-bold truncate">{firstName}</p>
@@ -113,9 +512,9 @@ const SimpleSummary = () => {
           </div>
         </div>
       </header>
-
+ 
       <motion.main
-        className="page-container py-3 pb-safe-nav lg:pb-6 space-y-6"
+        className="mx-auto max-w-2xl px-5 py-3 pb-safe-nav space-y-6"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -135,12 +534,12 @@ const SimpleSummary = () => {
             <Minus className="h-4.5 w-4.5" /> Gider Ekle
           </button>
         </motion.div>
-
+ 
         {/* 1. SafeToSpend — reuse the REAL component */}
         <motion.div variants={itemVariants}>
           <HomeSafeToSpend />
         </motion.div>
-
+ 
         {/* 2. Upcoming Payments */}
         <motion.div variants={itemVariants}>
           <SimpleUpcomingPayments
@@ -150,104 +549,19 @@ const SimpleSummary = () => {
             daysAhead={5}
           />
         </motion.div>
-
+ 
         {/* 3. Recent Transactions */}
         <motion.div variants={itemVariants}>
           <SimpleRecentTransactions transactions={transactions} scope="personal" />
         </motion.div>
-
+ 
         {/* 4. Card Carousel */}
         <motion.div variants={itemVariants}>
           <SimpleCardCarousel cards={cards} />
         </motion.div>
-
-        {/* 5. Collapsible Tools */}
-        <motion.div variants={itemVariants} className="space-y-3">
-          {/* Takvim Toggle */}
-          <button
-            onClick={() => setShowCalendar(v => !v)}
-            className="w-full flex items-center justify-between rounded-2xl bg-card p-4 shadow-sm active:scale-[0.98] transition-all"
-          >
-            <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500">
-                <CalendarDays className="h-5 w-5 text-white" />
-              </div>
-              <span className="font-bold">Takvim</span>
-            </div>
-            <ChevronDown className={`h-5 w-5 text-muted-foreground transition-transform ${showCalendar ? 'rotate-180' : ''}`} />
-          </button>
-          <AnimatePresence>
-            {showCalendar && (
-              <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: 'auto', opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.25 }}
-                className="overflow-hidden space-y-4"
-              >
-                <PaymentCalendar cards={cards} />
-                <MonthlyCalendar cards={cards} />
-              </motion.div>
-            )}
-          </AnimatePresence>
-
-          {/* Kredi Simülatörü Toggle */}
-          <button
-            onClick={() => setShowLoanCalc(v => !v)}
-            className="w-full flex items-center justify-between rounded-2xl bg-card p-4 shadow-sm active:scale-[0.98] transition-all"
-          >
-            <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-blue-700">
-                <Calculator className="h-5 w-5 text-white" />
-              </div>
-              <span className="font-bold">Kredi Simülatörü</span>
-            </div>
-            <ChevronDown className={`h-5 w-5 text-muted-foreground transition-transform ${showLoanCalc ? 'rotate-180' : ''}`} />
-          </button>
-          <AnimatePresence>
-            {showLoanCalc && (
-              <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: 'auto', opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.25 }}
-                className="overflow-hidden"
-              >
-                <SimpleLoanCalculator />
-              </motion.div>
-            )}
-          </AnimatePresence>
-
-          {/* Takla Simülatörü Toggle */}
-          <button
-            onClick={() => setShowDebtRolling(v => !v)}
-            className="w-full flex items-center justify-between rounded-2xl bg-card p-4 shadow-sm active:scale-[0.98] transition-all"
-          >
-            <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-orange-500 to-red-500">
-                <ArrowRightLeft className="h-5 w-5 text-white" />
-              </div>
-              <span className="font-bold">Takla Simülatörü</span>
-            </div>
-            <ChevronDown className={`h-5 w-5 text-muted-foreground transition-transform ${showDebtRolling ? 'rotate-180' : ''}`} />
-          </button>
-          <AnimatePresence>
-            {showDebtRolling && (
-              <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: 'auto', opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.25 }}
-                className="overflow-hidden"
-              >
-                <DebtRollingSimulator cards={cards} />
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </motion.div>
-
-        {/* 6. Quick Navigation — big rounded colorful buttons with Lucide icons */}
-        <motion.div variants={itemVariants} className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+ 
+        {/* 5. Quick Navigation — big rounded colorful buttons with Lucide icons */}
+        <motion.div variants={itemVariants} className="grid grid-cols-2 gap-3">
           {PERSONAL_NAV_ITEMS.map((item, index) => {
             const Icon = item.icon;
             return (
@@ -264,10 +578,10 @@ const SimpleSummary = () => {
                   <Icon className="h-5 w-5 text-white" />
                 </div>
                 <span className="text-[13px] font-semibold text-white leading-tight">{item.label}</span>
-
+ 
                 {/* Decorative circle */}
                 <div className="absolute -bottom-3 -right-3 h-16 w-16 rounded-full bg-white/10" />
-
+ 
                 {item.isPro && !isPremium && !isScreenshotMode && (
                   <span className="absolute top-2.5 right-2.5 inline-flex items-center gap-0.5 rounded-full bg-black/20 px-1.5 py-0.5 text-[9px] font-bold text-white">
                     <Crown className="h-2.5 w-2.5" /> PRO
@@ -277,10 +591,12 @@ const SimpleSummary = () => {
             );
           })}
         </motion.div>
-
+ 
         <div className="pb-4" />
       </motion.main>
-
+ 
+      <MobileNav activeTab="home" />
+ 
       <SimpleQuickAdd
         open={quickAddType !== null}
         onClose={() => setQuickAddType(null)}
@@ -290,5 +606,6 @@ const SimpleSummary = () => {
     </div>
   );
 };
-
+ 
 export default SimpleSummary;
+ 

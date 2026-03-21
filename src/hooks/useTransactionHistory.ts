@@ -1,0 +1,230 @@
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ import { useLocalStorage } from './useLocalStorage';
+import { useCallback } from 'react';
+ 
+export type TransactionType = 'income' | 'expense' | 'card_payment' | 'purchase' | 'simulator' | 'investment' | 'goal' | 'transfer';
+ 
+export interface TransactionHistoryEntry {
+  id: string;
+  type: TransactionType;
+  title: string;
+  description?: string;
+  amount?: number;
+  category?: string;
+  date: string;
+  createdAt: string;
+}
+ 
+const TYPE_ICONS: Record<TransactionType, string> = {
+  income: '💰',
+  expense: '💸',
+  card_payment: '💳',
+  purchase: '🛒',
+  simulator: '🧮',
+  investment: '📈',
+  goal: '🎯',
+  transfer: '🔄',
+};
+ 
+const TYPE_COLORS: Record<TransactionType, string> = {
+  income: 'text-success',
+  expense: 'text-destructive',
+  card_payment: 'text-primary',
+  purchase: 'text-warning',
+  simulator: 'text-info',
+  investment: 'text-violet-500',
+  goal: 'text-teal-500',
+  transfer: 'text-orange-500',
+};
+ 
+export function useTransactionHistory() {
+  const [history, setHistory] = useLocalStorage<TransactionHistoryEntry[]>(
+    'kredi-pusula-transaction-history',
+    []
+  );
+ 
+  const addEntry = useCallback((entry: Omit<TransactionHistoryEntry, 'id' | 'createdAt'>) => {
+    const newEntry: TransactionHistoryEntry = {
+      ...entry,
+      id: `th_${Date.now()}_${Math.random().toString(36).slice(2, 6)}`,
+      createdAt: new Date().toISOString(),
+    };
+    setHistory((prev) => [newEntry, ...prev].slice(0, 500)); // Keep last 500 entries
+    return newEntry;
+  }, [setHistory]);
+ 
+  const deleteEntry = useCallback((id: string) => {
+    setHistory((prev) => prev.filter((e) => e.id !== id));
+  }, [setHistory]);
+ 
+  const clearHistory = useCallback(() => {
+    setHistory([]);
+  }, [setHistory]);
+ 
+  const getEntriesByType = useCallback((type: TransactionType) => {
+    return history.filter((e) => e.type === type);
+  }, [history]);
+ 
+  return {
+    history,
+    addEntry,
+    deleteEntry,
+    clearHistory,
+    getEntriesByType,
+    TYPE_ICONS,
+    TYPE_COLORS,
+  };
+}
+ 

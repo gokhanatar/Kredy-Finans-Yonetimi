@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { Capacitor } from '@capacitor/core';
 import { Crown, TrendingUp } from 'lucide-react';
 import { MobileNav } from '@/components/MobileNav';
 import { FamilySyncSetup } from '@/components/FamilySyncSetup';
@@ -29,6 +30,19 @@ const Menu = () => {
   const [showRestructuring, setShowRestructuring] = useState(false);
   const [showInstallment, setShowInstallment] = useState(false);
   const [showPaywall, setShowPaywall] = useState(false);
+
+  const openUrl = useCallback(async (url: string) => {
+    if (Capacitor.isNativePlatform()) {
+      try {
+        const { Browser } = await import('@capacitor/browser');
+        await Browser.open({ url });
+      } catch {
+        window.open(url, '_blank');
+      }
+    } else {
+      window.open(url, '_blank');
+    }
+  }, []);
 
   return (
     <div className="min-h-screen bg-background">
@@ -278,6 +292,25 @@ const Menu = () => {
               <span className="font-medium">❓ {t('profile.helpSupport')}</span>
               <span className="text-muted-foreground">→</span>
             </button>
+          </div>
+
+          {/* Legal Links */}
+          <div className="space-y-2">
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground px-1">{t('common:legal', 'Yasal')}</h3>
+            <div className="flex flex-wrap gap-2 text-xs text-muted-foreground px-1">
+              <button onClick={() => openUrl('https://gokhanatar.github.io/Kredy-Finans-Yonetimi/privacy-policy.html')} className="underline hover:text-foreground">
+                {t('common:privacyPolicy', 'Gizlilik Politikası')}
+              </button>
+              <span>·</span>
+              <button onClick={() => openUrl('https://gokhanatar.github.io/Kredy-Finans-Yonetimi/terms-of-use.html')} className="underline hover:text-foreground">
+                {t('common:termsOfUse', 'Kullanım Koşulları')}
+              </button>
+              <span>·</span>
+              <button onClick={() => openUrl('https://gokhanatar.github.io/Kredy-Finans-Yonetimi/eula.html')} className="underline hover:text-foreground">
+                {t('common:eula', 'EULA')}
+              </button>
+            </div>
+            <p className="text-[10px] text-muted-foreground/60 px-1">Kredy v1.0.0 — Finans Atlas</p>
           </div>
         </div>
       </main>

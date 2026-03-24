@@ -184,5 +184,9 @@
     "addIncome": "Add Income",
     "payBill": "Pay Bill"
   },
-  "subscription": "Subscription"
+  "subscription": "Subscription",
+  "legal": "Legal",
+  "privacyPolicy": "Privacy Policy",
+  "termsOfUse": "Terms of Use",
+  "eula": "EULA"
 }

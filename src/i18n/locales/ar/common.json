@@ -184,5 +184,9 @@
     "addIncome": "إضافة دخل",
     "payBill": "دفع فاتورة"
   },
-  "subscription": "اشتراك"
+  "subscription": "اشتراك",
+  "legal": "قانوني",
+  "privacyPolicy": "سياسة الخصوصية",
+  "termsOfUse": "شروط الاستخدام",
+  "eula": "اتفاقية الترخيص"
 }

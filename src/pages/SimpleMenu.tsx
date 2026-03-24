@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import { Capacitor } from '@capacitor/core';
 import {
   Crown, ChevronRight, Landmark, Brain, Briefcase,
   Bell, Settings, HelpCircle, Maximize2,
@@ -80,6 +81,19 @@ const SimpleMenu = () => {
   const [showRestructuring, setShowRestructuring] = useState(false);
 
   const [cards] = useFamilySyncedStorage<CreditCardType[]>('kredi-pusula-cards', []);
+
+  const openUrl = useCallback(async (url: string) => {
+    if (Capacitor.isNativePlatform()) {
+      try {
+        const { Browser } = await import('@capacitor/browser');
+        await Browser.open({ url });
+      } catch {
+        window.open(url, '_blank');
+      }
+    } else {
+      window.open(url, '_blank');
+    }
+  }, []);
 
   const recentHistory = history.slice(0, 8);
 
@@ -243,6 +257,18 @@ const SimpleMenu = () => {
 
         {/* App Settings */}
         {renderMenuGroup('Uygulama', APP)}
+
+        {/* Legal Links */}
+        <div className="px-1 pt-2 pb-1">
+          <div className="flex flex-wrap justify-center gap-2 text-[11px] text-muted-foreground/70">
+            <button onClick={() => openUrl('https://gokhanatar.github.io/Kredy-Finans-Yonetimi/privacy-policy.html')} className="underline">Gizlilik Politikası</button>
+            <span>·</span>
+            <button onClick={() => openUrl('https://gokhanatar.github.io/Kredy-Finans-Yonetimi/terms-of-use.html')} className="underline">Kullanım Koşulları</button>
+            <span>·</span>
+            <button onClick={() => openUrl('https://gokhanatar.github.io/Kredy-Finans-Yonetimi/eula.html')} className="underline">EULA</button>
+          </div>
+          <p className="text-center text-[10px] text-muted-foreground/50 mt-1">Kredy v1.0.0</p>
+        </div>
 
         <div className="h-4" />
       </motion.main>

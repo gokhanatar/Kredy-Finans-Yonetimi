@@ -70,12 +70,54 @@
     "lastMonth": "Geçen Ay"
   },
   "days": {
-    "short": ["Pz", "Pt", "Sa", "Ça", "Pe", "Cu", "Ct"],
-    "long": ["Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"]
+    "short": [
+      "Pz",
+      "Pt",
+      "Sa",
+      "Ça",
+      "Pe",
+      "Cu",
+      "Ct"
+    ],
+    "long": [
+      "Pazar",
+      "Pazartesi",
+      "Salı",
+      "Çarşamba",
+      "Perşembe",
+      "Cuma",
+      "Cumartesi"
+    ]
   },
   "months": {
-    "long": ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"],
-    "short": ["Oca", "Şub", "Mar", "Nis", "May", "Haz", "Tem", "Ağu", "Eyl", "Eki", "Kas", "Ara"]
+    "long": [
+      "Ocak",
+      "Şubat",
+      "Mart",
+      "Nisan",
+      "Mayıs",
+      "Haziran",
+      "Temmuz",
+      "Ağustos",
+      "Eylül",
+      "Ekim",
+      "Kasım",
+      "Aralık"
+    ],
+    "short": [
+      "Oca",
+      "Şub",
+      "Mar",
+      "Nis",
+      "May",
+      "Haz",
+      "Tem",
+      "Ağu",
+      "Eyl",
+      "Eki",
+      "Kas",
+      "Ara"
+    ]
   },
   "currency": {
     "TRY": "Türk Lirası (₺)",
@@ -142,5 +184,9 @@
     "addIncome": "Gelir Ekle",
     "payBill": "Fatura Öde"
   },
-  "subscription": "Abonelik"
+  "subscription": "Abonelik",
+  "legal": "Yasal",
+  "privacyPolicy": "Gizlilik Politikası",
+  "termsOfUse": "Kullanım Koşulları",
+  "eula": "EULA"
 }

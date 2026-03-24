@@ -1,0 +1,142 @@
+{
+  "title": "Varlık Yönetimi",
+  "subtitle": "Gayrimenkul, araç ve vergi takibi",
+  "tabs": {
+    "property": "Emlak",
+    "vehicles": "Araçlar",
+    "businesses": "İşletmeler"
+  },
+  "addProperty": "Emlak Ekle",
+  "addVehicle": "Araç Ekle",
+  "addBusiness": "İşletme Ekle",
+  "upcomingDeadlines": "Yaklaşan Son Tarihler",
+  "taxCalendar": "Vergi Takvimi",
+  "property": {
+    "registered": "Kayıtlı Gayrimenkuller",
+    "notAdded": "Henüz gayrimenkul eklenmemiş",
+    "addDesc": "Emlak vergisi takibi için gayrimenkul ekleyin",
+    "name": "Gayrimenkul Adı",
+    "type": "Gayrimenkul Türü",
+    "location": "Konum",
+    "sqMeters": "m²",
+    "sqMetersNotSet": "Metrekare belirtilmedi",
+    "value2026": "2026 Değeri",
+    "annualTax": "Yıllık Vergi",
+    "exempt": "Muaf",
+    "rentalIncome": "Kira geliri",
+    "deleteTitle": "Gayrimenkulü Sil",
+    "deleteConfirm": "{{name}} kaydını silmek istediğinize emin misiniz?",
+    "added": "Gayrimenkul eklendi",
+    "deleted": "Gayrimenkul silindi"
+  },
+  "vehicle": {
+    "registered": "Kayıtlı Araçlar",
+    "notAdded": "Henüz araç eklenmemiş",
+    "addDesc": "MTV ve muayene takibi için araç ekleyin",
+    "nextInspection": "Sonraki Muayene",
+    "daysOverdue": "{{days}} gün geçmiş",
+    "daysRemaining": "{{days}} gün",
+    "disabledRestriction": "Engelli Satış Yasağı",
+    "deleteTitle": "Aracı Sil",
+    "deleteConfirm": "{{name}} kaydını silmek istediğinize emin misiniz?",
+    "added": "Araç eklendi",
+    "deleted": "Araç silindi"
+  },
+  "propertyTypes": {
+    "konut": "Konut",
+    "isyeri": "İş Yeri",
+    "arsa": "Arsa"
+  },
+  "locationTypes": {
+    "buyuksehir": "Büyükşehir",
+    "diger": "Diğer İl"
+  },
+  "vehicleTypes": {
+    "otomobil": "Otomobil",
+    "ticari": "Ticari Araç",
+    "motosiklet": "Motosiklet"
+  },
+  "professionTypes": {
+    "kuyumcu": "Kuyumcu",
+    "oto_galeri": "Oto Galeri",
+    "emlakci": "Emlakçı",
+    "hastane": "Özel Hastane",
+    "muayenehane": "Muayenehane",
+    "diger": "Diğer"
+  },
+  "propertyForm": {
+    "addButton": "Gayrimenkul Ekle",
+    "editTitle": "Gayrimenkul Düzenle",
+    "newTitle": "Yeni Gayrimenkul",
+    "name": "Taşınmaz Adı",
+    "namePlaceholder": "Kadıköy Daire, Ofis vb.",
+    "type": "Tür",
+    "location": "Konum",
+    "taxValue2025": "2025 Vergi Değeri (TL)",
+    "taxValue2025Placeholder": "1.000.000",
+    "ceilingValue2026": "2026 Tavan Değeri: {{value}}",
+    "ceilingMax": "(max 3x)",
+    "sqMeters": "Metrekare (opsiyonel)",
+    "sqMetersPlaceholder": "120",
+    "isRented": "Kiraya Verildi mi?",
+    "annualRent": "Yıllık Kira Geliri (TL)",
+    "annualRentPlaceholder": "72.000",
+    "rentExemption": "2026 Konut İstisnası: 58.000 TL | İş Yeri: 400.000 TL",
+    "exemptionChecks": "Muafiyet Kontrolleri",
+    "isRetired": "Emekli misiniz?",
+    "isSingleProperty": "Tek eviniz mi?",
+    "hasOtherIncome": "Faiz geliri var mı?",
+    "exemptionEligible": "Emekli muafiyeti için uygunsunuz (200m² altı koşulu)",
+    "monthlyRentAmount": "Aylık Kira Tutarı",
+    "rentalDayOfMonth": "Kira Ödeme Günü",
+    "rentalDayPlaceholder": "Gün seçiniz",
+    "contractStartDate": "Sözleşme Başlangıç",
+    "contractEndDate": "Sözleşme Bitiş",
+    "city": "İl",
+    "cityPlaceholder": "İl seçiniz",
+    "district": "İlçe",
+    "districtPlaceholder": "İlçe (opsiyonel)",
+    "validation": {
+      "nameRequired": "Gayrimenkul adı zorunludur",
+      "valueRequired": "Vergi değeri sıfırdan büyük olmalıdır",
+      "rentAmountRequired": "Kiraya verilmişse aylık kira tutarı zorunludur"
+    }
+  },
+  "vehicleForm": {
+    "addButton": "Araç Ekle",
+    "editTitle": "Araç Düzenle",
+    "newTitle": "Yeni Araç",
+    "name": "Araç Adı",
+    "namePlaceholder": "Audi A4",
+    "plate": "Plaka",
+    "platePlaceholder": "34 ABC 123",
+    "vehicleType": "Araç Türü",
+    "registrationDate": "Tescil Tarihi",
+    "post2018": "2018 sonrası: MTV matrah değerine göre hesaplanır",
+    "pre2018": "2018 öncesi: MTV motor hacmi ve yaşa göre hesaplanır",
+    "engineCC": "Motor Hacmi (cc)",
+    "engineCCPlaceholder": "1600",
+    "purchaseValue": "Alış Değeri / Matrah (TL)",
+    "purchaseValuePlaceholder": "500.000",
+    "inspectionDate": "Son Muayene Tarihi (opsiyonel)",
+    "disabledExemption": "Engelli ÖTV Muafiyeti",
+    "exemptionDate": "Muafiyet Tarihi",
+    "saleRestriction": "10 Yıl Satış Yasağı",
+    "saleRestrictionDesc": "2025 sonrası alınan araçlar için satış yasağı 10 yıla çıkarılmıştır.",
+    "domesticRate": "Yerlilik şartı: %{{rate}} yerli katkı oranı gereklidir",
+    "otvExemptLimit": "ÖTV muafiyet limiti: {{value}}",
+    "validation": {
+      "nameRequired": "Araç adı zorunludur",
+      "plateRequired": "Plaka zorunludur",
+      "registrationRequired": "Tescil tarihi zorunludur",
+      "engineRequired": "Motor hacmi sıfırdan büyük olmalıdır"
+    }
+  },
+  "taxMessages": {
+    "rentalIncomeWarning": "Konut kira geliriniz için kredi faizini gider düşemezsiniz!",
+    "inspectionWarning": "MTV borcunuz veya trafik cezanız varsa muayene randevusu alamazsınız!",
+    "propertyExemption": "Emekli, tek konut sahibi ve 200m² altı - Emlak vergisi muafiyeti",
+    "inspectionOverdue": "Araç muayenesi {{days}} gün geçmiş!",
+    "disabledSaleRestriction": "Aracınızı satarsanız ÖTV ödemek zorundasınız! ({{years}} yıl kaldı)"
+  }
+}

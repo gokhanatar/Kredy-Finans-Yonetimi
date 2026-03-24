@@ -50,19 +50,14 @@ export function calculateEffectiveInterestRate(baseRate: number): number {
  * @returns Toplam faiz maliyeti (TL)
  */
 export function calculateTotalInterestCost(principal: number, monthlyRate: number, months: number): number {
-  if (months <= 0) return 0;
-
   const effectiveRate = calculateEffectiveInterestRate(monthlyRate) / 100;
   const r = effectiveRate;
   const n = months;
-
-  // Zero interest: no cost
-  if (r === 0) return 0;
-
+  
   // PMT formülü ile aylık ödeme
   const monthlyPayment = principal * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
   const totalPayment = monthlyPayment * months;
-
+  
   return totalPayment - principal;
 }
 
@@ -123,9 +118,22 @@ export function calculateDaysUntilPayment(statementDate: number): number {
   const currentYear = today.getFullYear();
 
   // Payment is typically 10 days after statement
-  // Use Date constructor which handles month overflow automatically
-  // e.g. new Date(2026, 0, 41) → Feb 10
-  const paymentDate = new Date(currentYear, currentMonth, statementDate + 10);
+  let paymentDay = statementDate + 10;
+  let paymentMonth = currentMonth;
+  let paymentYear = currentYear;
+
+  const daysInMonth = new Date(paymentYear, paymentMonth + 1, 0).getDate();
+  if (paymentDay > daysInMonth) {
+    paymentDay -= daysInMonth;
+    paymentMonth += 1;
+  }
+
+  if (paymentMonth > 11) {
+    paymentMonth = 0;
+    paymentYear += 1;
+  }
+
+  const paymentDate = new Date(paymentYear, paymentMonth, paymentDay);
   const diffTime = paymentDate.getTime() - today.getTime();
   const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
@@ -142,12 +150,10 @@ export function calculateGoldenWindow(cards: CreditCard[]): GoldenWindowCard[] {
 
   return cards
     .map((card) => {
-      // Use actual days in previous month instead of hard-coded 30
-      const daysInPrevMonth = new Date(today.getFullYear(), today.getMonth(), 0).getDate();
       const daysSinceStatement =
         currentDay >= card.statementDate
           ? currentDay - card.statementDate
-          : daysInPrevMonth - card.statementDate + currentDay;
+          : 30 - card.statementDate + currentDay;
 
       // Golden window is 1-5 days after statement date (5 full days)
       const isGoldenWindow = daysSinceStatement >= 1 && daysSinceStatement <= 5;
@@ -168,11 +174,9 @@ export function calculateGoldenWindow(cards: CreditCard[]): GoldenWindowCard[] {
       } else if (daysSinceStatement < 1) {
         recommendation = `⏳ Yarına bekle, hesap kesimi bugün. Yarın altın pencere başlıyor!`;
       } else {
-        // Use actual days in current month instead of hard-coded 30
-        const daysInCurrentMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
         const daysToNextGolden = card.statementDate > currentDay
           ? card.statementDate - currentDay + 1
-          : daysInCurrentMonth - currentDay + card.statementDate + 1;
+          : 30 - currentDay + card.statementDate + 1;
         recommendation = `Ödeme ${daysUntilPayment} gün sonra. Altın pencereye ${daysToNextGolden} gün.`;
       }
 
@@ -297,6 +301,7 @@ export function calculateFinancialHealth(cards: CreditCard[]): FinancialHealth {
 
   const highUtilizationCards = cards.filter(
     (card) =>
+      card.limit > 0 &&
       (card.currentDebt / card.limit) * 100 >
       FINANCIAL_CONSTANTS.UTILIZATION_DANGER_THRESHOLD
   );
@@ -424,39 +429,18 @@ export function simulateRestructuring(
 ): RestructuringSimulation {
   const { TCMB_REFERENCE_RATE, BANK_MARGIN, KKDF_RATE, BSMV_RATE, HIGH_LIMIT_THRESHOLD, HIGH_LIMIT_MIN_PAYMENT, LOW_LIMIT_MIN_PAYMENT, RESTRUCTURE_LIMIT_FREEZE_THRESHOLD } = FINANCIAL_CONSTANTS;
   
-  // Guard: zero term → pay all at once
-  if (termMonths <= 0) {
-    return {
-      totalDebt,
-      cardLimit,
-      termMonths: 0,
-      monthlyInterestRate: 0,
-      effectiveRate: 0,
-      monthlyPayment: totalDebt,
-      totalPayment: totalDebt,
-      totalInterestCost: 0,
-      minimumPaymentRate: 0,
-      riskLevel: 'low',
-      warnings: [],
-      findeksImpact: '',
-    };
-  }
-
   // Calculate effective interest rate
   const baseRate = TCMB_REFERENCE_RATE + BANK_MARGIN; // %3.11 + %0.5 = %3.61
   const monthlyInterestRate = baseRate / 100;
-
+  
   // Add KKDF and BSMV taxes to interest
   const taxMultiplier = 1 + (KKDF_RATE / 100) + (BSMV_RATE / 100); // 1.30
   const effectiveRate = monthlyInterestRate * taxMultiplier;
-
+  
   // PMT formula: P * [r(1+r)^n] / [(1+r)^n - 1]
   const r = effectiveRate;
   const n = termMonths;
-  // Zero interest: simple division
-  const monthlyPayment = r === 0
-    ? totalDebt / n
-    : totalDebt * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+  const monthlyPayment = totalDebt * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
   
   const totalPayment = monthlyPayment * termMonths;
   const totalInterestCost = totalPayment - totalDebt;

@@ -1,569 +1,4 @@
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74
-75
-76
-77
-78
-79
-80
-81
-82
-83
-84
-85
-86
-87
-88
-89
-90
-91
-92
-93
-94
-95
-96
-97
-98
-99
-100
-101
-102
-103
-104
-105
-106
-107
-108
-109
-110
-111
-112
-113
-114
-115
-116
-117
-118
-119
-120
-121
-122
-123
-124
-125
-126
-127
-128
-129
-130
-131
-132
-133
-134
-135
-136
-137
-138
-139
-140
-141
-142
-143
-144
-145
-146
-147
-148
-149
-150
-151
-152
-153
-154
-155
-156
-157
-158
-159
-160
-161
-162
-163
-164
-165
-166
-167
-168
-169
-170
-171
-172
-173
-174
-175
-176
-177
-178
-179
-180
-181
-182
-183
-184
-185
-186
-187
-188
-189
-190
-191
-192
-193
-194
-195
-196
-197
-198
-199
-200
-201
-202
-203
-204
-205
-206
-207
-208
-209
-210
-211
-212
-213
-214
-215
-216
-217
-218
-219
-220
-221
-222
-223
-224
-225
-226
-227
-228
-229
-230
-231
-232
-233
-234
-235
-236
-237
-238
-239
-240
-241
-242
-243
-244
-245
-246
-247
-248
-249
-250
-251
-252
-253
-254
-255
-256
-257
-258
-259
-260
-261
-262
-263
-264
-265
-266
-267
-268
-269
-270
-271
-272
-273
-274
-275
-276
-277
-278
-279
-280
-281
-282
-283 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- import { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ArrowLeft, Plus } from 'lucide-react';
@@ -588,9 +23,9 @@ import {
 import { cn } from '@/lib/utils';
 import { toast } from '@/hooks/use-toast';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
- 
+
 type SubTab = 'portfoy' | 'altin' | 'doviz' | 'hisse' | 'kripto';
- 
+
 const SUB_TAB_IDS: SubTab[] = ['portfoy', 'altin', 'doviz', 'hisse', 'kripto'];
 const SUB_TAB_KEYS: Record<SubTab, string> = {
   portfoy: 'tabs.portfolio',
@@ -599,7 +34,7 @@ const SUB_TAB_KEYS: Record<SubTab, string> = {
   hisse: 'tabs.stocks',
   kripto: 'tabs.crypto',
 };
- 
+
 const TAB_TO_CATEGORIES: Record<SubTab, InvestmentCategory[]> = {
   portfoy: [],
   altin: ['altin', 'gumus'],
@@ -607,30 +42,30 @@ const TAB_TO_CATEGORIES: Record<SubTab, InvestmentCategory[]> = {
   hisse: ['hisse'],
   kripto: ['kripto'],
 };
- 
+
 function InvestmentContent() {
   const { t } = useTranslation(['investments', 'common']);
   const navigate = useNavigate();
   const { investments, investmentsByCategory, addInvestment, updateInvestment, deleteInvestment } = useInvestments();
   const { refreshPrices, isRefreshing, lastFetchedText } = useInvestmentPricesContext();
- 
+
   const [activeTab, setActiveTab] = useState<SubTab>('portfoy');
   const [showForm, setShowForm] = useState(false);
   const [formCategory, setFormCategory] = useState<InvestmentCategory | undefined>();
   const [editingInvestment, setEditingInvestment] = useState<Investment | undefined>();
- 
+
   const openAddForm = (category?: InvestmentCategory) => {
     setFormCategory(category);
     setEditingInvestment(undefined);
     setShowForm(true);
   };
- 
+
   const openEditForm = (investment: Investment) => {
     setEditingInvestment(investment);
     setFormCategory(investment.category);
     setShowForm(true);
   };
- 
+
   const handleSubmit = (data: Omit<Investment, 'id' | 'createdAt'>) => {
     if (editingInvestment) {
       updateInvestment(editingInvestment.id, data);
@@ -642,18 +77,18 @@ function InvestmentContent() {
     setShowForm(false);
     setEditingInvestment(undefined);
   };
- 
+
   const handleDelete = (id: string) => {
     deleteInvestment(id);
     toast({ title: t('deleted'), description: t('deletedDesc'), variant: 'destructive' });
   };
- 
+
   const getTabInvestments = (tab: SubTab): Investment[] => {
     const categories = TAB_TO_CATEGORIES[tab];
     if (categories.length === 0) return investments;
     return investments.filter((inv) => categories.includes(inv.category));
   };
- 
+
   const renderTabContent = () => {
     if (activeTab === 'portfoy') {
       return (
@@ -665,7 +100,7 @@ function InvestmentContent() {
           />
           <PortfolioSummary investments={investments} />
           {investments.length > 0 && <PortfolioPieChart investments={investments} />}
- 
+
           {investments.length > 0 && (
             <div className="rounded-2xl bg-card p-4 shadow-soft">
               <h3 className="font-semibold text-sm mb-3">{t('quickAdd')}</h3>
@@ -683,7 +118,7 @@ function InvestmentContent() {
               </div>
             </div>
           )}
- 
+
           {investments.length === 0 && (
             <div className="flex flex-col items-center gap-4 py-8">
               <div className="grid grid-cols-3 gap-3 w-full">
@@ -707,11 +142,11 @@ function InvestmentContent() {
         </div>
       );
     }
- 
+
     const tabInvestments = getTabInvestments(activeTab);
     const categories = TAB_TO_CATEGORIES[activeTab];
     const primaryCategory = categories[0] as InvestmentCategory | undefined;
- 
+
     return (
       <div className="space-y-4">
         <PriceRefreshButton
@@ -719,7 +154,7 @@ function InvestmentContent() {
           isRefreshing={isRefreshing}
           lastFetchedText={lastFetchedText}
         />
- 
+
         {categories.length > 1 ? (
           categories.map((cat) => {
             const catInvestments = investmentsByCategory[cat] || [];
@@ -750,7 +185,7 @@ function InvestmentContent() {
       </div>
     );
   };
- 
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -761,7 +196,7 @@ function InvestmentContent() {
           </Button>
           <h1 className="text-lg font-semibold">{t('title')}</h1>
         </div>
- 
+
         {/* Sub-tabs */}
         <div className="flex gap-1 overflow-x-auto px-4 pb-3 scrollbar-none">
           {SUB_TAB_IDS.map((tabId) => (
@@ -785,7 +220,7 @@ function InvestmentContent() {
           ))}
         </div>
       </div>
- 
+
       <main className="p-4 pb-safe-nav space-y-4">
         {/* FREE: Portfolio summary (only on portfoy tab) */}
         {activeTab === 'portfoy' && (
@@ -794,15 +229,15 @@ function InvestmentContent() {
             {investments.length > 0 && <PortfolioPieChart investments={investments} />}
           </>
         )}
- 
+
         {/* LOCKED: All actionable content */}
         <PremiumLockOverlay>
           {renderTabContent()}
         </PremiumLockOverlay>
       </main>
- 
+
       <MobileNav activeTab="home" />
- 
+
       {/* Add/Edit Form Modal */}
       <Dialog
         open={showForm}
@@ -833,7 +268,7 @@ function InvestmentContent() {
     </div>
   );
 }
- 
+
 const Investments = () => {
   return (
     <ErrorBoundary>
@@ -843,6 +278,5 @@ const Investments = () => {
     </ErrorBoundary>
   );
 };
- 
+
 export default Investments;
- 

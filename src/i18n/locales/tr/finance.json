@@ -1,0 +1,152 @@
+{
+  "incomeCategories": {
+    "maas": "Maaş",
+    "ek-gelir": "Ek Gelir",
+    "kira-gelir": "Kira Geliri",
+    "yatirim-gelir": "Yatırım Geliri",
+    "diger-gelir": "Diğer Gelir"
+  },
+  "expenseCategories": {
+    "market": "Market",
+    "kira": "Kira",
+    "fatura": "Fatura",
+    "ulasim": "Ulaşım",
+    "saglik": "Sağlık",
+    "egitim": "Eğitim",
+    "eglence": "Eğlence",
+    "giyim": "Giyim",
+    "yemek": "Yemek",
+    "ev": "Ev & Dekorasyon",
+    "cocuk": "Çocuk",
+    "evcil": "Evcil Hayvan",
+    "bakim": "Kişisel Bakım",
+    "hediye": "Hediye",
+    "tasit": "Taşıt",
+    "sigorta": "Sigorta",
+    "diger-gider": "Diğer"
+  },
+  "subscriptionCategories": {
+    "dijital": "Dijital Hizmet",
+    "muzik": "Müzik",
+    "video": "Video/Film",
+    "oyun": "Oyun",
+    "bulut": "Bulut Depolama",
+    "spor": "Spor/Salon",
+    "egitim-abo": "Eğitim",
+    "haber": "Haber/Dergi",
+    "yazilim": "Yazılım",
+    "diger-abo": "Diğer"
+  },
+  "recurringExpensePresets": {
+    "yol": "Yol/Ulaşım",
+    "sigara": "Sigara",
+    "kahve": "Kahve",
+    "ogle": "Öğle Yemeği",
+    "akaryakit": "Akaryakıt",
+    "otopark": "Otopark"
+  },
+  "incomeFrequency": {
+    "monthly": "Aylık",
+    "weekly": "Haftalık",
+    "biweekly": "İki Haftada Bir",
+    "yearly": "Yıllık",
+    "one-time": "Tek Seferlik"
+  },
+  "recurringIncomePresets": {
+    "maas": "Maaş",
+    "kira": "Kira Geliri",
+    "freelance": "Freelance / Ek İş",
+    "yatirim": "Yatırım Geliri / Faiz",
+    "emekli": "Emekli Maaşı",
+    "burs": "Burs / Destek"
+  },
+  "defaultBudgetCategories": {
+    "kira": "Kira",
+    "market": "Market",
+    "fatura": "Fatura",
+    "ulasim": "Ulaşım",
+    "yemek": "Yemek",
+    "eglence": "Eğlence",
+    "saglik": "Sağlık",
+    "giyim": "Giyim",
+    "tasarruf": "Tasarruf",
+    "diger": "Diğer"
+  },
+  "installmentCategories": {
+    "gida": "Gıda & Market",
+    "akaryakit": "Akaryakıt",
+    "telekom": "Telekomünikasyon",
+    "yurtdisi": "Yurt Dışı Harcama",
+    "tv_elektronik": "Televizyon",
+    "cep_telefonu": "Cep Telefonu (Sıfır)",
+    "yenilenmis_telefon": "Yenilenmiş Telefon",
+    "tablet": "Tablet",
+    "bilgisayar": "Bilgisayar",
+    "mobilya": "Mobilya",
+    "beyaz_esya": "Beyaz Eşya",
+    "giyim": "Giyim",
+    "saglik": "Sağlık",
+    "egitim": "Eğitim",
+    "kuyum": "Kuyum (İşçilikli)",
+    "yurtici_seyahat": "Yurt İçi Seyahat",
+    "kktc": "KKTC Seyahat",
+    "diger": "Diğer",
+    "elektronik": "Elektronik",
+    "eglence": "Eğlence"
+  },
+  "installmentConditions": {
+    "noInstallment": "Taksit yasak",
+    "aboveAmount": "{{amount}} TL üstü",
+    "noAmountLimit": "Tutar sınırı yok"
+  },
+  "bankOptions": {
+    "yapikredi": "Yapı Kredi",
+    "garanti": "Garanti BBVA",
+    "isbank": "İş Bankası",
+    "akbank": "Akbank",
+    "ziraat": "Ziraat Bankası",
+    "halkbank": "Halkbank",
+    "vakifbank": "Vakıfbank",
+    "qnb": "QNB Finansbank",
+    "denizbank": "Denizbank",
+    "teb": "TEB",
+    "ing": "ING",
+    "hsbc": "HSBC",
+    "sekerbank": "Şekerbank",
+    "anadolubank": "Anadolubank",
+    "fibabanka": "Fibabanka",
+    "odeabank": "Odeabank",
+    "turkishbank": "Turkish Bank",
+    "alternatifbank": "Alternatifbank",
+    "burganbank": "Burgan Bank",
+    "icbc": "ICBC Turkey",
+    "kuveytturk": "Kuveyt Türk",
+    "turkiyefinans": "Türkiye Finans",
+    "albaraka": "Albaraka Türk",
+    "ziraatkatilim": "Ziraat Katılım",
+    "vakifkatilim": "Vakıf Katılım",
+    "emlakkatilim": "Emlak Katılım",
+    "hayatfinans": "Hayat Finans",
+    "enpara": "Enpara.com",
+    "papara": "Papara",
+    "diger": "Diğer"
+  },
+  "wallet": {
+    "title": "Cüzdan",
+    "tabs": {
+      "accounts": "Hesaplar",
+      "cards": "Kartlar",
+      "debts": "Borçlar",
+      "budget": "Bütçe"
+    }
+  },
+  "analytics": {
+    "title": "Analiz",
+    "tabs": {
+      "charts": "Grafikler",
+      "calendar": "Takvim"
+    },
+    "chartsPlaceholder": "Grafikler burada görünecek",
+    "calendarPlaceholder": "Takvim burada görünecek"
+  }
+}

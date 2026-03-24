@@ -58,16 +58,12 @@
     "restored": "Purchases restored!",
     "noRestore": "No purchases to restore",
     "purchaseSuccess": "Subscription active!",
-    "manageSubscription": "Manage Subscription",
-    "redeemCode": "Promo Code",
-    "redeeming": "Checking...",
-    "redeemSuccess": "Code redeemed!"
+    "manageSubscription": "Manage Subscription"
   },
   "errors": {
     "purchaseFailed": "Purchase failed. Please try again.",
     "purchaseCancelled": "Purchase cancelled.",
-    "notAvailable": "Purchases are not available right now.",
-    "redeemFailed": "Code could not be redeemed"
+    "notAvailable": "Purchases are not available right now."
   },
   "restore": "Restore purchases",
   "terms": "Payment will be charged to your Apple/Google account. Subscription automatically renews unless cancelled at least 24 hours before the end of the current period. You can manage your subscription in your account settings.",

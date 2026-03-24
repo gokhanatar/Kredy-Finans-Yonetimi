@@ -13,15 +13,8 @@ const defaultConfig: NotificationConfig = {
   goldenWindowNotify: true,
 };
 
-const TOAST_DEDUP_KEY = 'kredi-pusula-toast-notif-last-check';
-
 export function useNotifications(cards: CreditCard[], config: NotificationConfig = defaultConfig) {
   const checkNotifications = useCallback(() => {
-    // Daily dedup: only show toast notifications once per day
-    const todayStr = new Date().toISOString().slice(0, 10);
-    const lastCheck = localStorage.getItem(TOAST_DEDUP_KEY);
-    if (lastCheck === todayStr) return;
-
     const today = startOfDay(new Date());
     const currentMonth = today.getMonth();
     const currentYear = today.getFullYear();
@@ -86,9 +79,6 @@ export function useNotifications(cards: CreditCard[], config: NotificationConfig
         }
       }
     });
-
-    // Mark today as checked
-    localStorage.setItem(TOAST_DEDUP_KEY, todayStr);
   }, [cards, config]);
 
   // Check notifications on mount and when cards change

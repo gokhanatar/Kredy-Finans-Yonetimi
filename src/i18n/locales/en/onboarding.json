@@ -1,0 +1,62 @@
+{
+  "slides": {
+    "1": {
+      "title": "All Your Cards in One Place",
+      "description": "Add your credit cards, track your debts, and never miss a payment date. Take control with installment calculators and restructuring simulators."
+    },
+    "2": {
+      "title": "Golden Window Notifications",
+      "description": "Minimize interest payments by shopping during the \"golden window\" period after the statement closing date. Get notified at the right time with smart alerts."
+    },
+    "3": {
+      "title": "Family Budget & Income/Expenses",
+      "description": "Record your income and expenses, create a zero-based budget. Track your subscriptions, recurring expenses, and see how much you can spend."
+    },
+    "4": {
+      "title": "Bank Accounts & Overdraft",
+      "description": "Track your checking accounts, calculate overdraft interest. Support for 30+ banks with all your accounts in one place."
+    },
+    "5": {
+      "title": "Savings Goals & Shared Wallet",
+      "description": "Set savings goals for your dreams and track your progress. Create shared wallets with friends and easily split expenses."
+    },
+    "6": {
+      "title": "Loan Simulator & Findeks",
+      "description": "Calculate mortgage, auto, or personal loans (up to 120 months). Simulate your Findeks score and get tips to improve it."
+    },
+    "7": {
+      "title": "AI Insights",
+      "description": "AI-powered spending analysis, budget recommendations, and debt strategies. Get instant answers to your financial questions in natural language."
+    },
+    "8": {
+      "title": "Privacy & Security",
+      "description": "Lock your app with a PIN code. Hide all amounts with privacy mode. Your data is stored only on your device."
+    },
+    "9": {
+      "title": "Cloud Backup",
+      "description": "Safely back up your data to the cloud. Never lose your data when switching devices — restore with one tap."
+    },
+    "10": {
+      "title": "7 Days Free Premium",
+      "description": "Unlimited access to all features, detailed analysis reports, CSV/PDF export, and multi-currency support. Try it free now!"
+    }
+  },
+  "startButton": "Let's Get Started",
+  "permissions": {
+    "title": "Permissions",
+    "subtitle": "Grant the following permissions for a better experience",
+    "notification": {
+      "title": "Notifications",
+      "description": "Would you like to receive payment reminders and golden window alerts?",
+      "allow": "Allow",
+      "skip": "Skip for Now"
+    },
+    "camera": {
+      "title": "Camera",
+      "description": "Camera access is needed for the receipt scanning feature",
+      "allow": "Allow",
+      "skip": "Skip for Now"
+    },
+    "done": "Done"
+  }
+}

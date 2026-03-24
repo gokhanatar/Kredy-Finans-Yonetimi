@@ -1,0 +1,142 @@
+{
+  "title": "إدارة الأصول",
+  "subtitle": "تتبع العقارات والمركبات والضرائب",
+  "tabs": {
+    "property": "العقارات",
+    "vehicles": "المركبات",
+    "businesses": "المنشآت"
+  },
+  "addProperty": "إضافة عقار",
+  "addVehicle": "إضافة مركبة",
+  "addBusiness": "إضافة منشأة",
+  "upcomingDeadlines": "المواعيد النهائية القادمة",
+  "taxCalendar": "التقويم الضريبي",
+  "property": {
+    "registered": "العقارات المسجلة",
+    "notAdded": "لم تتم إضافة عقارات بعد",
+    "addDesc": "أضف عقاراً لتتبع ضريبة الأملاك",
+    "name": "اسم العقار",
+    "type": "نوع العقار",
+    "location": "الموقع",
+    "sqMeters": "م²",
+    "sqMetersNotSet": "لم يتم تحديد المساحة",
+    "value2026": "قيمة 2026",
+    "annualTax": "الضريبة السنوية",
+    "exempt": "معفى",
+    "rentalIncome": "دخل الإيجار",
+    "deleteTitle": "حذف العقار",
+    "deleteConfirm": "هل أنت متأكد من حذف سجل {{name}}؟",
+    "added": "تمت إضافة العقار",
+    "deleted": "تم حذف العقار"
+  },
+  "vehicle": {
+    "registered": "المركبات المسجلة",
+    "notAdded": "لم تتم إضافة مركبات بعد",
+    "addDesc": "أضف مركبة لتتبع ضريبة المركبات والفحص الدوري",
+    "nextInspection": "الفحص القادم",
+    "daysOverdue": "متأخر {{days}} يوم",
+    "daysRemaining": "{{days}} يوم",
+    "disabledRestriction": "حظر بيع ذوي الاحتياجات الخاصة",
+    "deleteTitle": "حذف المركبة",
+    "deleteConfirm": "هل أنت متأكد من حذف سجل {{name}}؟",
+    "added": "تمت إضافة المركبة",
+    "deleted": "تم حذف المركبة"
+  },
+  "propertyTypes": {
+    "konut": "سكني",
+    "isyeri": "تجاري",
+    "arsa": "أرض"
+  },
+  "locationTypes": {
+    "buyuksehir": "مدينة كبرى",
+    "diger": "مدينة أخرى"
+  },
+  "vehicleTypes": {
+    "otomobil": "سيارة",
+    "ticari": "مركبة تجارية",
+    "motosiklet": "دراجة نارية"
+  },
+  "professionTypes": {
+    "kuyumcu": "صائغ",
+    "oto_galeri": "معرض سيارات",
+    "emlakci": "وكيل عقاري",
+    "hastane": "مستشفى خاص",
+    "muayenehane": "عيادة",
+    "diger": "أخرى"
+  },
+  "propertyForm": {
+    "addButton": "إضافة عقار",
+    "editTitle": "تعديل العقار",
+    "newTitle": "عقار جديد",
+    "name": "اسم العقار",
+    "namePlaceholder": "شقة كاديكوي، مكتب، إلخ.",
+    "type": "النوع",
+    "location": "الموقع",
+    "taxValue2025": "القيمة الضريبية 2025 (TL)",
+    "taxValue2025Placeholder": "1,000,000",
+    "ceilingValue2026": "القيمة السقفية 2026: {{value}}",
+    "ceilingMax": "(حد أقصى 3x)",
+    "sqMeters": "المساحة بالمتر المربع (اختياري)",
+    "sqMetersPlaceholder": "120",
+    "isRented": "هل تم تأجيره؟",
+    "annualRent": "دخل الإيجار السنوي (TL)",
+    "annualRentPlaceholder": "72,000",
+    "rentExemption": "إعفاء السكني 2026: 58,000 TL | تجاري: 400,000 TL",
+    "exemptionChecks": "فحوصات الإعفاء",
+    "isRetired": "هل أنت متقاعد؟",
+    "isSingleProperty": "هل هذا عقارك الوحيد؟",
+    "hasOtherIncome": "هل لديك دخل فوائد؟",
+    "exemptionEligible": "مؤهل لإعفاء المتقاعدين (شرط أقل من 200م²)",
+    "monthlyRentAmount": "مبلغ الإيجار الشهري",
+    "rentalDayOfMonth": "يوم دفع الإيجار",
+    "rentalDayPlaceholder": "اختر يوماً",
+    "contractStartDate": "بداية العقد",
+    "contractEndDate": "نهاية العقد",
+    "city": "المدينة",
+    "cityPlaceholder": "اختر المدينة",
+    "district": "الحي",
+    "districtPlaceholder": "الحي (اختياري)",
+    "validation": {
+      "nameRequired": "اسم العقار مطلوب",
+      "valueRequired": "يجب أن تكون القيمة الضريبية أكبر من صفر",
+      "rentAmountRequired": "مبلغ الإيجار الشهري مطلوب عند التأجير"
+    }
+  },
+  "vehicleForm": {
+    "addButton": "إضافة مركبة",
+    "editTitle": "تعديل المركبة",
+    "newTitle": "مركبة جديدة",
+    "name": "اسم المركبة",
+    "namePlaceholder": "Audi A4",
+    "plate": "لوحة الترخيص",
+    "platePlaceholder": "34 ABC 123",
+    "vehicleType": "نوع المركبة",
+    "registrationDate": "تاريخ التسجيل",
+    "post2018": "بعد 2018: يُحسب MTV بناءً على قيمة الوعاء الضريبي",
+    "pre2018": "قبل 2018: يُحسب MTV بناءً على حجم المحرك والعمر",
+    "engineCC": "حجم المحرك (سم مكعب)",
+    "engineCCPlaceholder": "1600",
+    "purchaseValue": "قيمة الشراء / الوعاء الضريبي (TL)",
+    "purchaseValuePlaceholder": "500,000",
+    "inspectionDate": "تاريخ آخر فحص (اختياري)",
+    "disabledExemption": "إعفاء ضريبة الاستهلاك الخاص للمعاقين",
+    "exemptionDate": "تاريخ الإعفاء",
+    "saleRestriction": "حظر بيع لمدة 10 سنوات",
+    "saleRestrictionDesc": "تم تمديد حظر البيع للمركبات المشتراة بعد 2025 إلى 10 سنوات.",
+    "domesticRate": "شرط المحتوى المحلي: يلزم نسبة محتوى محلي %{{rate}}",
+    "otvExemptLimit": "حد إعفاء ضريبة الاستهلاك الخاص: {{value}}",
+    "validation": {
+      "nameRequired": "اسم المركبة مطلوب",
+      "plateRequired": "لوحة الترخيص مطلوبة",
+      "registrationRequired": "تاريخ التسجيل مطلوب",
+      "engineRequired": "يجب أن يكون حجم المحرك أكبر من صفر"
+    }
+  },
+  "taxMessages": {
+    "rentalIncomeWarning": "لا يمكنك خصم فوائد القروض من دخل إيجار المسكن!",
+    "inspectionWarning": "لا يمكنك حجز موعد فحص دوري إذا كان لديك ديون ضريبية أو مخالفات مرورية!",
+    "propertyExemption": "متقاعد، مالك لمسكن واحد وأقل من 200م² - إعفاء من ضريبة الأملاك",
+    "inspectionOverdue": "تأخر الفحص الدوري للمركبة {{days}} يوم!",
+    "disabledSaleRestriction": "إذا بعت مركبتك يجب عليك دفع ضريبة الاستهلاك الخاص! ({{years}} سنة متبقية)"
+  }
+}

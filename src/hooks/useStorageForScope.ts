@@ -1,45 +1,6 @@
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- import { useLocalStorage } from './useLocalStorage';
+import { useLocalStorage } from './useLocalStorage';
 import { useFamilySyncedStorage } from './useFamilySyncedStorage';
- 
+
 /**
  * Scope-aware storage hook that accepts raw storage keys.
  * 'personal' → useLocalStorage (no Firebase sync)
@@ -56,4 +17,3 @@ export function useStorageForScope<T>(
   const synced = useFamilySyncedStorage<T>(key, initialValue);
   return scope === 'family' ? synced : local;
 }
- 

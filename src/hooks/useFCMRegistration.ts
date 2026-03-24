@@ -10,34 +10,11 @@ import { useFamilySync } from '@/contexts/FamilySyncContext';
 const APNS_TOKEN_KEY = 'kredi-pusula-apns-token';
 const DB_URL = import.meta.env.VITE_FIREBASE_DATABASE_URL || '';
 
-/** Get Firebase ID token for authenticated REST calls. */
-async function getAuthToken(): Promise<string | null> {
-  try {
-    const { getAuth } = await import('firebase/auth');
-    const { getApps } = await import('firebase/app');
-    const apps = getApps();
-    if (apps.length === 0) return null;
-    const auth = getAuth(apps[0]);
-    const user = auth.currentUser;
-    if (!user) return null;
-    return await user.getIdToken();
-  } catch {
-    return null;
-  }
-}
-
-/** Build REST URL with auth token if available. */
-function buildAuthUrl(path: string, idToken: string | null): string {
-  const base = `${DB_URL}/${path}.json`;
-  return idToken ? `${base}?auth=${encodeURIComponent(idToken)}` : base;
-}
-
 // Firebase REST ile debug log yaz (hook import etmeden direkt fetch)
 async function debugLog(step: string, data: Record<string, unknown> = {}) {
   try {
     const payload = { step, ts: Date.now(), platform: Capacitor.getPlatform(), ...data };
-    const idToken = await getAuthToken();
-    await fetch(buildAuthUrl(`debug/push/${Date.now()}`, idToken), {
+    await fetch(`${DB_URL}/debug/push/${Date.now()}.json`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
@@ -51,58 +28,44 @@ export function useFCMRegistration() {
   const uploadedRef = useRef(false);
   const familyIdRef = useRef(familyId);
   const memberIdRef = useRef(memberId);
-  // A2: Promise-based guard instead of boolean flag to prevent race conditions
-  const uploadPromiseRef = useRef<Promise<void> | null>(null);
+  const uploadingRef = useRef(false);
 
   familyIdRef.current = familyId;
   memberIdRef.current = memberId;
 
   const uploadToken = useCallback(async (token: string, fId: string, mId: string) => {
-    // A2: If an upload is already in progress, wait for it instead of skipping
-    if (uploadPromiseRef.current) {
-      await uploadPromiseRef.current;
-      return;
-    }
-
-    const doUpload = async () => {
-      const platform = Capacitor.getPlatform(); // 'ios' | 'android'
-      try {
-        await debugLog('upload_start', { familyId: fId, memberId: mId, tokenLen: token.length, platform });
-
-        // A1: Get auth token for authenticated REST calls
-        const idToken = await getAuthToken();
-
-        // Token ve platform bilgisini birlikte kaydet
-        const tokenData = { token, platform };
-        const res = await fetch(buildAuthUrl(`families/${fId}/members/${mId}/pushToken`, idToken), {
-          method: 'PUT',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(tokenData),
-        });
-
-        // Geriye uyumluluk: eski fcmToken alanini da guncelle
-        await fetch(buildAuthUrl(`families/${fId}/members/${mId}/fcmToken`, idToken), {
-          method: 'PUT',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(token),
-        });
-
-        if (!res.ok) {
-          await debugLog('upload_fail', { status: res.status, body: await res.text() });
-          return;
-        }
-        uploadedRef.current = true;
-        await debugLog('upload_success', { familyId: fId, memberId: mId, platform });
-      } catch (err: any) {
-        await debugLog('upload_error', { error: err?.message || String(err) });
-      }
-    };
-
-    uploadPromiseRef.current = doUpload();
+    if (uploadingRef.current) return;
+    uploadingRef.current = true;
+    const platform = Capacitor.getPlatform(); // 'ios' | 'android'
     try {
-      await uploadPromiseRef.current;
-    } finally {
-      uploadPromiseRef.current = null;
+      await debugLog('upload_start', { familyId: fId, memberId: mId, tokenLen: token.length, platform });
+
+      // Token ve platform bilgisini birlikte kaydet
+      const tokenData = { token, platform };
+      const res = await fetch(`${DB_URL}/families/${fId}/members/${mId}/pushToken.json`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(tokenData),
+      });
+
+      // Geriye uyumluluk: eski fcmToken alanini da guncelle
+      await fetch(`${DB_URL}/families/${fId}/members/${mId}/fcmToken.json`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(token),
+      });
+
+      if (!res.ok) {
+        await debugLog('upload_fail', { status: res.status, body: await res.text() });
+        uploadingRef.current = false;
+        return;
+      }
+      uploadedRef.current = true;
+      uploadingRef.current = false;
+      await debugLog('upload_success', { familyId: fId, memberId: mId, platform });
+    } catch (err: any) {
+      await debugLog('upload_error', { error: err?.message || String(err) });
+      uploadingRef.current = false;
     }
   }, []);
 
@@ -164,7 +127,7 @@ export function useFCMRegistration() {
         const actionListener = await PushNotifications.addListener('pushNotificationActionPerformed', (action) => {
           debugLog('push_tapped', { title: action.notification.title });
           if (typeof window !== 'undefined') {
-            window.dispatchEvent(new CustomEvent('push-tap-navigate', {
+            window.dispatchEvent(new CustomEvent('notification-tap-navigate', {
               detail: { route: '/notification-inbox' },
             }));
           }
@@ -201,6 +164,11 @@ export function useFCMRegistration() {
 
     return () => { cleanup?.(); };
   }, []);
+
+  // Aile degistiginde uploadedRef sifirla (yeni aileye token yuklenmeli)
+  useEffect(() => {
+    uploadedRef.current = false;
+  }, [familyId]);
 
   // Asama 2: Aile baglantisi kurulunca token yukle
   useEffect(() => {

@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect, useCallback } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CreditCard as CreditCardType } from '@/types/finance';
 import { calculateGoldenWindow } from '@/lib/financeUtils';
@@ -15,31 +15,19 @@ export function SimpleCardCarousel({ cards }: SimpleCardCarouselProps) {
   const { isPrivate } = usePrivacyModeContext();
   const goldenCards = calculateGoldenWindow(cards);
   const scrollRef = useRef<HTMLDivElement>(null);
-  const cardWidthRef = useRef(192); // fallback: 180px card + 12px gap
   const [activeIndex, setActiveIndex] = useState(0);
-
-  const measureCardWidth = useCallback(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-    const firstChild = el.firstElementChild as HTMLElement | null;
-    if (firstChild) {
-      const rect = firstChild.getBoundingClientRect();
-      const gap = parseFloat(getComputedStyle(el).gap) || 12;
-      cardWidthRef.current = rect.width + gap;
-    }
-  }, []);
 
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
-    measureCardWidth();
     const handleScroll = () => {
       const scrollLeft = el.scrollLeft;
-      setActiveIndex(Math.round(scrollLeft / cardWidthRef.current));
+      const cardWidth = 192; // 180px + 12px gap
+      setActiveIndex(Math.round(scrollLeft / cardWidth));
     };
     el.addEventListener('scroll', handleScroll, { passive: true });
     return () => el.removeEventListener('scroll', handleScroll);
-  }, [measureCardWidth]);
+  }, []);
 
   // Empty state
   if (cards.length === 0) {

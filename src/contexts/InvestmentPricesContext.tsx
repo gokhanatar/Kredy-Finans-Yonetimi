@@ -1,4 +1,4 @@
-import { createContext, useContext, useMemo, ReactNode } from 'react';
+import { createContext, useContext, ReactNode } from 'react';
 import { useInvestmentPrices } from '@/hooks/useInvestmentPrices';
 
 type InvestmentPricesContextType = ReturnType<typeof useInvestmentPrices>;
@@ -7,9 +7,8 @@ const InvestmentPricesContext = createContext<InvestmentPricesContextType | null
 
 export function InvestmentPricesProvider({ children }: { children: ReactNode }) {
   const prices = useInvestmentPrices();
-  const value = useMemo(() => prices, [prices.priceCache, prices.isRefreshing, prices.refreshPrices, prices.getPrice, prices.getCurrentValue, prices.isStale, prices.lastFetched, prices.lastFetchedText]);
   return (
-    <InvestmentPricesContext.Provider value={value}>
+    <InvestmentPricesContext.Provider value={prices}>
       {children}
     </InvestmentPricesContext.Provider>
   );

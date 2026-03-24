@@ -99,10 +99,7 @@ export function useBudget(storageKey?: string, scope: 'personal' | 'family' = 'p
     if (!currentBudget) return 0;
     const totalAllocated = currentBudget.categories.reduce((s, c) => s + c.allocated, 0);
     const totalSpent = currentBudget.categories.reduce((s, c) => s + c.spent, 0);
-    // If no categories have allocations, fallback to income - spent
-    if (totalAllocated === 0) return currentBudget.totalIncome - totalSpent;
-    // Remaining budget within allocated amounts
-    return totalAllocated - totalSpent;
+    return currentBudget.totalIncome - totalAllocated + (totalAllocated - totalSpent);
   }, [currentBudget]);
 
   const unallocated = useMemo(() => {

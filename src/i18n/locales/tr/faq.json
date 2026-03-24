@@ -1,0 +1,327 @@
+{
+  "categories": {
+    "genel": {
+      "title": "Genel Kullanım",
+      "q1": "Altın Pencere nedir?",
+      "a1": "Altın Pencere, hesap kesim tarihinden sonraki 5 günlük dönemdir. Bu dönemde yapılan harcamalar bir sonraki aya yansır ve en uzun vade süresine (40+ gün) sahip olursunuz. Uygulamamız bu dönemleri otomatik hesaplar ve size en uygun kartı önerir.",
+      "q2": "Kartlarımı nasıl eklerim?",
+      "a2": "Ana sayfadaki \"Kartlarım\" sekmesine gidin ve sağ üst köşedeki \"Kart Ekle\" butonuna tıklayın. Banka, kart adı, limit, borç ve hesap kesim tarihi gibi bilgileri girerek kartınızı ekleyebilirsiniz.",
+      "q3": "Hesap kesim tarihi nedir?",
+      "a3": "Hesap kesim tarihi, bankanın aylık ekstre dönemini kapattığı gündür. Bu tarihten sonra yapılan harcamalar bir sonraki ekstrenize yansır. Son ödeme tarihi genellikle hesap kesim tarihinden 10-15 gün sonradır.",
+      "q4": "Verilerim güvende mi?",
+      "a4": "Evet, tüm verileriniz yalnızca cihazınızda (localStorage) saklanır. Sunucularımıza herhangi bir kart veya finansal bilgi gönderilmez. İsterseniz \"Hesap Ayarları\" bölümünden tüm verilerinizi silebilirsiniz."
+    },
+    "faiz": {
+      "title": "Faiz Hesaplamaları",
+      "q1": "Gecikme faizi nasıl hesaplanır?",
+      "a1": "BDDK 2026 düzenlemelerine göre kademeli faiz uygulanır:\n\n• 30.000 TL altı borçlar: Aylık %3,55\n• 30.000-180.000 TL arası: Aylık %3,75\n• 180.000 TL üstü: Aylık %4,25\n\nGünlük faiz = (Borç × Aylık Oran) / 30",
+      "q2": "Akdi faiz ile gecikme faizi farkı nedir?",
+      "a2": "Akdi faiz, dönemsel borç üzerine uygulanan normal faizdir. Gecikme faizi ise son ödeme tarihinden sonra ödenmemiş tutara uygulanan ek faizdir ve akdi faizden yaklaşık %0,30 daha yüksektir.",
+      "q3": "Nakit avans faizi nedir?",
+      "a3": "ATM'den nakit çekme veya borç aktarımı işlemlerinde uygulanan faizdir. 2026 itibarıyla sabit %4,25 olarak belirlenmiştir. Üzerine %15 KKDF ve %15 BSMV eklenir.",
+      "q4": "KKDF ve BSMV nedir?",
+      "a4": "KKDF (Kaynak Kullanımı Destekleme Fonu) ve BSMV (Banka ve Sigorta Muameleleri Vergisi), kredi işlemlerinde faiz üzerine eklenen yasal kesintilerdir. Her biri %15 oranındadır. Toplam maliyet = Faiz × 1.30",
+      "q5": "Efektif faiz nasıl hesaplanır?",
+      "a5": "Efektif faiz, KKDF ve BSMV dahil toplam maliyeti gösterir.\n\nFormül: Efektif Faiz = Baz Faiz × 1.15 (KKDF) × 1.15 (BSMV)\n\nÖrnek: %3.25 baz faiz → %4.30 efektif faiz"
+    },
+    "bddk": {
+      "title": "BDDK Düzenlemeleri (2026)",
+      "q1": "2026 taksit limitleri nelerdir?",
+      "a1": "Bireysel kartlar için:\n\nTaksit Yasak: Gıda, akaryakıt, telekomünikasyon, yurt dışı\n\nTV (5K+ TL): Max 4 taksit\nTelefon (12K+ TL): Max 3 taksit\nYenilenmiş Telefon: Max 12 taksit\nMobilya/Beyaz Eşya: Max 9 taksit\n\nTicari kartlar 2x sınırla 18 aya kadar taksit yapabilir.",
+      "q2": "Yapılandırma kuralları nelerdir?",
+      "a2": "• Maksimum vade: 60 ay\n• Faiz tavanı: TCMB referans faizi (%3.11)\n• %50 ödenmeden limit artışı yapılamaz\n• Art arda 3 asgari ödeme kaçırılırsa kart kapatılır",
+      "q3": "Limit tahsis kuralları nelerdir?",
+      "a3": "• İlk yıl: Aylık gelirin maksimum 2 katı\n• İkinci yıldan sonra: Aylık gelirin 4 katı\n• 400K-750K TL arası limitler 15 Şubat 2026'ya kadar düşürülmelidir",
+      "q4": "Asgari ödeme kuralları nelerdir?",
+      "a4": "• 50.000 TL üstü limitlerde: Asgari ödeme %40\n• 50.000 TL altı limitlerde: Asgari ödeme %20\n• Yılda 3 kez asgari ödeme kaçırılırsa nakit kullanıma kapatılır"
+    },
+    "kredi": {
+      "title": "Kredi Simülatörü",
+      "q1": "Kredi taksiti nasıl hesaplanır?",
+      "a1": "PMT formülü kullanılır:\n\nTaksit = Anapara × [r(1+r)^n] / [(1+r)^n - 1]\n\nBurada:\n• r = Aylık faiz oranı\n• n = Taksit sayısı",
+      "q2": "Gecikme durumunda ne olur?",
+      "a2": "Her geciken gün için günlük faiz hesaplanır:\n\nGünlük Faiz = Taksit Tutarı × (Aylık Gecikme Faizi / 30)\n\nÖrnek: 5.000 TL taksit, %4 aylık gecikme faizi\nGünlük faiz = 5.000 × 0.04 / 30 = 6.67 TL",
+      "q3": "Erken ödeme yapabilir miyim?",
+      "a3": "Evet, tüm kredilerde erken ödeme hakkınız vardır. Konut kredilerinde %2, diğer kredilerde %1 erken ödeme komisyonu alınabilir. Erken ödeme durumunda kalan anapara üzerinden faiz işlemez."
+    },
+    "bildirim": {
+      "title": "Bildirimler",
+      "q1": "Bildirimler nasıl çalışır?",
+      "a1": "Uygulama, cihazınızın yerel bildirim sistemini kullanır. Ödeme hatırlatıcıları, altın pencere fırsatları ve gecikme uyarıları için bildirimler zamanlanır. Bildirim Tercihleri sayfasından özelleştirebilirsiniz.",
+      "q2": "Gecikme bildirimleri ne sıklıkla gelir?",
+      "a2": "Günlük, 3 günde bir veya haftalık olarak ayarlayabilirsiniz. Bildirimler, toplam gecikme gün sayısını ve o ana kadar binen toplam faizi gösterir.",
+      "q3": "Bildirimleri nasıl kapatırım?",
+      "a3": "\"Bildirim Tercihleri\" sayfasından istediğiniz bildirim türlerini ayrı ayrı açıp kapatabilirsiniz. Tamamını kapatmak için ana bildirimleri devre dışı bırakın."
+    },
+    "vergi": {
+      "title": "Vergi Takibi",
+      "q1": "KDV beyanname tarihi nedir?",
+      "a1": "Her ayın 26'sı KDV beyanname son tarihidir. Uygulama, belirlediğiniz gün öncesinde hatırlatma gönderir.",
+      "q2": "Geçici vergi dönemleri nelerdir?",
+      "a2": "Ocak, Nisan, Temmuz ve Ekim aylarının 17'si geçici vergi beyanname tarihleridir. Her çeyrek dönem için önceki 3 aylık kazanç beyan edilir.",
+      "q3": "Emlak ve MTV vergilerini takip edebilir miyim?",
+      "a3": "Evet! \"Varlık Yönetimi\" bölümünden ev, araba ve iş yeri bilgilerinizi girerek emlak vergisi, MTV ve muayene tarihlerinizi takip edebilirsiniz."
+    },
+    "yatirim": {
+      "title": "Yatırım Portföyü",
+      "q1": "Hangi yatırım türlerini takip edebilirim?",
+      "a1": "Altın (gram/çeyrek/yarım/tam), gümüş, döviz (USD, EUR, GBP), hisse senedi (BIST), ve kripto para (Bitcoin, Ethereum vb.) yatırımlarınızı takip edebilirsiniz. Fiyatlar düzenli olarak güncellenir.",
+      "q2": "Yatırım fiyatları ne sıklıkla güncellenir?",
+      "a2": "Fiyatlar uygulama açıldığında ve her 15 dakikada bir otomatik güncellenir. Güncelleme durumunu yatırım sayfasının üst kısmındaki saat simgesinden takip edebilirsiniz.",
+      "q3": "Portföy kâr/zarar nasıl hesaplanır?",
+      "a3": "Her yatırım için alış fiyatı × miktar = maliyet, güncel fiyat × miktar = güncel değer hesaplanır. Fark kâr veya zarardır. Toplam portföy performansı tüm yatırımların toplamı olarak gösterilir."
+    },
+    "varlik": {
+      "title": "Varlık Yönetimi",
+      "q1": "Gayrimenkul bilgilerimi nasıl eklerim?",
+      "a1": "\"Varlık Yönetimi\" sayfasından \"Gayrimenkul Ekle\" butonuna tıklayın. Taşınmaz türü (konut, iş yeri, arsa), metrekare, güncel değer ve il bilgisini girin. Uygulama emlak vergisini 2026 oranlarına göre otomatik hesaplar.",
+      "q2": "Araç vergisi (MTV) nasıl hesaplanır?",
+      "a2": "MTV, aracın yaşı, motor hacmi ve türüne göre 2026 tarifesine uygun hesaplanır. Aracınızı eklerken marka, model, yıl ve motor hacmini girin; uygulama yıllık MTV tutarını ve ödeme dönemlerini (Ocak-Temmuz) gösterir.",
+      "q3": "Varlıklarımın toplam değerini görebilir miyim?",
+      "a3": "Evet, varlık yönetimi sayfasının üst kısmında tüm gayrimenkul ve araçlarınızın toplam piyasa değeri, yıllık vergi yükleri ve yaklaşan ödeme tarihleri özet olarak görüntülenir."
+    },
+    "aile": {
+      "title": "Aile Paylaşımı",
+      "q1": "Aile grubu nasıl oluştururum?",
+      "a1": "\"Hesap Ayarları\" → \"Aile Paylaşımı\" bölümünden \"Aile Oluştur\" butonuna tıklayın. Otomatik oluşturulan 12 haneli kodu aile üyelerinizle paylaşın. Diğer üyeler bu kodu girerek gruba katılabilir.",
+      "q2": "Aile senkronizasyonu nasıl çalışır?",
+      "a2": "Aile grubuna katıldığınızda veriler Firebase üzerinden gerçek zamanlı olarak senkronize edilir. Bir üyenin eklediği kart veya değişiklik anında diğer üyelerde görünür. İnternet bağlantısı kesilirse veriler yerel olarak saklanır ve bağlantı geldiğinde senkronize olur.",
+      "q3": "Aile grubundan nasıl ayrılırım?",
+      "a3": "\"Aile Paylaşımı\" bölümünden \"Gruptan Ayrıl\" butonuna tıklayın. Ayrıldığınızda verileriniz yerel cihazınızda kalır ancak artık diğer üyelerle senkronize olmaz. Grup sahibi iseniz önce yetkileri devretmeniz gerekir."
+    },
+    "guvenlik": {
+      "title": "Güvenlik & Gizlilik",
+      "q1": "PIN kilidi nasıl çalışır?",
+      "a1": "6 haneli PIN oluşturarak uygulamayı kilitleyebilirsiniz — bu özellik tüm kullanıcılara ücretsizdir. Her uygulama açılışında PIN sorulur. PIN oluştururken iki adet ipucu girmeniz zorunludur — unutma durumunda bu ipuçları sırasıyla gösterilir.",
+      "q2": "Biyometrik kilit nedir?",
+      "a2": "PIN ayarladıktan sonra Face ID veya Touch ID ile hızlı giriş yapabilirsiniz — biyometrik kilit de ücretsizdir. Biyometrik doğrulama başarısız olursa PIN ekranına düşersiniz. \"Hesap Ayarları\" → \"Güvenlik\" bölümünden açıp kapatabilirsiniz.",
+      "q3": "Gizlilik modu ne yapar?",
+      "a3": "Gizlilik modu açıldığında bakiyeler, borç tutarları ve kart numaraları yıldız (*) ile maskelenir. Birisi ekranınıza baktığında hassas bilgileriniz görünmez. Bu özellik tüm kullanıcılara ücretsizdir. Profil sayfasından veya hızlı ayarlardan açıp kapatabilirsiniz."
+    },
+    "kmh": {
+      "title": "KMH (Kredili Mevduat Hesabı)",
+      "q1": "KMH nedir?",
+      "a1": "KMH (Kredili Mevduat Hesabı), banka hesabınızda bakiye sıfırın altına düştüğünde otomatik olarak devreye giren bir kredi türüdür. Banka, belirlenen limite kadar eksi bakiyeye izin verir ve bu kullanım üzerinden günlük faiz işletir.",
+      "q2": "KMH faizi nasıl hesaplanır?",
+      "a2": "TCMB Ocak 2026 oranlarına göre:\n\n• Akdi faiz: %4,25/ay\n• Temerrüt faiz: %4,55/ay\n• Vergiler: KKDF %15 + BSMV %5 = %20\n\nFormül: Brüt Faiz = Anapara × (Aylık Oran / 100 / 30) × Gün\nNet Maliyet = Brüt × 1,20",
+      "q3": "KMH limiti nasıl belirlenir?",
+      "a3": "BDDK kuralına göre KMH limiti, aylık gelirinizin en fazla 2 katı olabilir. Örneğin aylık 20.000 TL gelirli birinin KMH limiti en fazla 40.000 TL'dir. Limitin üzerinde kullanım yapılamaz.",
+      "q4": "KMH faizini nasıl düşürebilirim?",
+      "a4": "• Eksi bakiyeyi mümkün olduğunca hızlı kapatın — faiz günlük işler\n• Maaş girişi olduğunda otomatik kapanır, ama kısmi kullanım bile faize tabidir\n• Alternatif olarak ihtiyaç kredisi düşünün — KMH faizi genellikle kredi faizinden yüksektir\n• Limit artışı talep etmeyin — daha fazla limit daha fazla faiz riski demektir"
+    },
+    "premium": {
+      "title": "Premium Üyelik",
+      "q1": "Ücretsiz planda neler var?",
+      "a1": "Ücretsiz planda: 2 kredi kartı, 2 hesap, 3 düzenli ödeme, 1 tasarruf hedefi, 1 bütçe ve aylık 50 işlem hakkınız vardır. Ayrıca PIN kilidi, biyometrik kilit ve gizlilik modu tamamen ücretsizdir. Altın pencere, ödeme takvimi ve temel finansal sağlık puanı da ücretsiz kullanılabilir.",
+      "q2": "PRO'da neler var?",
+      "a2": "PRO ile tüm limitler kalkar: sınırsız kart, hesap, düzenli ödeme, hedef, bütçe ve işlem. Ek olarak yatırım portföyü, varlık yönetimi, borç aktarma/yapılandırma simülatörleri, aile grubu yönetimi, AI fiş tarama (Gemini 2.5 Flash), işlem şablonları ve ticari kart analizi gibi özellikler açılır.",
+      "q3": "Promosyon kodu nasıl kullanılır?",
+      "a3": "\"Hesap Ayarları\" → \"Premium\" bölümünden promosyon kodunuzu girin. Geçerli kod girildikten sonra premium özellikler anında aktif olur. Kodunuz yoksa 7 günlük ücretsiz deneme süresinden faydalanabilirsiniz.",
+      "q4": "AI fiş tarama nedir?",
+      "a4": "PRO kullanıcılar, Google Gemini 2.5 Flash ile fişlerini çok daha doğru tarayabilir. Ayarlar'dan ücretsiz Gemini API anahtarınızı girdikten sonra \"AI ile Tara\" seçeneği aktif olur. AI başarısız olursa otomatik olarak cihaz taramasına düşer. API anahtarı olmadan da cihaz OCR ile tarama yapılabilir.",
+      "q5": "Deneme süresi nasıl çalışır?",
+      "a5": "İlk kurulumdan itibaren 7 gün boyunca tüm PRO özellikleri ücretsiz deneyebilirsiniz. Süre dolduğunda ücretsiz plan limitleri (2 kart, 2 hesap, 50 işlem/ay vb.) devreye girer, gelişmiş özellikler için PRO gerekir."
+    }
+  },
+  "guide": {
+    "searchPlaceholder": "Kılavuzda ara...",
+    "noResults": "\"{{query}}\" için sonuç bulunamadı",
+    "sections": {
+      "quickStart": {
+        "title": "Hızlı Başlangıç",
+        "desc": "Uygulamayı hemen kullanmaya başlayın",
+        "item1": { "title": "Kredi Kartı Ekleyin", "desc": "\"Kartlarım\" sekmesinden \"Kart Ekle\" butonuna tıklayın. Banka, kart adı, limit, borç, hesap kesim tarihi ve son ödeme tarihini girin. Kart anında listenize eklenir." },
+        "item2": { "title": "Altın Pencereyi Keşfedin", "desc": "Ana sayfadaki \"Bugün Alışveriş Yap\" önerisi, en uzun vadeye sahip kartınızı gösterir. Bu karta yapacağınız harcamalar 40+ gün faizsiz dönemden yararlanır." },
+        "item3": { "title": "Bildirimleri Açın", "desc": "\"Bildirim Tercihleri\" sayfasından ödeme hatırlatıcılarını ve altın pencere uyarılarını açın. Böylece hiçbir ödemeyi kaçırmazsınız." },
+        "item4": { "title": "Kredi Simülatörünü Deneyin", "desc": "Simülatör sayfasından ihtiyaç, konut veya taşıt kredisi hesaplaması yapabilirsiniz. Faiz oranı, vade ve taksit tutarını anında görün." },
+        "item5": { "title": "Aile Grubuna Katılın", "desc": "\"Aile Paylaşımı\" bölümünden grup oluşturun veya mevcut gruba 12 haneli kodla katılın. Finansal verileri aile üyeleriyle gerçek zamanlı paylaşın." },
+        "item6": { "title": "Yatırım Portföyü Oluşturun", "desc": "\"Yatırımlar\" sayfasından altın, döviz, hisse veya kripto yatırımlarınızı ekleyin. Güncel fiyatlarla portföy performansınızı takip edin." }
+      },
+      "cardManagement": {
+        "title": "Kart Yönetimi",
+        "desc": "Kredi kartlarınızı etkin şekilde yönetin",
+        "item1": { "title": "Kart Ekleme", "desc": "\"Kartlarım\" → \"Kart Ekle\" yolunu izleyin. Banka seçimi, kart adı, toplam limit, güncel borç, hesap kesim günü ve son ödeme gününü doldurun. İsterseniz kart rengini de özelleştirin." },
+        "item2": { "title": "Kart Düzenleme", "desc": "Kart detay sayfasında sağ üstteki düzenleme ikonuna tıklayın. Limit, borç, tarihler ve diğer bilgileri güncelleyebilirsiniz." },
+        "item3": { "title": "Kart Silme", "desc": "Kart detay sayfasında \"Kartı Sil\" butonuna tıklayın. Silme işlemi onay gerektirir ve geri alınamaz." },
+        "item4": { "title": "Limit ve Borç Takibi", "desc": "Her kartın limit kullanım oranı yüzdelik olarak gösterilir. %70 üzeri kullanım kırmızı, %40-70 sarı, %40 altı yeşil renkle işaretlenir." },
+        "item5": { "title": "Kesim ve Son Ödeme Tarihi", "desc": "Hesap kesim tarihi ekstrenizin kapandığı gündür. Son ödeme tarihi genellikle 10-15 gün sonradır. Bu tarihler kartınızın altın pencere dönemini belirler." }
+      },
+      "goldenWindow": {
+        "title": "Altın Pencere",
+        "desc": "En uzun faizsiz dönemi yakalayın",
+        "item1": { "title": "Altın Pencere Nedir?", "desc": "Hesap kesim tarihinden hemen sonraki 5 günlük dönemdir. Bu dönemde yapılan harcamalar bir sonraki ekstre dönemine yansır, böylece 40-50 gün arası faizsiz ödeme süresi kazanırsınız." },
+        "item2": { "title": "Nasıl Çalışır?", "desc": "Uygulama tüm kartlarınızın kesim tarihlerini analiz eder ve bugün hangi kartın altın pencere döneminde olduğunu gösterir. Büyük alışverişlerinizi bu dönemlere denk getirin." },
+        "item3": { "title": "En İyi Kart Önerisi", "desc": "Ana sayfadaki \"Bugün Alışveriş Yap\" kartı, o an en uzun vadeyi sunan kartınızı otomatik önerir. Birden fazla kart altın pencerede ise en yüksek kullanılabilir limiti olan tercih edilir." }
+      },
+      "paymentCalendar": {
+        "title": "Ödeme Takvimi",
+        "desc": "Tüm ödemelerinizi takvimde görün",
+        "item1": { "title": "Takvim Görünümü", "desc": "Ödeme takviminde son ödeme tarihleri takvim üzerinde işaretlenir. Bir güne tıklayarak o günkü ödemelerin detayını görebilirsiniz." },
+        "item2": { "title": "Renk Kodları", "desc": "Yeşil: Ödendi, Kırmızı: Gecikmiş, Turuncu: Bugün son gün, Mavi: Gelecek ödeme. Bu renkler takvimde ve listede tutarlıdır." },
+        "item3": { "title": "Aylık Plan", "desc": "Aylık toplam ödeme tutarınız takvimin üst kısmında gösterilir. Hangi günlerde ne kadar ödeme yapmanız gerektiğini planlayarak nakit akışınızı yönetebilirsiniz." }
+      },
+      "healthScore": {
+        "title": "Finansal Sağlık Puanı",
+        "desc": "Finansal durumunuzu değerlendirin",
+        "item1": { "title": "Puan Nasıl Hesaplanır?", "desc": "Borç/limit oranı, zamanında ödeme geçmişi, toplam borç yükü ve çeşitlendirme gibi faktörler değerlendirilerek 0-100 arası puan hesaplanır." },
+        "item2": { "title": "Puan Aralıkları", "desc": "90-100: Mükemmel, 70-89: İyi, 50-69: Orta, 30-49: Riskli, 0-29: Kritik. Her aralık için iyileştirme önerileri sunulur." },
+        "item3": { "title": "Puanı Nasıl Yükseltirim?", "desc": "Borç/limit oranını %30 altında tutun, ödemeleri zamanında yapın, toplam borcu azaltın ve kartlar arasında dengeli kullanım sağlayın." },
+        "item4": { "title": "Puan Bileşenleri", "desc": "Borç/limit oranı (%35), ödeme geçmişi (%30), toplam borç (%20) ve kart çeşitlendirmesi (%15) puanın dört ana bileşenidir." }
+      },
+      "loanSimulator": {
+        "title": "Kredi Simülatörü",
+        "desc": "Kredi maliyetlerinizi önceden hesaplayın",
+        "item1": { "title": "Kredi Türleri", "desc": "İhtiyaç kredisi, konut kredisi, taşıt kredisi ve ticari kredi simülasyonları yapabilirsiniz. Her tür için güncel faiz oranları varsayılan olarak gelir." },
+        "item2": { "title": "Taksit Hesaplama", "desc": "Kredi tutarı, faiz oranı ve vade girerek aylık taksit tutarını, toplam geri ödeme ve toplam faiz maliyetini hesaplayın." },
+        "item3": { "title": "Amortisman Tablosu", "desc": "Her taksit için anapara, faiz ve kalan borç detayını gösteren amortisman tablosunu görüntüleyin. Tabloyu PDF veya CSV olarak dışa aktarabilirsiniz." },
+        "item4": { "title": "Erken Ödeme Hesabı", "desc": "Erken ödeme durumunda kalan borç, tasarruf edilen faiz ve erken ödeme komisyonunu hesaplayın. Konut kredilerinde %2, diğer kredilerde %1 komisyon uygulanır." }
+      },
+      "debtTools": {
+        "title": "Borç Araçları",
+        "desc": "Borçlarınızı yönetin ve azaltın",
+        "item1": { "title": "Borç Aktarımı Simülatörü", "desc": "Mevcut kredi kartı borcunuzu başka bir karta aktarmanın maliyetini hesaplayın. Aktarım faizi, vade ve aylık taksit tutarını karşılaştırın." },
+        "item2": { "title": "Borç Yapılandırma", "desc": "BDDK kurallarına uygun yapılandırma planı oluşturun. Maksimum 60 ay vade, TCMB referans faiz tavanı ve aylık taksit tutarını simüle edin." },
+        "item3": { "title": "Taksit Hesaplayıcı", "desc": "Herhangi bir borç tutarı için farklı vade seçenekleriyle taksit tutarlarını karşılaştırın. En uygun ödeme planını belirleyin." }
+      },
+      "personalFinance": {
+        "title": "Kişisel Finans",
+        "desc": "Gelir, gider ve bütçenizi yönetin",
+        "item1": { "title": "Gelir/Gider Takibi", "desc": "Aylık gelirlerinizi ve giderlerinizi kategorilere ayırarak kaydedin. Grafik ve raporlarla harcama alışkanlıklarınızı analiz edin." },
+        "item2": { "title": "Bütçe Planlama", "desc": "Kategori bazında aylık bütçe limitleri belirleyin. Limit aşımında uyarı alın ve harcamalarınızı kontrol altında tutun." },
+        "item3": { "title": "Abonelik Yönetimi", "desc": "Tekrarlayan aboneliklerinizi (Netflix, Spotify, dergi vb.) kaydedin. Aylık toplam abonelik maliyetinizi ve yenileme tarihlerini takip edin." },
+        "item4": { "title": "Tasarruf Hedefleri", "desc": "Kısa ve uzun vadeli tasarruf hedefleri oluşturun. İlerlemenizi görsel olarak takip edin ve hedefe ulaşma tahmini tarihini görün." },
+        "item5": { "title": "Net Değer Takibi", "desc": "Tüm varlıklarınız (mevduat, yatırım, gayrimenkul, araç) eksi tüm borçlarınız (kredi kartı, kredi, taksit) = net değeriniz. Aylık değişimi grafik olarak izleyin." }
+      },
+      "familyFinance": {
+        "title": "Aile Finansı",
+        "desc": "Ailenizle finansal verileri paylaşın",
+        "item1": { "title": "Aile Grubu Oluşturma", "desc": "\"Aile Paylaşımı\" bölümünden yeni grup oluşturun. Otomatik üretilen 12 haneli paylaşım kodunu aile üyelerinize gönderin." },
+        "item2": { "title": "Gruba Katılma", "desc": "Size verilen 12 haneli kodu \"Aile Paylaşımı\" → \"Gruba Katıl\" bölümüne girin. Onayladıktan sonra aile üyelerinin verileri cihazınızda görünür." },
+        "item3": { "title": "12 Haneli Kod", "desc": "Her aile grubunun benzersiz bir kodu vardır. Bu kod yalnızca aile üyeleri arasında paylaşılmalıdır. Güvenlik için kodu sosyal medyada paylaşmayın." },
+        "item4": { "title": "Gerçek Zamanlı Senkronizasyon", "desc": "Tüm veriler Firebase üzerinden anlık senkronize olur. Bir üye kart eklediğinde veya borç güncellediğinde değişiklik anında tüm üyelerde görünür." }
+      },
+      "investments": {
+        "title": "Yatırım Takibi",
+        "desc": "Yatırım portföyünüzü yönetin",
+        "item1": { "title": "Altın & Gümüş", "desc": "Gram, çeyrek, yarım ve tam altın ile gümüş yatırımlarınızı ekleyin. Güncel piyasa fiyatlarıyla anlık değerleme yapılır." },
+        "item2": { "title": "Döviz", "desc": "USD, EUR, GBP ve diğer döviz pozisyonlarınızı takip edin. Alış fiyatı ve miktar girerek kâr/zarar durumunuzu izleyin." },
+        "item3": { "title": "Hisse Senedi", "desc": "BIST hisse senetlerinizi sembol bazında ekleyin. Güncel borsa fiyatlarıyla portföy performansınızı takip edin." },
+        "item4": { "title": "Kripto Para", "desc": "Bitcoin, Ethereum ve diğer kripto para yatırımlarınızı kaydedin. 7/24 güncel fiyatlarla anlık portföy değerinizi görün." }
+      },
+      "assetManagement": {
+        "title": "Varlık Yönetimi",
+        "desc": "Gayrimenkul ve araçlarınızı takip edin",
+        "item1": { "title": "Gayrimenkul Kayıt", "desc": "Konut, iş yeri veya arsa bilgilerinizi girin. Metrekare, il, güncel değer ve edinim tarihi ile detaylı kayıt oluşturun." },
+        "item2": { "title": "Araç Kayıt", "desc": "Araç marka, model, yıl, motor hacmi ve plaka bilgilerini girerek aracınızı sisteme ekleyin." },
+        "item3": { "title": "Vergi Takibi", "desc": "Emlak vergisi ve MTV (motorlu taşıtlar vergisi) 2026 oranlarına göre otomatik hesaplanır. Ödeme dönemleri takvimde hatırlatılır." },
+        "item4": { "title": "2026 Vergi Oranları", "desc": "Emlak vergisi binde 1-3 arası (konut/ticari), MTV aracın yaşı ve motor hacmine göre kademelidir. Uygulama güncel tarifeyi otomatik uygular." }
+      },
+      "commercialAnalytics": {
+        "title": "Ticari Analitik",
+        "desc": "İş giderlerinizi ve vergilerinizi takip edin",
+        "item1": { "title": "KDV Hesaplama", "desc": "Alış ve satış faturalarınızın KDV tutarlarını otomatik hesaplayın. Aylık KDV matrahını ve ödenecek KDV'yi takip edin." },
+        "item2": { "title": "Gider Kategorileri", "desc": "İş giderlerinizi (kira, personel, malzeme, ulaşım vb.) kategorilere ayırarak kaydedin. Aylık ve yıllık gider raporları oluşturun." },
+        "item3": { "title": "Vergi Beyanname Takibi", "desc": "KDV (her ay 26), geçici vergi (çeyrek dönemler) ve yıllık gelir vergisi beyanname tarihlerini takvimde takip edin." }
+      },
+      "notifications": {
+        "title": "Bildirimler",
+        "desc": "Ödemeleri ve fırsatları kaçırmayın",
+        "item1": { "title": "Bildirim Türleri", "desc": "Ödeme hatırlatıcısı, altın pencere fırsatı, gecikme uyarısı, limit aşımı ve vergi beyanname hatırlatması gibi farklı bildirim türleri mevcuttur." },
+        "item2": { "title": "Tercihler", "desc": "Her bildirim türünü ayrı ayrı açıp kapatabilirsiniz. Hatırlatma süresini (1 gün, 3 gün, 1 hafta önce) özelleştirebilirsiniz." },
+        "item3": { "title": "Gelen Kutusu", "desc": "Tüm bildirimler gelen kutusunda listelenir. Okunmamış bildirimlerin sayısı uygulama ikonunda ve menüde gösterilir." }
+      },
+      "widgets": {
+        "title": "Widgetlar",
+        "desc": "Hızlı erişim için ana ekran widgetları",
+        "item1": { "title": "Widget Kategorileri", "desc": "Ödeme takvimi, altın pencere durumu, toplam borç özeti ve finansal sağlık puanı widgetları mevcuttur. Her biri farklı bilgi özetleri sunar." },
+        "item2": { "title": "Ana Ekrana Ekleme", "desc": "iOS: Ana ekranda uzun basın → Widget Ekle → Kredy. Android: Ana ekranda uzun basın → Widgetlar → Kredy. İstediğiniz widget boyutunu seçin." }
+      },
+      "accountSettings": {
+        "title": "Hesap Ayarları",
+        "desc": "Uygulama tercihlerinizi yönetin",
+        "item1": { "title": "Profil Düzenleme", "desc": "İsim ve e-posta adresinizi güncelleyin. Bu bilgiler uygulama içinde ve bulut yedeklemede kullanılır." },
+        "item2": { "title": "Tema Seçimi", "desc": "6 farklı tema arasından seçim yapın: Varsayılan, Koyu, Okyanus, Gün Batımı, Orman ve Lavanta. Tema seçimi anında uygulanır." },
+        "item3": { "title": "Dil Ayarı", "desc": "Türkçe (varsayılan), İngilizce, Arapça ve Rusça dil seçenekleri mevcuttur. Dil değişikliği uygulama yeniden başlatılmadan uygulanır." },
+        "item4": { "title": "PIN Güvenliği", "desc": "6 haneli PIN oluşturarak uygulamayı kilitleyebilirsiniz — bu özellik tamamen ücretsizdir. İki adet ipucu girmeniz zorunludur. Biyometrik (Face ID / Touch ID) kilit de ücretsiz olarak eklenebilir." },
+        "item5": { "title": "Bulut Yedekleme", "desc": "Google, Apple veya e-posta hesabınızla giriş yaparak verilerinizi buluta yedekleyin. Cihaz değiştirdiğinizde verilerinizi kolayca geri yükleyin." },
+        "item6": { "title": "Veri Aktarım", "desc": "Verilerinizi JSON veya CSV formatında dışa aktarabilirsiniz. Dışa aktarılan dosyayı başka bir cihaza import ederek verilerinizi taşıyabilirsiniz." }
+      },
+      "kmh": {
+        "title": "KMH Kullanımı",
+        "desc": "Kredili Mevduat Hesabı yönetimi",
+        "item1": { "title": "KMH Ekleme", "desc": "Banka hesabı eklerken KMH'yı etkinleştirin. Limit, akdi faiz oranı ve temerrüt faiz oranını girin. BDDK kuralı gereği limit aylık gelirinizin 2 katını aşamaz." },
+        "item2": { "title": "Faiz Hesaplama", "desc": "Eksi bakiye olduğunda uygulama günlük faizi otomatik hesaplar. Formül: Brüt = Anapara × (Aylık Oran / 30) × Gün. Net maliyet = Brüt × 1,20 (KKDF + BSMV dahil)." },
+        "item3": { "title": "Risk Seviyeleri", "desc": "KMH kullanımı 4 seviyede izlenir: Düşük (%25'e kadar), Orta (%50'ye kadar), Yüksek (%75'e kadar) ve Kritik (%75 üzeri). Her seviye farklı renk ve uyarıyla gösterilir." },
+        "item4": { "title": "Bildirimler", "desc": "KMH faiz bildirimleri açarak günlük faiz tutarını takip edebilirsiniz. Kritik seviyeye ulaştığında acil uyarı alırsınız." }
+      },
+      "premium": {
+        "title": "FREE & PRO Planlar",
+        "desc": "Ücretsiz plan limitleri ve PRO özellikler",
+        "item1": { "title": "Ücretsiz Plan", "desc": "Ücretsiz planda 2 kredi kartı, 2 hesap, 3 düzenli ödeme, 1 tasarruf hedefi, 1 bütçe ve aylık 50 işlem hakkınız var. PIN kilidi, biyometrik kilit ve gizlilik modu da tamamen ücretsizdir." },
+        "item2": { "title": "PRO Özellikleri", "desc": "PRO ile tüm limitler kalkar: sınırsız kart, hesap, düzenli ödeme, hedef, bütçe ve işlem. Ek olarak yatırım portföyü, varlık yönetimi, simülatörler, aile grubu yönetimi, AI fiş tarama, işlem şablonları ve ticari kart analizi açılır." },
+        "item3": { "title": "Promosyon Kodu", "desc": "\"Hesap Ayarları\" → \"Premium\" → \"Kodu Gir\" alanına promosyon kodunuzu yazın. Geçerli kod girildikten sonra PRO özellikler anında aktif olur." },
+        "item4": { "title": "AI Fiş Tarama", "desc": "PRO kullanıcılar Gemini 2.5 Flash ile fişlerini AI ile tarayabilir. Ayarlar'dan ücretsiz Gemini API anahtarınızı girin. Günlük 1.500 istek, dakikada 15 istek, aylık 1M token ücretsiz limitleriniz var." },
+        "item5": { "title": "7 Gün Ücretsiz Deneme", "desc": "İlk kurulumda 7 gün boyunca tüm PRO özellikleri ücretsiz deneyin. Süre dolduğunda ücretsiz plan limitleri (2 kart, 2 hesap, 50 işlem/ay vb.) devreye girer." }
+      }
+    }
+  },
+  "contact": {
+    "title": "İletişim Bilgileri",
+    "email": "E-posta",
+    "phone": "Telefon",
+    "workingHours": "Çalışma Saatleri",
+    "workingHoursValue": "Pazartesi - Cuma: 09:00 - 18:00"
+  },
+  "help": {
+    "title": "Yardım & Destek",
+    "tabs": {
+      "faq": "SSS",
+      "guide": "Kılavuz",
+      "contact": "İletişim"
+    },
+    "searchPlaceholder": "Soru ara...",
+    "noResults": "\"{{query}}\" için sonuç bulunamadı",
+    "quickStart": "Hızlı Başlangıç",
+    "getStarted": "Kredy'ı kullanmaya başlayın",
+    "steps": {
+      "addCards": "Kartlarınızı Ekleyin",
+      "addCardsDesc": "\"Kartlarım\" sekmesinden kredi kartlarınızı ekleyin. Hesap kesim ve son ödeme tarihlerini girin.",
+      "trackGoldenWindow": "Altın Pencereyi Takip Edin",
+      "trackGoldenWindowDesc": "Ana sayfadaki \"Bugün Alışveriş Yap\" önerisi, en uzun vadeyi kazanacağınız kartı gösterir.",
+      "setupNotifications": "Bildirimleri Ayarlayın",
+      "setupNotificationsDesc": "\"Bildirim Tercihleri\"nden ödeme hatırlatıcılarını ve altın pencere uyarılarını açın.",
+      "useSimulators": "Simülatörleri Kullanın",
+      "useSimulatorsDesc": "Borç aktarımı, yapılandırma ve kredi simülatörleri ile maliyetlerinizi önceden hesaplayın."
+    },
+    "formulas": {
+      "title": "Faiz Formülleri",
+      "dailyOverdue": "Günlük Gecikme Faizi",
+      "dailyOverdueFormula": "= Borç × (Aylık Oran / 30)",
+      "monthlyInstallment": "Aylık Taksit (PMT)",
+      "monthlyInstallmentFormula": "= P × [r(1+r)^n] / [(1+r)^n - 1]",
+      "effectiveInterest": "Efektif Faiz (KKDF + BSMV)",
+      "effectiveInterestFormula": "= Baz Faiz × 1.15 × 1.15"
+    },
+    "bddk2026": {
+      "title": "BDDK 2026 Özet",
+      "restructuringCeiling": "Yapılandırma Tavanı",
+      "restructuringValue": "60 Ay",
+      "interestCeiling": "Faiz Tavanı",
+      "interestValue": "%3,11 (TCMB)",
+      "cashAdvance": "Nakit Avans Faizi",
+      "cashAdvanceValue": "%4,25",
+      "kkdfBsmv": "KKDF + BSMV",
+      "kkdfBsmvValue": "%15 + %15"
+    },
+    "feedback": {
+      "title": "Geri Bildirim",
+      "subtitle": "Öneri, şikayet veya sorularınızı iletin",
+      "yourMessage": "Mesajınız",
+      "messagePlaceholder": "Düşüncelerinizi paylaşın...",
+      "sent": "Geri Bildirim Gönderildi",
+      "thanks": "Mesajınız için teşekkür ederiz!",
+      "errorEmpty": "Lütfen bir mesaj yazın."
+    },
+    "developer": "Geliştirici"
+  }
+}

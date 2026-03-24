@@ -38,24 +38,23 @@ const DEFAULT_PRODUCTS: IAPProduct[] = [
     id: PRODUCT_IDS.monthly,
     title: 'Aylık Pro',
     description: 'Aylık abonelik',
-    price: '$1,99',
-    priceAmount: 1.99,
-    currency: 'USD',
+    price: '₺39,99',
+    priceAmount: 39.99,
+    currency: 'TRY',
     period: 'monthly',
   },
   {
     id: PRODUCT_IDS.yearly,
     title: 'Yıllık Pro',
     description: 'Yıllık abonelik',
-    price: '$19,99',
-    priceAmount: 19.99,
-    currency: 'USD',
+    price: '₺399,99',
+    priceAmount: 399.99,
+    currency: 'TRY',
     period: 'yearly',
   },
 ];
 
 let pluginInstance: any = null;
-let storeKitPlugin: any = null;
 let initialized = false;
 let pluginAvailable = false;
 let cachedProducts: IAPProduct[] | null = null;
@@ -70,39 +69,21 @@ const getPlatform = (): 'ios' | 'android' | 'web' => {
   return (window as any).Capacitor?.getPlatform?.() || 'web';
 };
 
+let pluginLoadFailed = false;
+
 const loadPlugin = async (): Promise<any> => {
+  if (pluginLoadFailed) return null;
   if (pluginInstance) return pluginInstance;
   try {
-    const { NativePurchases } = await import('@capgo/native-purchases');
-    pluginInstance = NativePurchases;
-    return pluginInstance;
-  } catch {
+    const mod = await import('@capgo/native-purchases');
+    if (mod?.NativePurchases) {
+      pluginInstance = mod.NativePurchases;
+      return pluginInstance;
+    }
+    pluginLoadFailed = true;
     return null;
-  }
-};
-
-let playBillingPlugin: any = null;
-
-const loadStoreKitPlugin = async (): Promise<any> => {
-  if (storeKitPlugin) return storeKitPlugin;
-  if (getPlatform() !== 'ios') return null;
-  try {
-    const { registerPlugin } = await import('@capacitor/core');
-    storeKitPlugin = registerPlugin('StoreKit');
-    return storeKitPlugin;
   } catch {
-    return null;
-  }
-};
-
-const loadPlayBillingPlugin = async (): Promise<any> => {
-  if (playBillingPlugin) return playBillingPlugin;
-  if (getPlatform() !== 'android') return null;
-  try {
-    const { registerPlugin } = await import('@capacitor/core');
-    playBillingPlugin = registerPlugin('PlayBilling');
-    return playBillingPlugin;
-  } catch {
+    pluginLoadFailed = true;
     return null;
   }
 };
@@ -311,63 +292,6 @@ class IAPService {
     } catch {
       // Silently fail
     }
-  }
-
-  async redeemOfferCode(): Promise<boolean> {
-    const platform = getPlatform();
-
-    if (platform === 'ios') {
-      // iOS: Native StoreKit Offer Code Redeem Sheet
-      try {
-        const sk = await loadStoreKitPlugin();
-        if (!sk) return false;
-
-        const result = await sk.presentOfferCodeRedeemSheet();
-
-        // After redemption, check for active subscription
-        if (result?.purchases?.length > 0) {
-          const active = this.findActiveSubscription(result.purchases);
-          if (active) {
-            this.processTransaction(active);
-            return true;
-          }
-        }
-
-        // Also check via main plugin (transaction listener may have fired)
-        await new Promise(r => setTimeout(r, 2000));
-        const sub = await this.getActiveSubscription();
-        return sub?.isActive === true;
-      } catch (err: any) {
-        if (err?.message?.includes('cancel')) return false;
-        throw err;
-      }
-    }
-
-    if (platform === 'android') {
-      // Android: Native Play Store promo code redemption via PlayBillingPlugin
-      try {
-        const pb = await loadPlayBillingPlugin();
-        if (pb) {
-          await pb.redeemPromoCode({});
-          // Wait for Play Store to process, then check subscription
-          await new Promise(r => setTimeout(r, 3000));
-          const restored = await this.restorePurchases();
-          return restored;
-        }
-      } catch {
-        // Fallback: open Play Store redeem page in browser
-      }
-      try {
-        const { Browser } = await import('@capacitor/browser');
-        await Browser.open({ url: 'https://play.google.com/redeem' });
-        return true;
-      } catch {
-        window.open('https://play.google.com/redeem', '_blank');
-        return true;
-      }
-    }
-
-    return false;
   }
 
   // --- private helpers ---

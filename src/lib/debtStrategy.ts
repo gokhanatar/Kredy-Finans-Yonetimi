@@ -90,11 +90,10 @@ function simulatePayoff(
     let remainingExtra = extraPayment;
 
     // Ödenen borçlardan kurtarılan minimum ödeme miktarı da ek ödemeye eklenir
-    // Cap at original balance to avoid overstating freed amount when last payment was partial
     let freedMinPayment = 0;
     for (const debt of sortedDebts) {
       if (balances[debt.id] <= 0.01) {
-        freedMinPayment += Math.min(debt.minimumPayment, debt.balance);
+        freedMinPayment += debt.minimumPayment;
       }
     }
     remainingExtra += freedMinPayment;

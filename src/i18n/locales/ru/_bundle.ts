@@ -1,37 +1,4 @@
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- import common from './common.json';
+import common from './common.json';
 import settings from './settings.json';
 import cards from './cards.json';
 import finance from './finance.json';
@@ -45,6 +12,5 @@ import faq from './faq.json';
 import onboarding from './onboarding.json';
 import widgets from './widgets.json';
 import ai from './ai.json';
- 
+
 export default { common, settings, cards, finance, family, investments, loans, assets, notifications, subscription, faq, onboarding, widgets, ai } as Record<string, unknown>;
- 

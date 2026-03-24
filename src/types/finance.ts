@@ -177,7 +177,7 @@ export const FINANCIAL_CONSTANTS = {
   CASH_ADVANCE_RATE: 4.25, // %4.25 - Nakit avans faizi (sabit)
   CASH_ADVANCE_LATE_RATE: 4.55, // %4.55 - Nakit avans gecikme faizi
   KKDF_RATE: 15, // %15 - Kaynak Kullanımı Destekleme Fonu
-  BSMV_RATE: 15, // %15 - BSMV for credit cards (KMH uses 5% — see KMH_CONSTANTS in familyFinance.ts)
+  BSMV_RATE: 15, // %15 - Banka ve Sigorta Muameleleri Vergisi
   TRANSACTION_FEE: 1, // %1
   BANK_MARGIN: 0.5, // %0.5 banka marjı
 

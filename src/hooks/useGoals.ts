@@ -54,7 +54,7 @@ export function useGoals(storageKey?: string, scope: 'personal' | 'family' = 'pe
         if (!contribution) return g;
         return {
           ...g,
-          currentAmount: Math.max(0, g.currentAmount - contribution.amount),
+          currentAmount: g.currentAmount - contribution.amount,
           contributions: g.contributions.filter((c) => c.id !== contributionId),
         };
       })

@@ -16,7 +16,7 @@ function emitSync(key: string, value: string | null) {
 
 export function useLocalStorage<T>(key: string, initialValue: T): [T, (value: T | ((prev: T) => T)) => void] {
   const initialValueRef = useRef(initialValue);
-  const selfWrite = useRef(0);
+  const selfWrite = useRef(false);
 
   const [storedValue, setStoredValue] = useState<T>(() => {
     if (typeof window === "undefined") {
@@ -37,7 +37,7 @@ export function useLocalStorage<T>(key: string, initialValue: T): [T, (value: T 
         const valueToStore = value instanceof Function ? value(prevValue) : value;
         if (typeof window !== "undefined") {
           const serialized = JSON.stringify(valueToStore);
-          selfWrite.current += 1;
+          selfWrite.current = true;
           window.localStorage.setItem(key, serialized);
           emitSync(key, serialized);
           window.dispatchEvent(new CustomEvent('cloud-dirty', { detail: { key } }));
@@ -55,7 +55,7 @@ export function useLocalStorage<T>(key: string, initialValue: T): [T, (value: T 
     const onSync = (e: Event) => {
       const { key: k, value: v } = (e as CustomEvent<LSSyncDetail>).detail;
       if (k !== key) return;
-      if (selfWrite.current > 0) { selfWrite.current -= 1; return; }
+      if (selfWrite.current) { selfWrite.current = false; return; }
       try {
         setStoredValue(v ? (JSON.parse(v) as T) : initialValueRef.current);
       } catch { /* ignore */ }

@@ -588,13 +588,12 @@
     padding-bottom: calc(7rem + env(safe-area-inset-bottom, 0px));
   }
 
-  /* Responsive app container */
+  /* Responsive app container — centered column on large screens */
   :root {
     --app-max-width: 100%;
   }
 
-  /* Tablet portrait (768-1023px): centered column */
-  @media (min-width: 768px) and (max-width: 1023px) {
+  @media (min-width: 768px) {
     :root {
       --app-max-width: 600px;
     }
@@ -617,6 +616,7 @@
       box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.1);
     }
 
+    /* Bottom nav — app genişliğine sınırla */
     nav.fixed,
     .fixed.bottom-0:not([role="dialog"]) {
       max-width: var(--app-max-width);
@@ -625,45 +625,22 @@
       transform: translateX(-50%);
     }
 
+    /* Sticky header — app genişliğine sınırla */
     .sticky.top-0 {
       max-width: var(--app-max-width);
       margin-left: auto;
       margin-right: auto;
     }
 
+    /* PremiumLockOverlay PRO butonu — container'a göre pozisyonla */
     .fixed.top-20.right-4 {
       right: calc(50% - var(--app-max-width) / 2 + 1rem) !important;
     }
   }
 
-  /* lg+ (1024px): Full-width layout with sidebar */
-  @media (min-width: 1024px) {
-    body {
-      max-width: 100%;
-      margin: 0;
-      border: none;
-    }
-  }
-
-  /* Page container — responsive max-width */
-  .page-container {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    max-width: 42rem; /* max-w-2xl */
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-  }
-
-  @media (min-width: 1024px) {
-    .page-container {
-      max-width: 960px;
-    }
-  }
-
-  @media (min-width: 1536px) {
-    .page-container {
-      max-width: 1200px;
+  @media (min-width: 1280px) {
+    :root {
+      --app-max-width: 540px;
     }
   }
 

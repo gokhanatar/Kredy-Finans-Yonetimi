@@ -1,0 +1,142 @@
+{
+  "title": "Управління активами",
+  "subtitle": "Нерухомість, транспорт та податковий облік",
+  "tabs": {
+    "property": "Нерухомість",
+    "vehicles": "Транспорт",
+    "businesses": "Підприємства"
+  },
+  "addProperty": "Додати нерухомість",
+  "addVehicle": "Додати транспорт",
+  "addBusiness": "Додати підприємство",
+  "upcomingDeadlines": "Найближчі дедлайни",
+  "taxCalendar": "Податковий календар",
+  "property": {
+    "registered": "Зареєстрована нерухомість",
+    "notAdded": "Нерухомості ще не додано",
+    "addDesc": "Додай нерухомість для відстеження податку на майно",
+    "name": "Назва нерухомості",
+    "type": "Тип нерухомості",
+    "location": "Розташування",
+    "sqMeters": "м²",
+    "sqMetersNotSet": "Площу не вказано",
+    "value2026": "Вартість 2026",
+    "annualTax": "Річний податок",
+    "exempt": "Звільнено",
+    "rentalIncome": "Дохід від оренди",
+    "deleteTitle": "Видалити нерухомість",
+    "deleteConfirm": "Ти впевнений, що хочеш видалити запис {{name}}?",
+    "added": "Нерухомість додано",
+    "deleted": "Нерухомість видалено"
+  },
+  "vehicle": {
+    "registered": "Зареєстрований транспорт",
+    "notAdded": "Транспорту ще не додано",
+    "addDesc": "Додай транспорт для відстеження транспортного податку та техогляду",
+    "nextInspection": "Наступний техогляд",
+    "daysOverdue": "Прострочено на {{days}} днів",
+    "daysRemaining": "{{days}} днів",
+    "disabledRestriction": "Обмеження на продаж для осіб з інвалідністю",
+    "deleteTitle": "Видалити транспорт",
+    "deleteConfirm": "Ти впевнений, що хочеш видалити запис {{name}}?",
+    "added": "Транспортний засіб додано",
+    "deleted": "Транспортний засіб видалено"
+  },
+  "propertyTypes": {
+    "konut": "Житло",
+    "isyeri": "Комерція",
+    "arsa": "Ділянка"
+  },
+  "locationTypes": {
+    "buyuksehir": "Місто-мільйонник",
+    "diger": "Інша область"
+  },
+  "vehicleTypes": {
+    "otomobil": "Автомобіль",
+    "ticari": "Комерційний транспорт",
+    "motosiklet": "Мотоцикл"
+  },
+  "professionTypes": {
+    "kuyumcu": "Ювелір",
+    "oto_galeri": "Автосалон",
+    "emlakci": "Ріелтор",
+    "hastane": "Приватна лікарня",
+    "muayenehane": "Лікарський кабінет",
+    "diger": "Інше"
+  },
+  "propertyForm": {
+    "addButton": "Додати нерухомість",
+    "editTitle": "Редагувати нерухомість",
+    "newTitle": "Нова нерухомість",
+    "name": "Назва об'єкта",
+    "namePlaceholder": "Квартира на Хрещатику, Офіс тощо",
+    "type": "Тип",
+    "location": "Розташування",
+    "taxValue2025": "Податкова вартість 2025 (TL)",
+    "taxValue2025Placeholder": "1 000 000",
+    "ceilingValue2026": "Гранична вартість 2026: {{value}}",
+    "ceilingMax": "(макс. 3x)",
+    "sqMeters": "Площа (необов'язково)",
+    "sqMetersPlaceholder": "120",
+    "isRented": "Здається в оренду?",
+    "annualRent": "Річний дохід від оренди (TL)",
+    "annualRentPlaceholder": "72 000",
+    "rentExemption": "Пільга 2026 на житло: 58 000 TL | Комерція: 400 000 TL",
+    "exemptionChecks": "Перевірка пільг",
+    "isRetired": "Ти на пенсії?",
+    "isSingleProperty": "Це твоє єдине житло?",
+    "hasOtherIncome": "Маєш відсотковий дохід?",
+    "exemptionEligible": "Маєш право на пенсійну пільгу (умова — до 200 м²)",
+    "monthlyRentAmount": "Щомісячна орендна плата",
+    "rentalDayOfMonth": "День оплати оренди",
+    "rentalDayPlaceholder": "Обери день",
+    "contractStartDate": "Початок договору",
+    "contractEndDate": "Закінчення договору",
+    "city": "Місто",
+    "cityPlaceholder": "Обери місто",
+    "district": "Район",
+    "districtPlaceholder": "Район (необов'язково)",
+    "validation": {
+      "nameRequired": "Назва нерухомості обов'язкова",
+      "valueRequired": "Податкова вартість має бути більше нуля",
+      "rentAmountRequired": "Щомісячна орендна плата обов'язкова, якщо здається в оренду"
+    }
+  },
+  "vehicleForm": {
+    "addButton": "Додати транспорт",
+    "editTitle": "Редагувати транспорт",
+    "newTitle": "Новий транспорт",
+    "name": "Назва транспорту",
+    "namePlaceholder": "Audi A4",
+    "plate": "Номерний знак",
+    "platePlaceholder": "34 ABC 123",
+    "vehicleType": "Тип транспорту",
+    "registrationDate": "Дата реєстрації",
+    "post2018": "Після 2018: Транспортний податок розраховується за податковою базою",
+    "pre2018": "До 2018: Транспортний податок розраховується за об'ємом двигуна та віком",
+    "engineCC": "Об'єм двигуна (куб. см)",
+    "engineCCPlaceholder": "1600",
+    "purchaseValue": "Вартість покупки / Податкова база (TL)",
+    "purchaseValuePlaceholder": "500 000",
+    "inspectionDate": "Дата останнього техогляду (необов'язково)",
+    "disabledExemption": "Пільга на акцизний збір для осіб з інвалідністю",
+    "exemptionDate": "Дата пільги",
+    "saleRestriction": "10-річне обмеження на продаж",
+    "saleRestrictionDesc": "Обмеження на продаж для транспорту, придбаного після 2025 року, збільшено до 10 років.",
+    "domesticRate": "Вимога вітчизняного вмісту: потрібно {{rate}}% вітчизняних компонентів",
+    "otvExemptLimit": "Ліміт пільги на акцизний збір: {{value}}",
+    "validation": {
+      "nameRequired": "Назва транспорту обов'язкова",
+      "plateRequired": "Номерний знак обов'язковий",
+      "registrationRequired": "Дата реєстрації обов'язкова",
+      "engineRequired": "Об'єм двигуна має бути більше нуля"
+    }
+  },
+  "taxMessages": {
+    "rentalIncomeWarning": "Ти не можеш вирахувати відсотки за кредит з доходу від оренди житла!",
+    "inspectionWarning": "Ти не можеш записатися на техогляд, якщо маєш борг з транспортного податку або штрафи!",
+    "propertyExemption": "Пенсіонер, єдине житло і до 200 м² — звільнення від податку на нерухомість",
+    "inspectionOverdue": "Техогляд прострочено на {{days}} днів!",
+    "disabledSaleRestriction": "Якщо продаси транспорт, доведеться сплатити акцизний збір! (залишилося {{years}} років)"
+  }
+}

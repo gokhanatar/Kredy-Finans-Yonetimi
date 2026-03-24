@@ -1,211 +1,4 @@
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74
-75
-76
-77
-78
-79
-80
-81
-82
-83
-84
-85
-86
-87
-88
-89
-90
-91
-92
-93
-94
-95
-96
-97
-98
-99
-100
-101
-102
-103
-104 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
@@ -214,9 +7,9 @@ import { MobileNav } from '@/components/MobileNav';
 import { TrialBanner } from '@/components/finance/TrialBanner';
 import { FinanceContent, FINANS_TAB_IDS, type FinansSubTab } from '@/components/finance/FinanceContent';
 import { QuickAddFAB } from '@/components/QuickAddFAB';
- 
+
 // ─── Sub-tab translation keys ───────────────────────────────────
- 
+
 const SUB_TAB_KEYS: Record<FinansSubTab, string> = {
   ozet: 'tabs.summary',
   'gelir-gider': 'tabs.incomeExpense',
@@ -224,17 +17,17 @@ const SUB_TAB_KEYS: Record<FinansSubTab, string> = {
   'butce-hedefler': 'tabs.budgetGoals',
   hesaplar: 'tabs.accounts',
 };
- 
+
 // ─── Main component ─────────────────────────────────────────────
- 
+
 const Finance = () => {
   const { t } = useTranslation(['family', 'finance', 'common']);
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
- 
+
   const [finansTab, setFinansTab] = useState<FinansSubTab>('ozet');
   const [pendingAction, setPendingAction] = useState<string | null>(null);
- 
+
   // Handle URL action param from FAB navigation
   useEffect(() => {
     const action = searchParams.get('action');
@@ -249,7 +42,7 @@ const Finance = () => {
       setSearchParams(searchParams, { replace: true });
     }
   }, []);
- 
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -261,10 +54,10 @@ const Finance = () => {
             </Button>
             <h1 className="text-lg font-semibold">{t('personalTitle', 'Kişisel Finansım')}</h1>
           </div>
- 
+
           {/* Trial / Premium Banner */}
           <TrialBanner />
- 
+
           {/* Sub-tab navigation */}
           <div className="px-4">
             <div className="flex gap-1 overflow-x-auto py-2 no-scrollbar">
@@ -285,7 +78,7 @@ const Finance = () => {
           </div>
         </div>
       </div>
- 
+
       <main className="mx-auto max-w-2xl px-5 py-4 pb-safe-nav">
         <FinanceContent
           scope="personal"
@@ -295,17 +88,16 @@ const Finance = () => {
           onActionHandled={() => setPendingAction(null)}
         />
       </main>
- 
+
       <QuickAddFAB
         onAddExpense={() => { setFinansTab('gelir-gider'); setPendingAction('expense'); }}
         onAddIncome={() => { setFinansTab('gelir-gider'); setPendingAction('income'); }}
         onPayBill={() => { setFinansTab('duzenli-odemeler'); }}
       />
- 
+
       <MobileNav activeTab="finance" />
     </div>
   );
 };
- 
+
 export default Finance;
- 

@@ -121,8 +121,6 @@ export function useAssetTaxNotifications(
   }, [properties]);
   
   // MTV bildirimleri
-  // NOTE (O-20): MTV notification currently shows a single reminder regardless of vehicle count.
-  // A per-vehicle MTV breakdown would require engine size / model year data per vehicle.
   const mtvNotifications = useMemo((): AssetNotification[] => {
     if (vehicles.length === 0) return [];
     
@@ -247,17 +245,13 @@ export function useAssetTaxNotifications(
         const restriction = checkDisabledSaleRestriction(vehicle);
         
         if (restriction.isBanned && restriction.penalty) {
-          // Use actual date difference if banEndDate is available, otherwise approximate
-          const daysRemaining = restriction.banEndDate
-            ? differenceInDays(restriction.banEndDate, new Date())
-            : restriction.yearsRemaining * 365;
           notifications.push({
             id: `sale-ban-${vehicle.id}`,
             type: 'sale_ban',
             title: 'Engelli Araç Satış Yasağı',
             message: restriction.penalty,
             date: restriction.banEndDate,
-            daysRemaining,
+            daysRemaining: restriction.yearsRemaining * 365,
             severity: 'warning',
             assetId: vehicle.id,
             assetName: vehicle.name,

@@ -64,7 +64,10 @@
     "perDay": "/يوم",
     "perWeek": "/أسبوع",
     "perMonth": "/شهر",
-    "perYear": "/سنة"
+    "perYear": "/سنة",
+    "last3Months": "آخر 3 أشهر",
+    "last6Months": "آخر 6 أشهر",
+    "lastMonth": "الشهر الماضي"
   },
   "days": {
     "short": [
@@ -170,6 +173,8 @@
     "menu": "القائمة"
   },
   "all": "الكل",
+  "noData": "لم يتم العثور على بيانات",
+  "you": "أنت",
   "other": "أخرى",
   "total": "الإجمالي",
   "unknown": "غير معروف",
@@ -179,8 +184,5 @@
     "addIncome": "إضافة دخل",
     "payBill": "دفع فاتورة"
   },
-  "legal": {
-    "privacyPolicy": "سياسة الخصوصية",
-    "termsOfUse": "شروط الاستخدام"
-  }
+  "subscription": "اشتراك"
 }

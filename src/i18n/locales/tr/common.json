@@ -64,57 +64,18 @@
     "perDay": "/gün",
     "perWeek": "/hafta",
     "perMonth": "/ay",
-    "perYear": "/yıl"
+    "perYear": "/yıl",
+    "last3Months": "Son 3 Ay",
+    "last6Months": "Son 6 Ay",
+    "lastMonth": "Geçen Ay"
   },
   "days": {
-    "short": [
-      "Pz",
-      "Pt",
-      "Sa",
-      "Ça",
-      "Pe",
-      "Cu",
-      "Ct"
-    ],
-    "long": [
-      "Pazar",
-      "Pazartesi",
-      "Salı",
-      "Çarşamba",
-      "Perşembe",
-      "Cuma",
-      "Cumartesi"
-    ]
+    "short": ["Pz", "Pt", "Sa", "Ça", "Pe", "Cu", "Ct"],
+    "long": ["Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"]
   },
   "months": {
-    "long": [
-      "Ocak",
-      "Şubat",
-      "Mart",
-      "Nisan",
-      "Mayıs",
-      "Haziran",
-      "Temmuz",
-      "Ağustos",
-      "Eylül",
-      "Ekim",
-      "Kasım",
-      "Aralık"
-    ],
-    "short": [
-      "Oca",
-      "Şub",
-      "Mar",
-      "Nis",
-      "May",
-      "Haz",
-      "Tem",
-      "Ağu",
-      "Eyl",
-      "Eki",
-      "Kas",
-      "Ara"
-    ]
+    "long": ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"],
+    "short": ["Oca", "Şub", "Mar", "Nis", "May", "Haz", "Tem", "Ağu", "Eyl", "Eki", "Kas", "Ara"]
   },
   "currency": {
     "TRY": "Türk Lirası (₺)",
@@ -170,6 +131,8 @@
     "menu": "Menü"
   },
   "all": "Tümü",
+  "noData": "Veri bulunamadı",
+  "you": "Sen",
   "other": "Diğer",
   "total": "Toplam",
   "unknown": "Bilinmeyen",
@@ -179,8 +142,5 @@
     "addIncome": "Gelir Ekle",
     "payBill": "Fatura Öde"
   },
-  "legal": {
-    "privacyPolicy": "Gizlilik Politikası",
-    "termsOfUse": "Kullanım Koşulları"
-  }
+  "subscription": "Abonelik"
 }

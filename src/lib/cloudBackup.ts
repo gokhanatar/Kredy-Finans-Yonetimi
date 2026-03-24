@@ -23,6 +23,21 @@ export const ALL_STORAGE_KEYS = [
   'kredi-pusula-category-limits',
   'kredi-pusula-investment-prices',
   'kredi-pusula-recurring-incomes',
+  'kredi-pusula-properties',
+  'kredi-pusula-vehicles',
+  'kredi-pusula-monthly-bills',
+  'kredi-pusula-personal-accounts',
+  'kredi-pusula-personal-monthly-bills',
+  'kredi-pusula-personal-transactions',
+  'kredi-pusula-personal-subscriptions',
+  'kredi-pusula-personal-recurring-expenses',
+  'kredi-pusula-personal-budgets',
+  'kredi-pusula-personal-goals',
+  'kredi-pusula-notification-inbox',
+  'kredi-pusula-family-cards',
+  'kredi-pusula-businesses',
+  'kredi-pusula-iap-subscription',
+  'kredi-pusula-simple-mode',
 ];
 
 const LOCAL_MODIFIED_KEY = 'kredi-pusula-local-modified';
@@ -53,20 +68,9 @@ export function collectLocalData(): CloudBackupData {
   };
 }
 
-/**
- * Check if local data is newer than the backup being restored.
- * Returns true if local is newer (restore would overwrite newer data).
- */
-export function isLocalNewerThanBackup(backup: CloudBackupData): boolean {
-  const localTs = getLocalTimestamp();
-  if (!localTs) return false;
-  return new Date(localTs).getTime() > new Date(backup.timestamp).getTime();
-}
-
 export function restoreLocalData(backup: CloudBackupData): void {
-  const allowedKeys = new Set(ALL_STORAGE_KEYS);
   for (const [key, value] of Object.entries(backup.data)) {
-    if (value !== null && value !== undefined && allowedKeys.has(key)) {
+    if (value !== null && value !== undefined) {
       localStorage.setItem(key, value);
     }
   }

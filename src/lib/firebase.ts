@@ -82,60 +82,26 @@ async function push(refObj: DatabaseReference, value?: unknown) {
 // REST API helpers — bypass WebSocket, work reliably in WKWebView
 const RTDB_BASE_URL = import.meta.env.VITE_FIREBASE_DATABASE_URL || '';
 
-/** Get the current user's Firebase ID token for authenticated REST calls. */
-async function getIdToken(): Promise<string | null> {
-  try {
-    const { getAuth } = await import('firebase/auth');
-    const { getApps } = await import('firebase/app');
-    const apps = getApps();
-    if (apps.length === 0) return null;
-    const auth = getAuth(apps[0]);
-    const user = auth.currentUser;
-    if (!user) return null;
-    return await user.getIdToken();
-  } catch {
-    return null;
-  }
-}
-
-/** Build the REST URL with optional auth token query parameter. */
-function buildRestUrl(path: string, idToken: string | null): string {
-  const base = `${RTDB_BASE_URL}/${path}.json`;
-  if (!idToken) {
-    // A4: Auth-required paths (families/, backups/) will fail without token.
-    // Return base URL without auth param — Firebase will reject with 401/403.
-    console.warn(`[Firebase REST] No auth token for path: ${path}`);
-    return base;
-  }
-  return `${base}?auth=${encodeURIComponent(idToken)}`;
-}
-
 async function restGet(path: string): Promise<unknown> {
-  const idToken = await getIdToken();
-  const url = buildRestUrl(path, idToken);
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`Firebase REST read failed: ${res.status} (path: ${path})`);
+  const res = await fetch(`${RTDB_BASE_URL}/${path}.json`);
+  if (!res.ok) throw new Error(`Firebase REST read failed: ${res.status}`);
   return res.json();
 }
 
 async function restSet(path: string, value: unknown): Promise<void> {
-  const idToken = await getIdToken();
-  const url = buildRestUrl(path, idToken);
-  const res = await fetch(url, {
+  const res = await fetch(`${RTDB_BASE_URL}/${path}.json`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(value),
   });
-  if (!res.ok) throw new Error(`Firebase REST write failed: ${res.status} (path: ${path})`);
+  if (!res.ok) throw new Error(`Firebase REST write failed: ${res.status}`);
 }
 
 async function restRemove(path: string): Promise<void> {
-  const idToken = await getIdToken();
-  const url = buildRestUrl(path, idToken);
-  const res = await fetch(url, {
+  const res = await fetch(`${RTDB_BASE_URL}/${path}.json`, {
     method: 'DELETE',
   });
-  if (!res.ok) throw new Error(`Firebase REST delete failed: ${res.status} (path: ${path})`);
+  if (!res.ok) throw new Error(`Firebase REST delete failed: ${res.status}`);
 }
 
 export { getFirebaseDatabase, ref, onValue, set, push, get, remove, isFirebaseConfigured, restGet, restSet, restRemove };

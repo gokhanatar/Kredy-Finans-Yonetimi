@@ -13,7 +13,7 @@ export interface WidgetDef {
 }
 
 export interface WidgetPreviewData {
-  type: 'debt' | 'payment' | 'golden' | 'budget' | 'barometer' | 'salary' | 'quotes' | 'savings' | 'tip' | 'findeks' | 'bank-account' | 'portfolio';
+  type: 'debt' | 'payment' | 'golden' | 'budget' | 'barometer' | 'salary' | 'quotes' | 'savings' | 'tip' | 'findeks' | 'bank-account';
 }
 
 export const CATEGORY_LABEL_KEYS: Record<WidgetCategory, string> = {
@@ -144,15 +144,5 @@ export const widgets: WidgetDef[] = [
     gradient: 'from-slate-500/30 via-gray-500/20 to-zinc-500/10',
     icon: 'building-2',
     preview: { type: 'bank-account' },
-  },
-  {
-    id: 'portfolio-value',
-    nameKey: 'widgets:widgets.portfolio-value.name',
-    descKey: 'widgets:widgets.portfolio-value.description',
-    category: 'ciddi',
-    size: '1x1',
-    gradient: 'from-violet-500/30 via-purple-500/20 to-indigo-500/10',
-    icon: 'trending-up',
-    preview: { type: 'portfolio' },
   },
 ];

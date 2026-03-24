@@ -1,0 +1,62 @@
+{
+  "slides": {
+    "1": {
+      "title": "Tüm Kartlarınız Tek Yerde",
+      "description": "Kredi kartlarınızı ekleyin, borçlarınızı takip edin ve ödeme tarihlerini asla kaçırmayın. Taksit hesaplama ve yapılandırma simülatörleri ile kontrolü elinize alın."
+    },
+    "2": {
+      "title": "Altın Pencere Bildirimleri",
+      "description": "Hesap kesim tarihinden sonraki \"altın pencere\" döneminde alışveriş yaparak faiz ödemelerini minimize edin. Akıllı bildirimlerle doğru zamanda uyarılın."
+    },
+    "3": {
+      "title": "Aile Bütçesi & Gelir/Gider",
+      "description": "Gelir ve giderlerinizi kaydedin, sıfır tabanlı bütçe oluşturun. Aboneliklerinizi, düzenli harcamalarınızı takip edin ve ne kadar harcayabileceğinizi görün."
+    },
+    "4": {
+      "title": "Banka Hesabı & KMH",
+      "description": "Vadesiz hesaplarınızı takip edin, KMH faiz hesaplaması yapın. 30'dan fazla banka desteği ile tüm hesaplarınız tek yerde."
+    },
+    "5": {
+      "title": "Birikim Hedefleri & Ortak Cüzdan",
+      "description": "Hayallerinize birikim hedefi koyun ve ilerlemenizi takip edin. Arkadaşlarınızla ortak cüzdan oluşturup harcamaları kolayca paylaşın."
+    },
+    "6": {
+      "title": "Kredi Simülatörü & Findeks",
+      "description": "Konut, taşıt veya ihtiyaç kredisi hesaplayın (120 aya kadar). Findeks puanınızı simüle edin ve artırmak için öneriler alın."
+    },
+    "7": {
+      "title": "AI İçgörüleri",
+      "description": "Yapay zeka destekli harcama analizi, bütçe önerisi ve borç stratejisi. Doğal dil ile finansal sorularınıza anında yanıt alın."
+    },
+    "8": {
+      "title": "Gizlilik & Güvenlik",
+      "description": "PIN kodu ile uygulamanızı kilitleyin. Gizlilik modu ile tüm tutarları gizleyin. Verileriniz yalnızca cihazınızda saklanır."
+    },
+    "9": {
+      "title": "Bulut Yedekleme",
+      "description": "Verilerinizi güvenle buluta yedekleyin. Cihaz değiştirseniz bile verilerinizi kaybetmeyin, tek tıkla geri yükleyin."
+    },
+    "10": {
+      "title": "7 Gün Ücretsiz Premium",
+      "description": "Tüm özelliklere sınırsız erişim, detaylı analiz raporları, CSV/PDF dışa aktarma ve çoklu döviz desteği. Hemen ücretsiz deneyin!"
+    }
+  },
+  "startButton": "Başlayalım",
+  "permissions": {
+    "title": "İzinler",
+    "subtitle": "Daha iyi bir deneyim için aşağıdaki izinleri verin",
+    "notification": {
+      "title": "Bildirimler",
+      "description": "Ödeme hatırlatmaları ve altın pencere bildirimleri almak ister misiniz?",
+      "allow": "İzin Ver",
+      "skip": "Şimdilik Geçin"
+    },
+    "camera": {
+      "title": "Kamera",
+      "description": "Fiş tarama özelliği için kamera erişimi gereklidir",
+      "allow": "İzin Ver",
+      "skip": "Şimdilik Geçin"
+    },
+    "done": "Tamamla"
+  }
+}

@@ -1,4 +1,4 @@
-import { createContext, useContext, useCallback, useMemo, ReactNode } from 'react';
+import { createContext, useContext, useCallback, ReactNode } from 'react';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
 
 interface SimpleModeContextType {
@@ -23,10 +23,8 @@ export function SimpleModeProvider({ children }: { children: ReactNode }) {
     setIsSimpleMode(value);
   }, [setIsSimpleMode]);
 
-  const value = useMemo(() => ({ isSimpleMode, toggleSimpleMode, setSimpleMode }), [isSimpleMode, toggleSimpleMode, setSimpleMode]);
-
   return (
-    <SimpleModeContext.Provider value={value}>
+    <SimpleModeContext.Provider value={{ isSimpleMode, toggleSimpleMode, setSimpleMode }}>
       {children}
     </SimpleModeContext.Provider>
   );

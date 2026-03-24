@@ -11,7 +11,6 @@ function getNextBillingDate(billingDate: number, cycle: Subscription['billingCyc
   const next = new Date(year, month, day);
   if (next <= now) {
     if (cycle === 'weekly') {
-      // Advance by 7-day increments until next is in the future
       while (next <= now) {
         next.setDate(next.getDate() + 7);
       }

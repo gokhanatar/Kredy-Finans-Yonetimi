@@ -29,22 +29,9 @@ export function useNetWorth(storageKey?: string, scope: 'personal' | 'family' = 
       netWorth,
     };
 
-    const todayStr = new Date().toISOString().slice(0, 10);
-
     setHistory((prev) => {
-      // Dedup: replace existing entry for same day instead of adding duplicate
-      const lastEntry = prev.length > 0 ? prev[prev.length - 1] : null;
-      const lastDate = lastEntry ? lastEntry.date.slice(0, 10) : null;
-
-      let updated: NetWorthSnapshot[];
-      if (lastDate === todayStr) {
-        // Replace last entry (same day)
-        updated = [...prev.slice(0, -1), snapshot];
-      } else {
-        updated = [...prev, snapshot];
-      }
-
       // Keep max 365 snapshots (one per day for a year)
+      const updated = [...prev, snapshot];
       if (updated.length > 365) {
         return updated.slice(updated.length - 365);
       }

@@ -170,6 +170,8 @@ export function FamilySyncProvider({ children }: { children: ReactNode }) {
             lastSeen: Date.now(),
             role: existingMember?.role || 'member',
             isPremium: existingMember?.isPremium || false,
+            ...(existingMember?.pushToken ? { pushToken: existingMember.pushToken } : {}),
+            ...(existingMember?.fcmToken ? { fcmToken: existingMember.fcmToken } : {}),
           });
 
           const { db, fb } = await getFirebase();
@@ -305,7 +307,7 @@ export function FamilySyncProvider({ children }: { children: ReactNode }) {
         const dissolveScheduledAt = familyData.dissolveScheduledAt as number | undefined;
         if (dissolveScheduledAt && !isPremium) {
           const remaining = dissolveScheduledAt - Date.now();
-          if (remaining <= 0 && !cancelled) {
+          if (remaining <= 0) {
             await rest.restRemove(`families/${state.familyId}`);
             clearListeners();
             clearStoredFamily();
@@ -321,7 +323,7 @@ export function FamilySyncProvider({ children }: { children: ReactNode }) {
             }));
             setGracePeriodDaysLeft(null);
             setIsInGracePeriod(false);
-          } else if (remaining > 0) {
+          } else {
             setGracePeriodDaysLeft(Math.ceil(remaining / (24 * 60 * 60 * 1000)));
           }
         }
@@ -374,7 +376,7 @@ export function FamilySyncProvider({ children }: { children: ReactNode }) {
       joinedAt: Date.now(),
       lastSeen: Date.now(),
       role: 'organizer',
-      isPremium,
+      isPremium: true,
     };
 
     try {
@@ -422,7 +424,7 @@ export function FamilySyncProvider({ children }: { children: ReactNode }) {
     }));
 
     return code;
-  }, [clearListeners, isPremium]);
+  }, [clearListeners]);
 
   const joinFamily = useCallback(async (code: string, name: string, isPremium = false): Promise<boolean> => {
     if (!isFirebaseConfigured()) throw new Error('Firebase not configured');
@@ -601,7 +603,7 @@ export function FamilySyncProvider({ children }: { children: ReactNode }) {
         if (cancelled) return;
         const dataRef = await fb.ref(db, `families/${state.familyId}/data/${key}`);
         if (cancelled) return;
-        const listener = await fb.onValue(dataRef, (snapshot) => {
+        unsub = await fb.onValue(dataRef, (snapshot) => {
           if (cancelled) return;
           const val = snapshot.val();
           if (val?.value !== undefined) {
@@ -609,10 +611,9 @@ export function FamilySyncProvider({ children }: { children: ReactNode }) {
           }
         });
         if (!cancelled) {
-          unsub = listener;
-          unsubscribesRef.current.push(listener);
+          unsubscribesRef.current.push(unsub);
         } else {
-          listener();
+          unsub();
         }
       } catch (err) {
         // Bug 2 fix: log instead of silently ignoring

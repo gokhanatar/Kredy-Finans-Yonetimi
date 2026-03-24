@@ -50,10 +50,6 @@
     "bank-account": {
       "name": "Bank Account",
       "description": "Balance + overdraft usage status"
-    },
-    "portfolio-value": {
-      "name": "Portfolio Value",
-      "description": "Total value of your investment portfolio"
     }
   },
   "quotes": [

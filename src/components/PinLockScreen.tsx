@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
 import { Delete, ScanFace, Fingerprint, ShieldCheck, HelpCircle, ArrowLeft, KeyRound, AlertTriangle, Cloud } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -29,20 +29,12 @@ export function PinLockScreen() {
     return stored ? parseInt(stored, 10) : 0;
   });
   const maxLength = 6;
-  const shakeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const { t } = useTranslation(['settings']);
 
   // Persist failedAttempts to sessionStorage
   useEffect(() => {
     sessionStorage.setItem(SESSION_KEY, String(failedAttempts));
   }, [failedAttempts]);
-
-  // Cleanup shake timer on unmount
-  useEffect(() => {
-    return () => {
-      if (shakeTimerRef.current) clearTimeout(shakeTimerRef.current);
-    };
-  }, []);
 
   // Auto-trigger biometric on mount
   useEffect(() => {
@@ -71,7 +63,7 @@ export function PinLockScreen() {
         setError(true);
         setShake(true);
         setFailedAttempts((prev) => prev + 1);
-        shakeTimerRef.current = setTimeout(() => {
+        setTimeout(() => {
           setPin('');
           setShake(false);
         }, 500);

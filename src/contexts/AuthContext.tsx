@@ -70,33 +70,27 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     checkBiometricAvailability().then(({ isAvailable, biometryType: bt }) => {
       setIsBiometricAvailable(isAvailable);
       setBiometryType(bt);
-    });
+    }).catch(() => {});
   }, []);
 
   // Auto-lock on app background (native only)
   useEffect(() => {
     if (!Capacitor.isNativePlatform()) return;
 
-    let cancelled = false;
     let listener: { remove: () => void } | null = null;
 
-    import('@capacitor/app').then(({ App }) => {
-      if (cancelled) return;
-      App.addListener('appStateChange', ({ isActive }) => {
-        if (!isActive && isPinSetRef.current) {
-          setIsLocked(true);
-        }
-      }).then((l) => {
-        if (cancelled) {
-          l.remove();
-        } else {
-          listener = l;
-        }
-      });
-    });
+    (async () => {
+      try {
+        const { App } = await import('@capacitor/app');
+        listener = await App.addListener('appStateChange', ({ isActive }) => {
+          if (!isActive && isPinSetRef.current) {
+            setIsLocked(true);
+          }
+        });
+      } catch {}
+    })();
 
     return () => {
-      cancelled = true;
       listener?.remove();
     };
   }, []);

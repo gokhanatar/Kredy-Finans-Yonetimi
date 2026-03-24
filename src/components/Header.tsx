@@ -30,7 +30,7 @@ export function Header({ userName }: HeaderProps) {
 
   return (
     <header className="sticky top-0 z-40 bg-background/80 backdrop-blur-xl safe-area-top">
-      <div className="page-container flex items-center justify-between py-4">
+      <div className="mx-auto max-w-2xl flex items-center justify-between px-5 py-4">
         {/* Logo & Greeting */}
         <div className="flex items-center gap-3">
           <img src="/logo.png" alt={t('appName')} className="h-10 w-10 rounded-xl shadow-glow" />

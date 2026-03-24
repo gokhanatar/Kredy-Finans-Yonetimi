@@ -7,7 +7,7 @@ export interface SpendingTrend {
   currentMonth: number;
   previousMonth: number;
   changePercent: number;
-  direction: 'up' | 'down' | 'stable' | 'new';
+  direction: 'up' | 'down' | 'stable';
 }
 
 export interface SpendingAnomaly {
@@ -102,12 +102,11 @@ function groupByCategory(
  * Standart sapma hesaplar
  */
 function calculateStdDev(values: number[]): { mean: number; stdDev: number } {
-  if (values.length <= 1) return { mean: values[0] || 0, stdDev: 0 };
+  if (values.length === 0) return { mean: 0, stdDev: 0 };
 
   const mean = values.reduce((sum, v) => sum + v, 0) / values.length;
   const squaredDiffs = values.map((v) => Math.pow(v - mean, 2));
-  // Bessel's correction: divide by (n - 1) for sample std dev
-  const variance = squaredDiffs.reduce((sum, v) => sum + v, 0) / (values.length - 1);
+  const variance = squaredDiffs.reduce((sum, v) => sum + v, 0) / values.length;
   const stdDev = Math.sqrt(variance);
 
   return { mean, stdDev };
@@ -160,9 +159,8 @@ export function analyzeSpendingTrends(
     if (previousMonth > 0) {
       changePercent = ((currentMonth - previousMonth) / previousMonth) * 100;
     } else if (currentMonth > 0) {
-      // Önceki ayda harcama yok, bu ayda var → yeni kategori, %0 artış
-      changePercent = 0;
-      direction = 'new';
+      // Önceki ayda harcama yok, bu ayda var
+      changePercent = 100;
     }
 
     if (changePercent > 5) {

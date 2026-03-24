@@ -1,6 +1,6 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
- 
+
 // Only import Turkish (default) statically - other languages loaded on demand
 import trCommon from './locales/tr/common.json';
 import trSettings from './locales/tr/settings.json';
@@ -16,32 +16,32 @@ import trFaq from './locales/tr/faq.json';
 import trOnboarding from './locales/tr/onboarding.json';
 import trWidgets from './locales/tr/widgets.json';
 import trAi from './locales/tr/ai.json';
- 
+
 export const defaultNS = 'common';
 export const namespaces = [
   'common', 'settings', 'cards', 'finance', 'family',
   'investments', 'loans', 'assets', 'notifications',
   'subscription', 'faq', 'onboarding', 'widgets', 'ai',
 ] as const;
- 
+
 export type AppNamespace = (typeof namespaces)[number];
- 
+
 type LangCode = 'en' | 'ar' | 'ru' | 'uk';
- 
+
 const langLoaders: Record<LangCode, () => Promise<Record<string, unknown>>> = {
   en: () => import('./locales/en/_bundle').then(m => m.default),
   ar: () => import('./locales/ar/_bundle').then(m => m.default),
   ru: () => import('./locales/ru/_bundle').then(m => m.default),
   uk: () => import('./locales/uk/_bundle').then(m => m.default),
 };
- 
+
 const loadedLanguages = new Set<string>(['tr']);
- 
+
 export async function loadLanguage(lang: string): Promise<void> {
   if (loadedLanguages.has(lang)) return;
   const loader = langLoaders[lang as LangCode];
   if (!loader) return;
- 
+
   const bundle = await loader();
   for (const ns of namespaces) {
     if (bundle[ns]) {
@@ -50,7 +50,7 @@ export async function loadLanguage(lang: string): Promise<void> {
   }
   loadedLanguages.add(lang);
 }
- 
+
 i18n.use(initReactI18next).init({
   resources: {
     tr: {
@@ -78,6 +78,5 @@ i18n.use(initReactI18next).init({
     escapeValue: false,
   },
 });
- 
+
 export default i18n;
- 

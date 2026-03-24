@@ -17,8 +17,7 @@
     "savings-goal": { "name": "Ціль заощаджень", "description": "Наскільки близько ти до цілі?" },
     "daily-tip": { "name": "Порада дня", "description": "Нова фінансова порада щодня" },
     "findeks-score": { "name": "Бал Findeks", "description": "Орієнтовний бал Findeks" },
-    "bank-account": { "name": "Банківський рахунок", "description": "Баланс + використання КМН" },
-    "portfolio-value": { "name": "Вартість портфеля", "description": "Загальна вартість інвестиційного портфеля" }
+    "bank-account": { "name": "Банківський рахунок", "description": "Баланс + використання КМН" }
   },
   "quotes": [
     "Де говорять гроші, там усі глухі.",

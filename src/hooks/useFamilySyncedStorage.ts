@@ -78,8 +78,8 @@ export function useFamilySyncedStorage<T>(
     // Initial fetch
     doFetch();
 
-    // Poll every 30 seconds for updates (reduced from 10s to lower load)
-    const interval = setInterval(doFetch, 30000);
+    // Poll every 10 seconds for updates
+    const interval = setInterval(doFetch, 10000);
 
     return () => {
       cancelled = true;
@@ -108,10 +108,7 @@ export function useFamilySyncedStorage<T>(
         }
         // Sync to Firebase if connected
         if (isConnected) {
-          // A5: Set timestamp BEFORE sync to prevent concurrent update conflicts.
-          // This ensures incoming remote data with older timestamps is ignored.
-          const now = Date.now();
-          lastUpdatedAtRef.current = now;
+          lastUpdatedAtRef.current = Date.now();
           syncData(key, valueToStore).catch((err) => {
             console.error('Family sync failed for key:', key, err);
             reportSyncError(

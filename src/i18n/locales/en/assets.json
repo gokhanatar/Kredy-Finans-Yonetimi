@@ -1,0 +1,142 @@
+{
+  "title": "Asset Management",
+  "subtitle": "Real estate, vehicles, and tax tracking",
+  "tabs": {
+    "property": "Real Estate",
+    "vehicles": "Vehicles",
+    "businesses": "Businesses"
+  },
+  "addProperty": "Add Property",
+  "addVehicle": "Add Vehicle",
+  "addBusiness": "Add Business",
+  "upcomingDeadlines": "Upcoming Deadlines",
+  "taxCalendar": "Tax Calendar",
+  "property": {
+    "registered": "Registered Properties",
+    "notAdded": "No properties added yet",
+    "addDesc": "Add a property for property tax tracking",
+    "name": "Property Name",
+    "type": "Property Type",
+    "location": "Location",
+    "sqMeters": "sq m",
+    "sqMetersNotSet": "Square meters not specified",
+    "value2026": "2026 Value",
+    "annualTax": "Annual Tax",
+    "exempt": "Exempt",
+    "rentalIncome": "Rental income",
+    "deleteTitle": "Delete Property",
+    "deleteConfirm": "Are you sure you want to delete the {{name}} record?",
+    "added": "Property added",
+    "deleted": "Property deleted"
+  },
+  "vehicle": {
+    "registered": "Registered Vehicles",
+    "notAdded": "No vehicles added yet",
+    "addDesc": "Add a vehicle for motor vehicle tax and inspection tracking",
+    "nextInspection": "Next Inspection",
+    "daysOverdue": "{{days}} days overdue",
+    "daysRemaining": "{{days}} days",
+    "disabledRestriction": "Disability Sale Restriction",
+    "deleteTitle": "Delete Vehicle",
+    "deleteConfirm": "Are you sure you want to delete the {{name}} record?",
+    "added": "Vehicle added",
+    "deleted": "Vehicle deleted"
+  },
+  "propertyTypes": {
+    "konut": "Residential",
+    "isyeri": "Commercial",
+    "arsa": "Land"
+  },
+  "locationTypes": {
+    "buyuksehir": "Metropolitan City",
+    "diger": "Other Province"
+  },
+  "vehicleTypes": {
+    "otomobil": "Automobile",
+    "ticari": "Commercial Vehicle",
+    "motosiklet": "Motorcycle"
+  },
+  "professionTypes": {
+    "kuyumcu": "Jeweler",
+    "oto_galeri": "Auto Dealer",
+    "emlakci": "Real Estate Agent",
+    "hastane": "Private Hospital",
+    "muayenehane": "Medical Office",
+    "diger": "Other"
+  },
+  "propertyForm": {
+    "addButton": "Add Property",
+    "editTitle": "Edit Property",
+    "newTitle": "New Property",
+    "name": "Property Name",
+    "namePlaceholder": "Kadikoy Apartment, Office, etc.",
+    "type": "Type",
+    "location": "Location",
+    "taxValue2025": "2025 Tax Value (TL)",
+    "taxValue2025Placeholder": "1,000,000",
+    "ceilingValue2026": "2026 Ceiling Value: {{value}}",
+    "ceilingMax": "(max 3x)",
+    "sqMeters": "Square Meters (optional)",
+    "sqMetersPlaceholder": "120",
+    "isRented": "Is it rented?",
+    "annualRent": "Annual Rental Income (TL)",
+    "annualRentPlaceholder": "72,000",
+    "rentExemption": "2026 Residential Exemption: 58,000 TL | Commercial: 400,000 TL",
+    "exemptionChecks": "Exemption Checks",
+    "isRetired": "Are you retired?",
+    "isSingleProperty": "Is this your only property?",
+    "hasOtherIncome": "Do you have interest income?",
+    "exemptionEligible": "Eligible for retiree exemption (under 200 sq m condition)",
+    "monthlyRentAmount": "Monthly Rent Amount",
+    "rentalDayOfMonth": "Rent Payment Day",
+    "rentalDayPlaceholder": "Select day",
+    "contractStartDate": "Contract Start",
+    "contractEndDate": "Contract End",
+    "city": "City",
+    "cityPlaceholder": "Select city",
+    "district": "District",
+    "districtPlaceholder": "District (optional)",
+    "validation": {
+      "nameRequired": "Property name is required",
+      "valueRequired": "Tax value must be greater than zero",
+      "rentAmountRequired": "Monthly rent amount is required when rented"
+    }
+  },
+  "vehicleForm": {
+    "addButton": "Add Vehicle",
+    "editTitle": "Edit Vehicle",
+    "newTitle": "New Vehicle",
+    "name": "Vehicle Name",
+    "namePlaceholder": "Audi A4",
+    "plate": "License Plate",
+    "platePlaceholder": "34 ABC 123",
+    "vehicleType": "Vehicle Type",
+    "registrationDate": "Registration Date",
+    "post2018": "Post-2018: MTV calculated based on tax base value",
+    "pre2018": "Pre-2018: MTV calculated based on engine volume and age",
+    "engineCC": "Engine Volume (cc)",
+    "engineCCPlaceholder": "1600",
+    "purchaseValue": "Purchase Value / Tax Base (TL)",
+    "purchaseValuePlaceholder": "500,000",
+    "inspectionDate": "Last Inspection Date (optional)",
+    "disabledExemption": "Disability SCT Exemption",
+    "exemptionDate": "Exemption Date",
+    "saleRestriction": "10-Year Sale Restriction",
+    "saleRestrictionDesc": "The sale restriction for vehicles purchased after 2025 has been extended to 10 years.",
+    "domesticRate": "Domestic content requirement: {{rate}}% domestic content rate required",
+    "otvExemptLimit": "SCT exemption limit: {{value}}",
+    "validation": {
+      "nameRequired": "Vehicle name is required",
+      "plateRequired": "License plate is required",
+      "registrationRequired": "Registration date is required",
+      "engineRequired": "Engine volume must be greater than zero"
+    }
+  },
+  "taxMessages": {
+    "rentalIncomeWarning": "You cannot deduct loan interest as an expense for residential rental income!",
+    "inspectionWarning": "You cannot book an inspection appointment if you have outstanding motor vehicle tax or traffic fines!",
+    "propertyExemption": "Retiree, single property owner, and under 200 sq m - Property tax exemption",
+    "inspectionOverdue": "Vehicle inspection is {{days}} days overdue!",
+    "disabledSaleRestriction": "If you sell your vehicle, you will be required to pay Special Consumption Tax (SCT)! ({{years}} years remaining)"
+  }
+}

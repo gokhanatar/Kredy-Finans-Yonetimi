@@ -3,11 +3,6 @@ import { Account, KMH_CONSTANTS } from '@/types/familyFinance';
 /**
  * KMH (Kredili Mevduat Hesabı) utility functions
  * TCMB Ocak 2026 oranları + BDDK kuralları
- *
- * NOTE: KMH uses BSMV_RATE=5% (from KMH_CONSTANTS in familyFinance.ts),
- * which is different from credit card BSMV_RATE=15% (in finance.ts).
- * This is correct per BDDK regulation: KMH is classified as a credit product
- * subject to 5% BSMV, while credit card cash advances use 15% BSMV.
  */
 
 export type KMHSeverity = 'none' | 'low' | 'medium' | 'high' | 'critical';

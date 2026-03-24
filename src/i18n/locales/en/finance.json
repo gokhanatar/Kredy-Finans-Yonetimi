@@ -1,0 +1,152 @@
+{
+  "incomeCategories": {
+    "maas": "Salary",
+    "ek-gelir": "Side Income",
+    "kira-gelir": "Rental Income",
+    "yatirim-gelir": "Investment Income",
+    "diger-gelir": "Other Income"
+  },
+  "expenseCategories": {
+    "market": "Groceries",
+    "kira": "Rent",
+    "fatura": "Bills",
+    "ulasim": "Transportation",
+    "saglik": "Health",
+    "egitim": "Education",
+    "eglence": "Entertainment",
+    "giyim": "Clothing",
+    "yemek": "Dining",
+    "ev": "Home & Decor",
+    "cocuk": "Children",
+    "evcil": "Pets",
+    "bakim": "Personal Care",
+    "hediye": "Gifts",
+    "tasit": "Vehicle",
+    "sigorta": "Insurance",
+    "diger-gider": "Other"
+  },
+  "subscriptionCategories": {
+    "dijital": "Digital Services",
+    "muzik": "Music",
+    "video": "Video/Movies",
+    "oyun": "Gaming",
+    "bulut": "Cloud Storage",
+    "spor": "Sports/Gym",
+    "egitim-abo": "Education",
+    "haber": "News/Magazines",
+    "yazilim": "Software",
+    "diger-abo": "Other"
+  },
+  "recurringExpensePresets": {
+    "yol": "Commute/Transportation",
+    "sigara": "Cigarettes",
+    "kahve": "Coffee",
+    "ogle": "Lunch",
+    "akaryakit": "Fuel",
+    "otopark": "Parking"
+  },
+  "incomeFrequency": {
+    "monthly": "Monthly",
+    "weekly": "Weekly",
+    "biweekly": "Biweekly",
+    "yearly": "Yearly",
+    "one-time": "One-time"
+  },
+  "recurringIncomePresets": {
+    "maas": "Salary",
+    "kira": "Rental Income",
+    "freelance": "Freelance / Side Job",
+    "yatirim": "Investment Income / Interest",
+    "emekli": "Retirement Pension",
+    "burs": "Scholarship / Aid"
+  },
+  "defaultBudgetCategories": {
+    "kira": "Rent",
+    "market": "Groceries",
+    "fatura": "Bills",
+    "ulasim": "Transportation",
+    "yemek": "Dining",
+    "eglence": "Entertainment",
+    "saglik": "Health",
+    "giyim": "Clothing",
+    "tasarruf": "Savings",
+    "diger": "Other"
+  },
+  "installmentCategories": {
+    "gida": "Food & Groceries",
+    "akaryakit": "Fuel",
+    "telekom": "Telecommunications",
+    "yurtdisi": "International Purchases",
+    "tv_elektronik": "Television",
+    "cep_telefonu": "Mobile Phone (New)",
+    "yenilenmis_telefon": "Refurbished Phone",
+    "tablet": "Tablet",
+    "bilgisayar": "Computer",
+    "mobilya": "Furniture",
+    "beyaz_esya": "Home Appliances",
+    "giyim": "Clothing",
+    "saglik": "Health",
+    "egitim": "Education",
+    "kuyum": "Jewelry (Crafted)",
+    "yurtici_seyahat": "Domestic Travel",
+    "kktc": "Northern Cyprus Travel",
+    "diger": "Other",
+    "elektronik": "Electronics",
+    "eglence": "Entertainment"
+  },
+  "installmentConditions": {
+    "noInstallment": "Installments prohibited",
+    "aboveAmount": "Above {{amount}} TL",
+    "noAmountLimit": "No amount limit"
+  },
+  "bankOptions": {
+    "yapikredi": "Yapı Kredi",
+    "garanti": "Garanti BBVA",
+    "isbank": "İş Bankası",
+    "akbank": "Akbank",
+    "ziraat": "Ziraat Bankası",
+    "halkbank": "Halkbank",
+    "vakifbank": "Vakıfbank",
+    "qnb": "QNB Finansbank",
+    "denizbank": "Denizbank",
+    "teb": "TEB",
+    "ing": "ING",
+    "hsbc": "HSBC",
+    "sekerbank": "Şekerbank",
+    "anadolubank": "Anadolubank",
+    "fibabanka": "Fibabanka",
+    "odeabank": "Odeabank",
+    "turkishbank": "Turkish Bank",
+    "alternatifbank": "Alternatifbank",
+    "burganbank": "Burgan Bank",
+    "icbc": "ICBC Turkey",
+    "kuveytturk": "Kuveyt Türk",
+    "turkiyefinans": "Türkiye Finans",
+    "albaraka": "Albaraka Türk",
+    "ziraatkatilim": "Ziraat Katılım",
+    "vakifkatilim": "Vakıf Katılım",
+    "emlakkatilim": "Emlak Katılım",
+    "hayatfinans": "Hayat Finans",
+    "enpara": "Enpara.com",
+    "papara": "Papara",
+    "diger": "Other"
+  },
+  "wallet": {
+    "title": "Wallet",
+    "tabs": {
+      "accounts": "Accounts",
+      "cards": "Cards",
+      "debts": "Debts",
+      "budget": "Budget"
+    }
+  },
+  "analytics": {
+    "title": "Analytics",
+    "tabs": {
+      "charts": "Charts",
+      "calendar": "Calendar"
+    },
+    "chartsPlaceholder": "Charts will appear here",
+    "calendarPlaceholder": "Calendar will appear here"
+  }
+}

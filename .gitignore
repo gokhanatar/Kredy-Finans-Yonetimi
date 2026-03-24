@@ -1,0 +1,60 @@
+# Dependencies
+node_modules/
+functions/node_modules/
+
+# Build
+dist/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Auth keys (sensitive)
+AuthKey_*.p8
+*.p8
+private_keys/
+*.keystore
+*.keystore.bak
+*.keystore.old
+*.pem
+analog-artifact-*.json
+
+# Firebase
+firebase-debug.log
+
+# Xcode
+ios/App/App.xcodeproj/project.xcworkspace/
+ios/App/App.xcodeproj/xcuserdata/
+ios/App/CapApp-SPM/.swiftpm/
+
+# Android
+android/app/google-services.json
+
+# Deployment state
+store-deployment/deploy-state.json
+
+# Test artifacts
+.playwright-mcp/
+.maestro/
+
+# Backup files
+*.bak
+
+# Screenshots and store assets (large files)
+screenshots/
+store-deployment/screenshots/
+
+# Reports
+TEST_REPORT.md
+store-deployment/reports/
+
+# Fastlane secrets
+fastlane/api_key.json
+fastlane/Appfile

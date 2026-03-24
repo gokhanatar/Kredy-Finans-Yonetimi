@@ -1,447 +1,4 @@
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74
-75
-76
-77
-78
-79
-80
-81
-82
-83
-84
-85
-86
-87
-88
-89
-90
-91
-92
-93
-94
-95
-96
-97
-98
-99
-100
-101
-102
-103
-104
-105
-106
-107
-108
-109
-110
-111
-112
-113
-114
-115
-116
-117
-118
-119
-120
-121
-122
-123
-124
-125
-126
-127
-128
-129
-130
-131
-132
-133
-134
-135
-136
-137
-138
-139
-140
-141
-142
-143
-144
-145
-146
-147
-148
-149
-150
-151
-152
-153
-154
-155
-156
-157
-158
-159
-160
-161
-162
-163
-164
-165
-166
-167
-168
-169
-170
-171
-172
-173
-174
-175
-176
-177
-178
-179
-180
-181
-182
-183
-184
-185
-186
-187
-188
-189
-190
-191
-192
-193
-194
-195
-196
-197
-198
-199
-200
-201
-202
-203
-204
-205
-206
-207
-208
-209
-210
-211
-212
-213
-214
-215
-216
-217
-218
-219
-220
-221
-222 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- import { useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { MobileNav } from '@/components/MobileNav';
@@ -460,7 +17,7 @@ import {
   type LucideIcon,
 } from 'lucide-react';
 import { containerVariants, itemVariants, scaleInVariants } from '@/lib/simpleAnimations';
- 
+
 interface QuickNavItem {
   icon: LucideIcon;
   label: string;
@@ -468,7 +25,7 @@ interface QuickNavItem {
   gradient: string;
   isPro?: boolean;
 }
- 
+
 const FAMILY_NAV_ITEMS: QuickNavItem[] = [
   { icon: Wallet,       label: 'Gelir / Gider',      path: '/wallet?tab=hesaplar',  gradient: 'from-orange-500 to-amber-500' },
   { icon: BarChart3,    label: 'Analitik',            path: '/analytics',            gradient: 'from-blue-500 to-cyan-500' },
@@ -479,7 +36,7 @@ const FAMILY_NAV_ITEMS: QuickNavItem[] = [
   { icon: TrendingUp,   label: 'Yatırım Portföyü',   path: '/investments',          gradient: 'from-violet-500 to-purple-600', isPro: true },
   { icon: Building2,    label: 'Emlak & Araçlar',     path: '/assets',               gradient: 'from-teal-500 to-emerald-600', isPro: true },
 ];
- 
+
 function getRelativeTime(lastSeen: number): string {
   const diffMs = Date.now() - lastSeen;
   const diffMin = Math.floor(diffMs / 60000);
@@ -489,18 +46,18 @@ function getRelativeTime(lastSeen: number): string {
   if (diffHr < 24) return `${diffHr} sa`;
   return `${Math.floor(diffHr / 24)} gün`;
 }
- 
+
 const SimpleFamily = () => {
   const navigate = useNavigate();
   const { familyId, memberId, members, isInGracePeriod, gracePeriodDaysLeft } = useFamilySync();
   const { isPremium, isScreenshotMode } = useSubscriptionContext();
   const { profile } = useUserProfile();
   const [quickAddType, setQuickAddType] = useState<'income' | 'expense' | null>(null);
- 
+
   const hidePersonal = !!familyId && !!profile.hidePersonalFinance;
- 
+
   const [cards] = useFamilySyncedStorage<CreditCard[]>('kredi-pusula-cards', []);
- 
+
   const memberList = Object.entries(members).map(([id, member]) => ({
     id,
     name: member.name,
@@ -508,7 +65,7 @@ const SimpleFamily = () => {
     lastSeen: member.lastSeen,
     isOnline: Date.now() - member.lastSeen < 5 * 60 * 1000,
   })).sort((a, b) => (a.isMe ? -1 : b.isMe ? 1 : 0));
- 
+
   // If not in a family, show setup
   if (!familyId) {
     return (
@@ -527,7 +84,7 @@ const SimpleFamily = () => {
       </div>
     );
   }
- 
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header — gradient glass */}
@@ -538,7 +95,7 @@ const SimpleFamily = () => {
           </div>
         </div>
       </div>
- 
+
       <motion.main
         className="mx-auto max-w-2xl px-5 py-4 pb-safe-nav space-y-6"
         variants={containerVariants}
@@ -560,7 +117,7 @@ const SimpleFamily = () => {
             <Minus className="h-4.5 w-4.5" /> Gider Ekle
           </button>
         </motion.div>
- 
+
         {/* Grace Period Warning */}
         {isInGracePeriod && gracePeriodDaysLeft !== null && (
           <motion.div variants={itemVariants} className="rounded-2xl bg-warning/10 border border-warning/20 p-4">
@@ -581,7 +138,7 @@ const SimpleFamily = () => {
             </div>
           </motion.div>
         )}
- 
+
         {/* Members — horizontal avatars with stagger animation */}
         <motion.div variants={itemVariants} className="flex gap-3 overflow-x-auto pb-1 -mx-1 px-1">
           {memberList.map((member, index) => (
@@ -608,12 +165,12 @@ const SimpleFamily = () => {
             </motion.div>
           ))}
         </motion.div>
- 
+
         {/* Cards */}
         <motion.div variants={itemVariants}>
           <SimpleCardCarousel cards={cards} />
         </motion.div>
- 
+
         {/* Quick Navigation — big rounded colorful buttons with Lucide icons */}
         <motion.div variants={itemVariants} className="grid grid-cols-2 gap-3">
           {FAMILY_NAV_ITEMS.filter((item) => !hidePersonal || !item.path.startsWith('/wallet')).map((item) => {
@@ -632,10 +189,10 @@ const SimpleFamily = () => {
                   <Icon className="h-5 w-5 text-white" />
                 </div>
                 <span className="text-[13px] font-semibold text-white leading-tight">{item.label}</span>
- 
+
                 {/* Decorative circle */}
                 <div className="absolute -bottom-3 -right-3 h-16 w-16 rounded-full bg-white/10" />
- 
+
                 {item.isPro && !isPremium && !isScreenshotMode && (
                   <span className="absolute top-2.5 right-2.5 inline-flex items-center gap-0.5 rounded-full bg-black/20 px-1.5 py-0.5 text-[9px] font-bold text-white">
                     <Crown className="h-2.5 w-2.5" /> PRO
@@ -645,12 +202,12 @@ const SimpleFamily = () => {
             );
           })}
         </motion.div>
- 
+
         <div className="pb-4" />
       </motion.main>
- 
+
       <MobileNav activeTab={hidePersonal ? "home" : "family"} />
- 
+
       <SimpleQuickAdd
         open={quickAddType !== null}
         onClose={() => setQuickAddType(null)}
@@ -660,6 +217,5 @@ const SimpleFamily = () => {
     </div>
   );
 };
- 
+
 export default SimpleFamily;
- 

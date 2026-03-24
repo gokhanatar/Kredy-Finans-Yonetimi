@@ -50,10 +50,6 @@
     "bank-account": {
       "name": "Banka Hesabı",
       "description": "Bakiye + KMH kullanım durumu"
-    },
-    "portfolio-value": {
-      "name": "Portföy Değeri",
-      "description": "Yatırım portföyünüzün toplam değeri"
     }
   },
   "quotes": [

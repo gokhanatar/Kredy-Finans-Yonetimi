@@ -1,0 +1,152 @@
+{
+  "incomeCategories": {
+    "maas": "الراتب",
+    "ek-gelir": "دخل إضافي",
+    "kira-gelir": "دخل الإيجار",
+    "yatirim-gelir": "دخل الاستثمار",
+    "diger-gelir": "دخل آخر"
+  },
+  "expenseCategories": {
+    "market": "السوق",
+    "kira": "الإيجار",
+    "fatura": "الفواتير",
+    "ulasim": "المواصلات",
+    "saglik": "الصحة",
+    "egitim": "التعليم",
+    "eglence": "الترفيه",
+    "giyim": "الملابس",
+    "yemek": "الطعام",
+    "ev": "المنزل والديكور",
+    "cocuk": "الأطفال",
+    "evcil": "الحيوانات الأليفة",
+    "bakim": "العناية الشخصية",
+    "hediye": "الهدايا",
+    "tasit": "المركبات",
+    "sigorta": "التأمين",
+    "diger-gider": "أخرى"
+  },
+  "subscriptionCategories": {
+    "dijital": "خدمات رقمية",
+    "muzik": "موسيقى",
+    "video": "فيديو/أفلام",
+    "oyun": "ألعاب",
+    "bulut": "تخزين سحابي",
+    "spor": "رياضة/نادي",
+    "egitim-abo": "تعليم",
+    "haber": "أخبار/مجلات",
+    "yazilim": "برمجيات",
+    "diger-abo": "أخرى"
+  },
+  "recurringExpensePresets": {
+    "yol": "المواصلات",
+    "sigara": "سجائر",
+    "kahve": "قهوة",
+    "ogle": "وجبة الغداء",
+    "akaryakit": "وقود",
+    "otopark": "موقف سيارات"
+  },
+  "incomeFrequency": {
+    "monthly": "شهري",
+    "weekly": "أسبوعي",
+    "biweekly": "كل أسبوعين",
+    "yearly": "سنوي",
+    "one-time": "مرة واحدة"
+  },
+  "recurringIncomePresets": {
+    "maas": "الراتب",
+    "kira": "دخل الإيجار",
+    "freelance": "عمل حر / عمل إضافي",
+    "yatirim": "دخل الاستثمار / الفوائد",
+    "emekli": "معاش التقاعد",
+    "burs": "منحة / دعم"
+  },
+  "defaultBudgetCategories": {
+    "kira": "الإيجار",
+    "market": "السوق",
+    "fatura": "الفواتير",
+    "ulasim": "المواصلات",
+    "yemek": "الطعام",
+    "eglence": "الترفيه",
+    "saglik": "الصحة",
+    "giyim": "الملابس",
+    "tasarruf": "التوفير",
+    "diger": "أخرى"
+  },
+  "installmentCategories": {
+    "gida": "الأغذية والسوق",
+    "akaryakit": "الوقود",
+    "telekom": "الاتصالات",
+    "yurtdisi": "إنفاق خارج البلاد",
+    "tv_elektronik": "التلفزيون",
+    "cep_telefonu": "هاتف محمول (جديد)",
+    "yenilenmis_telefon": "هاتف مجدد",
+    "tablet": "جهاز لوحي",
+    "bilgisayar": "حاسوب",
+    "mobilya": "أثاث",
+    "beyaz_esya": "أجهزة منزلية",
+    "giyim": "ملابس",
+    "saglik": "صحة",
+    "egitim": "تعليم",
+    "kuyum": "مجوهرات (مصنّعة)",
+    "yurtici_seyahat": "سفر داخلي",
+    "kktc": "سفر شمال قبرص",
+    "diger": "أخرى",
+    "elektronik": "إلكترونيات",
+    "eglence": "ترفيه"
+  },
+  "installmentConditions": {
+    "noInstallment": "التقسيط ممنوع",
+    "aboveAmount": "أكثر من {{amount}} TL",
+    "noAmountLimit": "لا حد للمبلغ"
+  },
+  "bankOptions": {
+    "yapikredi": "Yapı Kredi",
+    "garanti": "Garanti BBVA",
+    "isbank": "İş Bankası",
+    "akbank": "Akbank",
+    "ziraat": "Ziraat Bankası",
+    "halkbank": "Halkbank",
+    "vakifbank": "Vakıfbank",
+    "qnb": "QNB Finansbank",
+    "denizbank": "Denizbank",
+    "teb": "TEB",
+    "ing": "ING",
+    "hsbc": "HSBC",
+    "sekerbank": "Şekerbank",
+    "anadolubank": "Anadolubank",
+    "fibabanka": "Fibabanka",
+    "odeabank": "Odeabank",
+    "turkishbank": "Turkish Bank",
+    "alternatifbank": "Alternatifbank",
+    "burganbank": "Burgan Bank",
+    "icbc": "ICBC Turkey",
+    "kuveytturk": "كويت ترك",
+    "turkiyefinans": "تركيا فينانس",
+    "albaraka": "البركة ترك",
+    "ziraatkatilim": "زراعات كاتيليم",
+    "vakifkatilim": "وقيف كاتيليم",
+    "emlakkatilim": "إملاك كاتيليم",
+    "hayatfinans": "حياة فينانس",
+    "enpara": "Enpara.com",
+    "papara": "Papara",
+    "diger": "أخرى"
+  },
+  "wallet": {
+    "title": "المحفظة",
+    "tabs": {
+      "accounts": "الحسابات",
+      "cards": "البطاقات",
+      "debts": "الديون",
+      "budget": "الميزانية"
+    }
+  },
+  "analytics": {
+    "title": "التحليلات",
+    "tabs": {
+      "charts": "الرسوم البيانية",
+      "calendar": "التقويم"
+    },
+    "chartsPlaceholder": "ستظهر الرسوم البيانية هنا",
+    "calendarPlaceholder": "سيظهر التقويم هنا"
+  }
+}

@@ -35,7 +35,7 @@ export const KMH_CONSTANTS = {
   DEFAULT_DEFAULT_RATE: 4.55,    // %4.55/ay temerrüt faiz
   // Vergiler
   KKDF_RATE: 0.15,              // %15 KKDF
-  BSMV_RATE: 0.05,              // %5 BSMV (KMH-specific rate per BDDK; credit cards use 15% — see finance.ts)
+  BSMV_RATE: 0.05,              // %5 BSMV
   TAX_MULTIPLIER: 1.20,         // 1 + KKDF + BSMV = 1.20
   // BDDK kuralı
   MAX_INCOME_MULTIPLIER: 2,     // KMH limiti max aylık gelirin 2 katı

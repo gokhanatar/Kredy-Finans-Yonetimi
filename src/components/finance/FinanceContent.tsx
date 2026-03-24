@@ -135,7 +135,7 @@ export function FinanceContent({ scope, activeSubTab, pendingAction, onActionHan
       setShowTxForm(true);
       onActionHandled?.();
     }
-  }, [pendingAction, onActionHandled]);
+  }, [pendingAction]);
 
   // Safe-to-spend calc
   const monthlyIncome = incomeHook.monthlyTotal > 0

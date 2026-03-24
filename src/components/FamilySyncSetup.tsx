@@ -54,9 +54,8 @@ export function FamilySyncSetup() {
     } catch (err) {
       const msg = err instanceof Error ? err.message : t('sync.errorCreateFailed');
       toast({ title: t('common:status.error'), description: msg, variant: 'destructive' });
-    } finally {
-      setLoading(false);
     }
+    setLoading(false);
   };
 
   const handleJoin = async () => {
@@ -78,9 +77,8 @@ export function FamilySyncSetup() {
     } catch (err) {
       const msg = err instanceof Error ? err.message : t('sync.errorConnectionFailed');
       toast({ title: t('common:status.error'), description: msg, variant: 'destructive' });
-    } finally {
-      setLoading(false);
     }
+    setLoading(false);
   };
 
   const handleLeave = async () => {
@@ -90,9 +88,8 @@ export function FamilySyncSetup() {
       toast({ title: t('sync.left'), description: t('sync.leftDesc') });
     } catch {
       toast({ title: t('common:status.error'), description: t('sync.errorOperationFailed'), variant: 'destructive' });
-    } finally {
-      setLoading(false);
     }
+    setLoading(false);
   };
 
   const copyCode = () => {

@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect, useCallback, useMemo, ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect, useCallback, ReactNode } from 'react';
 import type { User } from 'firebase/auth';
 import {
   signInWithGoogle,
@@ -171,20 +171,20 @@ export function CloudAuthProvider({ children }: { children: ReactNode }) {
     }
   }, [state.user]);
 
-  const value = useMemo(() => ({
-    ...state,
-    loginWithGoogle,
-    loginWithApple,
-    loginWithEmail,
-    registerEmail,
-    logout,
-    backup,
-    restore,
-    setAutoSyncEnabled,
-  }), [state, loginWithGoogle, loginWithApple, loginWithEmail, registerEmail, logout, backup, restore, setAutoSyncEnabled]);
-
   return (
-    <CloudAuthContext.Provider value={value}>
+    <CloudAuthContext.Provider
+      value={{
+        ...state,
+        loginWithGoogle,
+        loginWithApple,
+        loginWithEmail,
+        registerEmail,
+        logout,
+        backup,
+        restore,
+        setAutoSyncEnabled,
+      }}
+    >
       {children}
     </CloudAuthContext.Provider>
   );

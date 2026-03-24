@@ -32,7 +32,7 @@ import {
 export function calculate2026PropertyValue(value2025: number, actualValue2026?: number): number {
   const maxValue = value2025 * ASSET_TAX_CONSTANTS.MAX_VALUE_INCREASE_MULTIPLIER;
   
-  if (actualValue2026 !== undefined && actualValue2026 !== null) {
+  if (actualValue2026) {
     return Math.min(actualValue2026, maxValue);
   }
   
@@ -133,9 +133,7 @@ export function checkRentalDeclaration(
     : RENTAL_INCOME.EXEMPT_AMOUNT_ISYERI;
   
   const currentYear = new Date().getFullYear();
-  // Use day 0 of next month to get actual last day (avoids overflow for short months)
-  const lastDay = new Date(currentYear, RENTAL_INCOME.DECLARATION_MONTH, 0).getDate();
-  const declarationDeadline = new Date(currentYear, RENTAL_INCOME.DECLARATION_MONTH - 1, lastDay);
+  const declarationDeadline = new Date(currentYear, RENTAL_INCOME.DECLARATION_MONTH - 1, 31);
   
   const taxableAmount = Math.max(0, annualIncome - exemptAmount);
   const required = annualIncome > exemptAmount;
@@ -231,9 +229,9 @@ export function calculateNextMTVDate(): {
   
   // 1. Taksit: 31 Ocak (hafta sonuna denk gelirse bir sonraki iş günü)
   let firstDate = new Date(currentYear, FIRST_INSTALLMENT.month - 1, FIRST_INSTALLMENT.day);
-  // Hafta sonuna denk gelirse bir sonraki iş gününe kaydır
-  if (firstDate.getDay() === 6) firstDate.setDate(firstDate.getDate() + 2); // Cumartesi → Pazartesi
-  if (firstDate.getDay() === 0) firstDate.setDate(firstDate.getDate() + 1); // Pazar → Pazartesi
+  // 2026'da 31 Ocak Cumartesi, son gün 2 Şubat Pazartesi
+  if (firstDate.getDay() === 6) firstDate = addMonths(firstDate, 0); // Pazartesi'ye ayarla
+  if (firstDate.getDay() === 0) firstDate.setDate(firstDate.getDate() + 1);
   
   // 2. Taksit: 31 Temmuz
   const secondDate = new Date(currentYear, SECOND_INSTALLMENT.month - 1, SECOND_INSTALLMENT.day);

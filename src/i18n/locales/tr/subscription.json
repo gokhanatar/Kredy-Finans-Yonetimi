@@ -58,16 +58,12 @@
     "restored": "Satın almalar geri yüklendi!",
     "noRestore": "Geri yüklenecek satın alma bulunamadı",
     "purchaseSuccess": "Abonelik aktif!",
-    "manageSubscription": "Aboneliği Yönet",
-    "redeemCode": "Promosyon Kodu",
-    "redeeming": "Kontrol ediliyor...",
-    "redeemSuccess": "Kod kullanıldı!"
+    "manageSubscription": "Aboneliği Yönet"
   },
   "errors": {
     "purchaseFailed": "Satın alma başarısız oldu. Lütfen tekrar deneyin.",
     "purchaseCancelled": "Satın alma iptal edildi.",
-    "notAvailable": "Satın alma şu anda kullanılamıyor.",
-    "redeemFailed": "Kod kullanılamadı"
+    "notAvailable": "Satın alma şu anda kullanılamıyor."
   },
   "restore": "Satın almaları geri yükle",
   "terms": "Ödeme Apple/Google hesabınızdan tahsil edilir. Abonelik dönem sonunda otomatik olarak yenilenir. Yenileme işlemi dönemin sona ermesinden 24 saat öncesinde gerçekleşir. Aboneliğinizi istediğiniz zaman hesap ayarlarından iptal edebilirsiniz.",

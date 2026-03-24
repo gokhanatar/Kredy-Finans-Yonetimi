@@ -147,14 +147,12 @@ export function initNotificationBridge() {
 
       // Navigate — bildirime tiklandiginda inbox'a yonlendir
       if (assetMeta.assetType && assetMeta.assetId) {
-        const navPayload = { assetType: assetMeta.assetType, assetId: assetMeta.assetId };
-        if (reactReady) {
-          // React is ready — dispatch event directly, no buffer needed
-          window.dispatchEvent(new CustomEvent(NOTIFICATION_TAP_NAV, { detail: navPayload }));
-        } else {
-          // React not ready — buffer for later consumption via consumePendingTapNav
-          pendingTapNav = navPayload;
-        }
+        // Buffer'a yaz (React hazir degilse consumed olacak)
+        pendingTapNav = { assetType: assetMeta.assetType, assetId: assetMeta.assetId };
+        // Ayni zamanda event dispatch et (React hazirsa yakalanacak)
+        window.dispatchEvent(new CustomEvent(NOTIFICATION_TAP_NAV, {
+          detail: { assetType: assetMeta.assetType, assetId: assetMeta.assetId },
+        }));
       }
     });
 

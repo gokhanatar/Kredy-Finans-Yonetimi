@@ -83,11 +83,15 @@ export function SubscriptionProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const restorePurchases = useCallback(async (): Promise<boolean> => {
-    const restored = await iapService.restorePurchases();
-    if (restored) {
-      await checkPremiumAccess();
+    try {
+      const restored = await iapService.restorePurchases();
+      if (restored) {
+        await checkPremiumAccess();
+      }
+      return restored;
+    } catch {
+      return false;
     }
-    return restored;
   }, [checkPremiumAccess]);
 
   useEffect(() => {
@@ -109,21 +113,13 @@ export function SubscriptionProvider({ children }: { children: ReactNode }) {
     };
     init();
 
-    let cancelled = false;
     let appListener: { remove: () => void } | null = null;
-
     const loadAppPlugin = async () => {
       try {
         const { App } = await import('@capacitor/app');
-        if (cancelled) return;
-        const handle = await App.addListener('appStateChange', (state) => {
+        appListener = await App.addListener('appStateChange', (state) => {
           if (state.isActive) checkPremiumAccess();
         });
-        if (cancelled) {
-          handle.remove();
-        } else {
-          appListener = handle;
-        }
       } catch {
         // Web
       }
@@ -133,10 +129,7 @@ export function SubscriptionProvider({ children }: { children: ReactNode }) {
       loadAppPlugin();
     }
 
-    return () => {
-      cancelled = true;
-      appListener?.remove();
-    };
+    return () => { appListener?.remove(); };
   }, [checkPremiumAccess]);
 
   return (

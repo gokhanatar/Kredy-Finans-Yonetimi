@@ -1,0 +1,327 @@
+{
+  "categories": {
+    "genel": {
+      "title": "General Usage",
+      "q1": "What is the Golden Window?",
+      "a1": "The Golden Window is the 5-day period after the statement closing date. Purchases made during this period are reflected in the next month's statement, giving you the longest payment term (40+ days). Our app automatically calculates these periods and recommends the best card for you.",
+      "q2": "How do I add my cards?",
+      "a2": "Go to the \"My Cards\" tab on the home page and click the \"Add Card\" button in the top right corner. You can add your card by entering details such as bank, card name, limit, debt, and statement date.",
+      "q3": "What is the statement date?",
+      "a3": "The statement date is the day the bank closes the monthly billing cycle. Purchases made after this date are reflected in the next statement. The payment due date is usually 10-15 days after the statement date.",
+      "q4": "Is my data safe?",
+      "a4": "Yes, all your data is stored only on your device (localStorage). No card or financial information is sent to our servers. You can delete all your data from the \"Account Settings\" section if you wish."
+    },
+    "faiz": {
+      "title": "Interest Calculations",
+      "q1": "How is late payment interest calculated?",
+      "a1": "According to BDDK 2026 regulations, tiered interest rates apply:\n\n- Debts under 30,000 TL: 3.55% monthly\n- Debts between 30,000-180,000 TL: 3.75% monthly\n- Debts over 180,000 TL: 4.25% monthly\n\nDaily interest = (Debt x Monthly Rate) / 30",
+      "q2": "What is the difference between contractual and late interest?",
+      "a2": "Contractual interest is the regular interest applied to the periodic balance. Late interest is the additional interest applied to the unpaid amount after the due date, and is approximately 0.30% higher than the contractual interest.",
+      "q3": "What is cash advance interest?",
+      "a3": "This is the interest applied to ATM cash withdrawals or balance transfer transactions. As of 2026, it is fixed at 4.25%. An additional 15% KKDF and 15% BSMV are added on top.",
+      "q4": "What are KKDF and BSMV?",
+      "a4": "KKDF (Resource Utilization Support Fund) and BSMV (Banking and Insurance Transaction Tax) are legal deductions added on top of interest in credit transactions. Each is at a rate of 15%. Total cost = Interest x 1.30",
+      "q5": "How is the effective interest rate calculated?",
+      "a5": "The effective interest rate shows the total cost including KKDF and BSMV.\n\nFormula: Effective Interest = Base Interest x 1.15 (KKDF) x 1.15 (BSMV)\n\nExample: 3.25% base interest -> 4.30% effective interest"
+    },
+    "bddk": {
+      "title": "BDDK Regulations (2026)",
+      "q1": "What are the 2026 installment limits?",
+      "a1": "For personal cards:\n\nInstallments Prohibited: Food, fuel, telecommunications, international\n\nTV (5K+ TL): Max 4 installments\nPhone (12K+ TL): Max 3 installments\nRefurbished Phone: Max 12 installments\nFurniture/Appliances: Max 9 installments\n\nCommercial cards can have up to 18 months of installments with 2x limits.",
+      "q2": "What are the restructuring rules?",
+      "a2": "- Maximum term: 60 months\n- Interest ceiling: CBRT reference rate (3.11%)\n- No limit increase until 50% is paid off\n- Card is closed if minimum payment is missed 3 consecutive times",
+      "q3": "What are the limit allocation rules?",
+      "a3": "- First year: Maximum 2x monthly income\n- After second year: 4x monthly income\n- Limits between 400K-750K TL must be reduced by February 15, 2026",
+      "q4": "What are the minimum payment rules?",
+      "a4": "- Limits above 50,000 TL: Minimum payment 40%\n- Limits below 50,000 TL: Minimum payment 20%\n- If minimum payment is missed 3 times in a year, cash usage is suspended"
+    },
+    "kredi": {
+      "title": "Loan Simulator",
+      "q1": "How is a loan installment calculated?",
+      "a1": "The PMT formula is used:\n\nInstallment = Principal x [r(1+r)^n] / [(1+r)^n - 1]\n\nWhere:\n- r = Monthly interest rate\n- n = Number of installments",
+      "q2": "What happens if payment is late?",
+      "a2": "Daily interest is calculated for each overdue day:\n\nDaily Interest = Installment Amount x (Monthly Late Interest / 30)\n\nExample: 5,000 TL installment, 4% monthly late interest\nDaily interest = 5,000 x 0.04 / 30 = 6.67 TL",
+      "q3": "Can I make early repayment?",
+      "a3": "Yes, you have the right to early repayment on all loans. An early repayment commission of 2% for mortgages and 1% for other loans may apply. In case of early repayment, no interest accrues on the remaining principal."
+    },
+    "bildirim": {
+      "title": "Notifications",
+      "q1": "How do notifications work?",
+      "a1": "The app uses your device's local notification system. Notifications are scheduled for payment reminders, golden window opportunities, and overdue alerts. You can customize them from the Notification Preferences page.",
+      "q2": "How often do overdue notifications come?",
+      "a2": "You can set them to daily, every 3 days, or weekly. Notifications show the total number of overdue days and the total interest accrued up to that point.",
+      "q3": "How do I turn off notifications?",
+      "a3": "From the \"Notification Preferences\" page, you can enable or disable each notification type individually. To turn off all notifications, disable the master notification switch."
+    },
+    "vergi": {
+      "title": "Tax Tracking",
+      "q1": "When is the VAT return due date?",
+      "a1": "The 26th of each month is the VAT return deadline. The app sends a reminder the number of days before that you specify.",
+      "q2": "What are the quarterly tax periods?",
+      "a2": "The 17th of January, April, July, and October are the quarterly tax return dates. Earnings for the previous 3 months are declared for each quarter.",
+      "q3": "Can I track property and motor vehicle taxes?",
+      "a3": "Yes! From the \"Asset Management\" section, you can enter your property, vehicle, and business information to track property tax, motor vehicle tax, and inspection dates."
+    },
+    "yatirim": {
+      "title": "Investment Portfolio",
+      "q1": "What investment types can I track?",
+      "a1": "You can track gold (gram/quarter/half/full), silver, foreign currency (USD, EUR, GBP), stocks (BIST), and cryptocurrency (Bitcoin, Ethereum, etc.) investments. Prices are updated regularly.",
+      "q2": "How often are investment prices updated?",
+      "a2": "Prices are automatically updated when the app opens and every 15 minutes. You can track the update status from the clock icon at the top of the investments page.",
+      "q3": "How is portfolio profit/loss calculated?",
+      "a3": "For each investment: purchase price x quantity = cost, current price x quantity = current value. The difference is profit or loss. Total portfolio performance is shown as the sum of all investments."
+    },
+    "varlik": {
+      "title": "Asset Management",
+      "q1": "How do I add my property information?",
+      "a1": "From the \"Asset Management\" page, click the \"Add Property\" button. Enter the property type (residence, office, land), square meters, current value, and province. The app automatically calculates property tax based on 2026 rates.",
+      "q2": "How is vehicle tax (MTV) calculated?",
+      "a2": "MTV is calculated according to the 2026 tariff based on the vehicle's age, engine displacement, and type. When adding your vehicle, enter the brand, model, year, and engine size; the app shows the annual MTV amount and payment periods (January-July).",
+      "q3": "Can I see the total value of my assets?",
+      "a3": "Yes, at the top of the asset management page, you can see the total market value of all your properties and vehicles, annual tax burdens, and upcoming payment dates in a summary view."
+    },
+    "aile": {
+      "title": "Family Sharing",
+      "q1": "How do I create a family group?",
+      "a1": "Go to \"Account Settings\" → \"Family Sharing\" and click \"Create Family\". Share the automatically generated 12-character code with your family members. Other members can join the group by entering this code.",
+      "q2": "How does family sync work?",
+      "a2": "When you join a family group, data is synchronized in real-time through Firebase. A card or change added by one member appears instantly on other members' devices. If the internet connection is lost, data is stored locally and synced when connection is restored.",
+      "q3": "How do I leave a family group?",
+      "a3": "Click the \"Leave Group\" button in the \"Family Sharing\" section. When you leave, your data stays on your local device but no longer syncs with other members. If you are the group owner, you must transfer ownership first."
+    },
+    "guvenlik": {
+      "title": "Security & Privacy",
+      "q1": "How does PIN lock work?",
+      "a1": "You can lock the app by creating a 6-digit PIN — this feature is free for all users. The PIN is required every time the app opens. When creating a PIN, you must enter two hints — these hints are shown progressively if you forget your PIN.",
+      "q2": "What is biometric lock?",
+      "a2": "After setting a PIN, you can use Face ID or Touch ID for quick access — biometric lock is also free. If biometric authentication fails, you'll fall back to the PIN screen. You can enable or disable it from \"Account Settings\" → \"Security\".",
+      "q3": "What does privacy mode do?",
+      "a3": "When privacy mode is enabled, balances, debt amounts, and card numbers are masked with asterisks (*). Your sensitive information is hidden when someone looks at your screen. This feature is free for all users. You can toggle it from the profile page or quick settings."
+    },
+    "kmh": {
+      "title": "Overdraft (KMH)",
+      "q1": "What is an overdraft (KMH)?",
+      "a1": "An overdraft (KMH - Kredili Mevduat Hesabi) is a type of credit that automatically activates when your bank account balance drops below zero. The bank allows a negative balance up to a set limit and charges daily interest on the amount used.",
+      "q2": "How is overdraft interest calculated?",
+      "a2": "According to CBRT January 2026 rates:\n\n- Contractual interest: 4.25%/month\n- Default interest: 4.55%/month\n- Taxes: KKDF 15% + BSMV 5% = 20%\n\nFormula: Gross Interest = Principal x (Monthly Rate / 100 / 30) x Days\nNet Cost = Gross x 1.20",
+      "q3": "How is the overdraft limit determined?",
+      "a3": "According to BDDK rules, the overdraft limit can be at most 2 times your monthly income. For example, someone with a monthly income of 20,000 TL can have a maximum overdraft limit of 40,000 TL. Usage beyond the limit is not allowed.",
+      "q4": "How can I reduce overdraft interest?",
+      "a4": "- Pay off the negative balance as quickly as possible — interest is charged daily\n- It closes automatically when salary is deposited, but even partial usage is subject to interest\n- Consider a personal loan as an alternative — overdraft interest is usually higher than loan interest\n- Don't request a limit increase — more limit means more interest risk"
+    },
+    "premium": {
+      "title": "Premium Membership",
+      "q1": "What's in the free plan?",
+      "a1": "The free plan includes: 2 credit cards, 2 accounts, 3 recurring payments, 1 savings goal, 1 budget, and 50 transactions per month. Additionally, PIN lock, biometric lock, and privacy mode are completely free. Golden window, payment calendar, and basic financial health score are also available for free.",
+      "q2": "What's in PRO?",
+      "a2": "With PRO, all limits are removed: unlimited cards, accounts, recurring payments, goals, budgets, and transactions. Plus, investment portfolio, asset management, debt transfer/restructuring simulators, family group management, AI receipt scanning (Gemini 2.5 Flash), transaction templates, and commercial card analytics are unlocked.",
+      "q3": "How do I use a promo code?",
+      "a3": "Enter your promo code in \"Account Settings\" → \"Premium\". PRO features are activated instantly after entering a valid code. If you don't have a code, you can take advantage of the 7-day free trial.",
+      "q4": "What is AI receipt scanning?",
+      "a4": "PRO users can scan receipts much more accurately using Google Gemini 2.5 Flash. After entering your free Gemini API key in Settings, the \"Scan with AI\" option becomes available. If AI fails, it automatically falls back to device scanning. You can also scan with device OCR without an API key.",
+      "q5": "How does the trial period work?",
+      "a5": "From the first installation, you can try all PRO features for free for 7 days. When the period expires, free plan limits (2 cards, 2 accounts, 50 transactions/month, etc.) take effect; advanced features require PRO."
+    }
+  },
+  "guide": {
+    "searchPlaceholder": "Search guide...",
+    "noResults": "No results found for \"{{query}}\"",
+    "sections": {
+      "quickStart": {
+        "title": "Quick Start",
+        "desc": "Get started with the app right away",
+        "item1": { "title": "Add a Credit Card", "desc": "Click \"Add Card\" from the \"My Cards\" tab. Enter bank, card name, limit, debt, statement date, and due date. The card is instantly added to your list." },
+        "item2": { "title": "Discover the Golden Window", "desc": "The \"Shop Today\" suggestion on the home page shows your card with the longest payment term. Purchases on this card benefit from a 40+ day interest-free period." },
+        "item3": { "title": "Enable Notifications", "desc": "Turn on payment reminders and golden window alerts from \"Notification Preferences\" so you never miss a payment." },
+        "item4": { "title": "Try the Loan Simulator", "desc": "From the simulator page, calculate personal, mortgage, or auto loans. See interest rate, term, and installment amount instantly." },
+        "item5": { "title": "Join a Family Group", "desc": "Create a group or join an existing one with a 12-character code from \"Family Sharing\". Share financial data with family members in real-time." },
+        "item6": { "title": "Build an Investment Portfolio", "desc": "Add your gold, currency, stock, or crypto investments from \"Investments\". Track your portfolio performance with current prices." }
+      },
+      "cardManagement": {
+        "title": "Card Management",
+        "desc": "Manage your credit cards effectively",
+        "item1": { "title": "Adding Cards", "desc": "Go to \"My Cards\" → \"Add Card\". Fill in bank selection, card name, total limit, current debt, statement day, and due date. You can also customize the card color." },
+        "item2": { "title": "Editing Cards", "desc": "Click the edit icon in the top right of the card detail page. You can update limit, debt, dates, and other information." },
+        "item3": { "title": "Deleting Cards", "desc": "Click the \"Delete Card\" button on the card detail page. Deletion requires confirmation and cannot be undone." },
+        "item4": { "title": "Limit & Debt Tracking", "desc": "Each card's limit utilization ratio is shown as a percentage. Over 70% is marked red, 40-70% yellow, under 40% green." },
+        "item5": { "title": "Statement & Due Dates", "desc": "The statement date is when your billing cycle closes. The due date is usually 10-15 days later. These dates determine your card's golden window period." }
+      },
+      "goldenWindow": {
+        "title": "Golden Window",
+        "desc": "Catch the longest interest-free period",
+        "item1": { "title": "What Is the Golden Window?", "desc": "It's the 5-day period right after the statement closing date. Purchases during this period go to the next billing cycle, giving you 40-50 days of interest-free payment time." },
+        "item2": { "title": "How Does It Work?", "desc": "The app analyzes all your cards' statement dates and shows which card is currently in its golden window period. Time your big purchases to these periods." },
+        "item3": { "title": "Best Card Recommendation", "desc": "The \"Shop Today\" card on the home page automatically recommends the card offering the longest term right now. If multiple cards are in their golden window, the one with the highest available limit is preferred." }
+      },
+      "paymentCalendar": {
+        "title": "Payment Calendar",
+        "desc": "See all your payments on the calendar",
+        "item1": { "title": "Calendar View", "desc": "Payment due dates are marked on the calendar. Click on a day to see the details of payments due that day." },
+        "item2": { "title": "Color Codes", "desc": "Green: Paid, Red: Overdue, Orange: Due today, Blue: Upcoming payment. These colors are consistent across the calendar and list views." },
+        "item3": { "title": "Monthly Plan", "desc": "Your total monthly payment amount is shown at the top of the calendar. Plan your cash flow by seeing how much you need to pay on which days." }
+      },
+      "healthScore": {
+        "title": "Financial Health Score",
+        "desc": "Evaluate your financial situation",
+        "item1": { "title": "How Is the Score Calculated?", "desc": "Factors like debt-to-limit ratio, on-time payment history, total debt burden, and diversification are evaluated to calculate a score between 0-100." },
+        "item2": { "title": "Score Ranges", "desc": "90-100: Excellent, 70-89: Good, 50-69: Average, 30-49: Risky, 0-29: Critical. Improvement suggestions are provided for each range." },
+        "item3": { "title": "How to Improve?", "desc": "Keep debt-to-limit ratio below 30%, make payments on time, reduce total debt, and maintain balanced usage across cards." },
+        "item4": { "title": "Score Components", "desc": "Debt/limit ratio (35%), payment history (30%), total debt (20%), and card diversification (15%) are the four main components." }
+      },
+      "loanSimulator": {
+        "title": "Loan Simulator",
+        "desc": "Calculate your loan costs in advance",
+        "item1": { "title": "Loan Types", "desc": "You can simulate personal loans, mortgages, auto loans, and commercial loans. Current interest rates come as defaults for each type." },
+        "item2": { "title": "Installment Calculation", "desc": "Enter loan amount, interest rate, and term to calculate the monthly installment, total repayment, and total interest cost." },
+        "item3": { "title": "Amortization Table", "desc": "View the amortization table showing principal, interest, and remaining balance for each installment. Export the table as PDF or CSV." },
+        "item4": { "title": "Early Repayment Calculation", "desc": "Calculate remaining balance, saved interest, and early repayment commission. Commission is 2% for mortgages and 1% for other loans." }
+      },
+      "debtTools": {
+        "title": "Debt Tools",
+        "desc": "Manage and reduce your debts",
+        "item1": { "title": "Balance Transfer Simulator", "desc": "Calculate the cost of transferring your credit card debt to another card. Compare transfer interest, term, and monthly installment." },
+        "item2": { "title": "Debt Restructuring", "desc": "Create a restructuring plan compliant with BDDK rules. Simulate maximum 60-month term, CBRT reference interest ceiling, and monthly installment." },
+        "item3": { "title": "Installment Calculator", "desc": "Compare installment amounts across different terms for any debt amount. Determine the most suitable payment plan." }
+      },
+      "personalFinance": {
+        "title": "Personal Finance",
+        "desc": "Manage your income, expenses, and budget",
+        "item1": { "title": "Income/Expense Tracking", "desc": "Record your monthly income and expenses by category. Analyze your spending habits with charts and reports." },
+        "item2": { "title": "Budget Planning", "desc": "Set monthly budget limits by category. Get alerts when limits are exceeded and keep your spending under control." },
+        "item3": { "title": "Subscription Management", "desc": "Record your recurring subscriptions (Netflix, Spotify, magazines, etc.). Track your total monthly subscription cost and renewal dates." },
+        "item4": { "title": "Savings Goals", "desc": "Create short and long-term savings goals. Visually track your progress and see the estimated date to reach your goal." },
+        "item5": { "title": "Net Worth Tracking", "desc": "All assets (deposits, investments, property, vehicles) minus all debts (credit cards, loans, installments) = your net worth. Track monthly changes on a chart." }
+      },
+      "familyFinance": {
+        "title": "Family Finance",
+        "desc": "Share financial data with your family",
+        "item1": { "title": "Creating a Family Group", "desc": "Create a new group from \"Family Sharing\". Send the automatically generated 12-character sharing code to your family members." },
+        "item2": { "title": "Joining a Group", "desc": "Enter the 12-character code given to you in \"Family Sharing\" → \"Join Group\". After confirmation, family members' data appears on your device." },
+        "item3": { "title": "12-Character Code", "desc": "Each family group has a unique code. This code should only be shared among family members. For security, don't share the code on social media." },
+        "item4": { "title": "Real-Time Sync", "desc": "All data syncs instantly via Firebase. When a member adds a card or updates debt, the change appears on all members' devices immediately." }
+      },
+      "investments": {
+        "title": "Investment Tracking",
+        "desc": "Manage your investment portfolio",
+        "item1": { "title": "Gold & Silver", "desc": "Add your gram, quarter, half, and full gold and silver investments. Instant valuation with current market prices." },
+        "item2": { "title": "Foreign Currency", "desc": "Track your USD, EUR, GBP, and other currency positions. Monitor profit/loss by entering purchase price and quantity." },
+        "item3": { "title": "Stocks", "desc": "Add BIST stocks by symbol. Track your portfolio performance with current exchange prices." },
+        "item4": { "title": "Cryptocurrency", "desc": "Record your Bitcoin, Ethereum, and other crypto investments. See your instant portfolio value with 24/7 updated prices." }
+      },
+      "assetManagement": {
+        "title": "Asset Management",
+        "desc": "Track your properties and vehicles",
+        "item1": { "title": "Property Registration", "desc": "Enter your residence, office, or land details. Create detailed records with square meters, province, current value, and acquisition date." },
+        "item2": { "title": "Vehicle Registration", "desc": "Add your vehicle by entering brand, model, year, engine displacement, and license plate information." },
+        "item3": { "title": "Tax Tracking", "desc": "Property tax and MTV (motor vehicle tax) are automatically calculated based on 2026 rates. Payment periods are reminded on the calendar." },
+        "item4": { "title": "2026 Tax Rates", "desc": "Property tax ranges from 0.1% to 0.3% (residential/commercial), MTV is tiered based on vehicle age and engine size. The app automatically applies the current tariff." }
+      },
+      "commercialAnalytics": {
+        "title": "Commercial Analytics",
+        "desc": "Track your business expenses and taxes",
+        "item1": { "title": "VAT Calculation", "desc": "Automatically calculate VAT amounts for your purchase and sales invoices. Track monthly VAT base and payable VAT." },
+        "item2": { "title": "Expense Categories", "desc": "Record business expenses (rent, staff, materials, transport, etc.) by category. Generate monthly and annual expense reports." },
+        "item3": { "title": "Tax Return Tracking", "desc": "Track VAT (26th monthly), quarterly tax, and annual income tax return dates on the calendar." }
+      },
+      "notifications": {
+        "title": "Notifications",
+        "desc": "Never miss payments and opportunities",
+        "item1": { "title": "Notification Types", "desc": "Various notification types are available: payment reminders, golden window opportunities, overdue alerts, limit warnings, and tax return reminders." },
+        "item2": { "title": "Preferences", "desc": "You can enable or disable each notification type individually. Customize reminder timing (1 day, 3 days, 1 week before)." },
+        "item3": { "title": "Inbox", "desc": "All notifications are listed in the inbox. The unread notification count is shown on the app icon and in the menu." }
+      },
+      "widgets": {
+        "title": "Widgets",
+        "desc": "Home screen widgets for quick access",
+        "item1": { "title": "Widget Categories", "desc": "Payment calendar, golden window status, total debt summary, and financial health score widgets are available. Each provides different information summaries." },
+        "item2": { "title": "Adding to Home Screen", "desc": "iOS: Long press home screen → Add Widget → Kredy. Android: Long press home screen → Widgets → Kredy. Choose your preferred widget size." }
+      },
+      "accountSettings": {
+        "title": "Account Settings",
+        "desc": "Manage your app preferences",
+        "item1": { "title": "Profile Editing", "desc": "Update your name and email address. This information is used within the app and for cloud backup." },
+        "item2": { "title": "Theme Selection", "desc": "Choose from 6 different themes: Default, Dark, Ocean, Sunset, Forest, and Lavender. Theme selection is applied instantly." },
+        "item3": { "title": "Language Setting", "desc": "Turkish (default), English, Arabic, and Russian language options are available. Language change is applied without restarting the app." },
+        "item4": { "title": "PIN Security", "desc": "Lock the app with a 6-digit PIN — this feature is completely free. Two hints are required. You can also add biometric (Face ID / Touch ID) lock for free." },
+        "item5": { "title": "Cloud Backup", "desc": "Sign in with Google, Apple, or email to back up your data to the cloud. Easily restore your data when switching devices." },
+        "item6": { "title": "Data Export", "desc": "Export your data in JSON or CSV format. Import the exported file on another device to transfer your data." }
+      },
+      "kmh": {
+        "title": "Overdraft Usage",
+        "desc": "Overdraft account management",
+        "item1": { "title": "Adding an Overdraft", "desc": "Enable overdraft when adding a bank account. Enter the limit, contractual interest rate, and default interest rate. Per BDDK rules, the limit cannot exceed 2 times your monthly income." },
+        "item2": { "title": "Interest Calculation", "desc": "When there is a negative balance, the app automatically calculates daily interest. Formula: Gross = Principal x (Monthly Rate / 30) x Days. Net cost = Gross x 1.20 (KKDF + BSMV included)." },
+        "item3": { "title": "Risk Levels", "desc": "Overdraft usage is tracked at 4 levels: Low (up to 25%), Medium (up to 50%), High (up to 75%), and Critical (above 75%). Each level is shown with a different color and warning." },
+        "item4": { "title": "Notifications", "desc": "Enable overdraft interest notifications to track the daily interest amount. You'll receive an urgent alert when it reaches a critical level." }
+      },
+      "premium": {
+        "title": "FREE & PRO Plans",
+        "desc": "Free plan limits and PRO features",
+        "item1": { "title": "Free Plan", "desc": "The free plan includes 2 credit cards, 2 accounts, 3 recurring payments, 1 savings goal, 1 budget, and 50 transactions per month. PIN lock, biometric lock, and privacy mode are also completely free." },
+        "item2": { "title": "PRO Features", "desc": "With PRO, all limits are removed: unlimited cards, accounts, recurring payments, goals, budgets, and transactions. Plus investment portfolio, asset management, simulators, family group management, AI receipt scanning, transaction templates, and commercial card analytics." },
+        "item3": { "title": "Promo Code", "desc": "Enter your promo code in \"Account Settings\" → \"Premium\" → \"Enter Code\". PRO features are activated instantly after entering a valid code." },
+        "item4": { "title": "AI Receipt Scanning", "desc": "PRO users can scan receipts with AI using Gemini 2.5 Flash. Enter your free Gemini API key in Settings. Free tier: 1,500 requests/day, 15 requests/minute, 1M tokens/month." },
+        "item5": { "title": "7-Day Free Trial", "desc": "Try all PRO features free for 7 days from the first installation. When the trial expires, free plan limits (2 cards, 2 accounts, 50 transactions/month, etc.) take effect." }
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact Information",
+    "email": "Email",
+    "phone": "Phone",
+    "workingHours": "Working Hours",
+    "workingHoursValue": "Monday - Friday: 09:00 - 18:00"
+  },
+  "help": {
+    "title": "Help & Support",
+    "tabs": {
+      "faq": "FAQ",
+      "guide": "Guide",
+      "contact": "Contact"
+    },
+    "searchPlaceholder": "Search questions...",
+    "noResults": "No results found for \"{{query}}\"",
+    "quickStart": "Quick Start",
+    "getStarted": "Get started with Kredy",
+    "steps": {
+      "addCards": "Add Your Cards",
+      "addCardsDesc": "Add your credit cards from the \"My Cards\" tab. Enter statement and payment due dates.",
+      "trackGoldenWindow": "Track the Golden Window",
+      "trackGoldenWindowDesc": "The \"Shop Today\" recommendation on the home page shows the card that will give you the longest payment term.",
+      "setupNotifications": "Set Up Notifications",
+      "setupNotificationsDesc": "Turn on payment reminders and golden window alerts from \"Notification Preferences\".",
+      "useSimulators": "Use Simulators",
+      "useSimulatorsDesc": "Calculate your costs in advance with balance transfer, restructuring, and loan simulators."
+    },
+    "formulas": {
+      "title": "Interest Formulas",
+      "dailyOverdue": "Daily Late Interest",
+      "dailyOverdueFormula": "= Debt x (Monthly Rate / 30)",
+      "monthlyInstallment": "Monthly Installment (PMT)",
+      "monthlyInstallmentFormula": "= P x [r(1+r)^n] / [(1+r)^n - 1]",
+      "effectiveInterest": "Effective Interest (KKDF + BSMV)",
+      "effectiveInterestFormula": "= Base Interest x 1.15 x 1.15"
+    },
+    "bddk2026": {
+      "title": "BDDK 2026 Summary",
+      "restructuringCeiling": "Restructuring Ceiling",
+      "restructuringValue": "60 Months",
+      "interestCeiling": "Interest Ceiling",
+      "interestValue": "3.11% (CBRT)",
+      "cashAdvance": "Cash Advance Interest",
+      "cashAdvanceValue": "4.25%",
+      "kkdfBsmv": "KKDF + BSMV",
+      "kkdfBsmvValue": "15% + 15%"
+    },
+    "feedback": {
+      "title": "Feedback",
+      "subtitle": "Share your suggestions, complaints, or questions",
+      "yourMessage": "Your Message",
+      "messagePlaceholder": "Share your thoughts...",
+      "sent": "Feedback Sent",
+      "thanks": "Thank you for your message!",
+      "errorEmpty": "Please write a message."
+    },
+    "developer": "Developer"
+  }
+}

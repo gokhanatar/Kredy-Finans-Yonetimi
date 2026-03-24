@@ -64,7 +64,10 @@
     "perDay": "/day",
     "perWeek": "/week",
     "perMonth": "/month",
-    "perYear": "/year"
+    "perYear": "/year",
+    "last3Months": "Last 3 Months",
+    "last6Months": "Last 6 Months",
+    "lastMonth": "Last Month"
   },
   "days": {
     "short": [
@@ -170,6 +173,8 @@
     "menu": "Menu"
   },
   "all": "All",
+  "noData": "No data found",
+  "you": "You",
   "other": "Other",
   "total": "Total",
   "unknown": "Unknown",
@@ -179,8 +184,5 @@
     "addIncome": "Add Income",
     "payBill": "Pay Bill"
   },
-  "legal": {
-    "privacyPolicy": "Privacy Policy",
-    "termsOfUse": "Terms of Use"
-  }
+  "subscription": "Subscription"
 }

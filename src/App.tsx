@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate, useNavigate } from "react-router-dom";
+import { HashRouter as BrowserRouter, Routes, Route, Navigate, useNavigate } from "react-router-dom";
 import { SubscriptionProvider } from "@/contexts/SubscriptionContext";
 import { AuthProvider, useAuth } from "@/contexts/AuthContext";
 import { FamilySyncProvider } from "@/contexts/FamilySyncContext";
@@ -14,7 +14,6 @@ import { SimpleModeProvider, useSimpleMode } from "@/contexts/SimpleModeContext"
 import { runDataMigrationV2 } from "@/lib/dataMigration";
 import { initNotificationBridge, NOTIFICATION_TAP_NAV, consumePendingTapNav } from "@/lib/notificationBridge";
 import { PinLockScreen } from "@/components/PinLockScreen";
-import { AppLayout } from "@/components/AppLayout";
 import { useTheme } from "@/hooks/useTheme";
 import { useLanguage } from "@/hooks/useLanguage";
 import { useDeepLinking } from "@/hooks/useDeepLinking";
@@ -45,8 +44,8 @@ const SimpleMenu = lazy(() => import("./pages/SimpleMenu"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 // Run data migration before app renders
-runDataMigrationV2();
-initNotificationBridge();
+try { runDataMigrationV2(); } catch {}
+try { initNotificationBridge(); } catch {}
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -115,39 +114,37 @@ function AppContent() {
       <NotificationScheduler />
       <BrowserRouter>
         <DeepLinkHandler />
-        <AppLayout>
-          <Suspense fallback={<PageLoader />}>
-            <Routes>
-              <Route path="/" element={<SimpleModeHome />} />
-              <Route path="/wallet" element={<Wallet />} />
-              <Route path="/analytics" element={<Analytics />} />
-              <Route path="/menu" element={<Menu />} />
-              <Route path="/family" element={<SimpleModeFamily />} />
-              {/* Simple mode dedicated routes */}
-              <Route path="/simple-menu" element={<SimpleMenu />} />
-              <Route path="/simple-family" element={<SimpleFamily />} />
-              <Route path="/subscription" element={<Subscription />} />
-              <Route path="/purchases" element={<PurchaseHistory />} />
-              <Route path="/notifications" element={<NotificationSettings />} />
-              <Route path="/notification-inbox" element={<NotificationInbox />} />
-              <Route path="/commercial-analytics" element={<CommercialCardAnalytics />} />
-              <Route path="/assets" element={<AssetManagement />} />
-              <Route path="/settings" element={<AccountSettings />} />
-              <Route path="/help" element={<HelpSupport />} />
-              <Route path="/loans" element={<LoanSimulator />} />
-              <Route path="/investments" element={<Investments />} />
-              <Route path="/widgets" element={<WidgetGallery />} />
-              <Route path="/ai-insights" element={<AIInsights />} />
-              {/* Redirects from old/alternate routes */}
-              <Route path="/finance" element={<Navigate to="/wallet" replace />} />
-              <Route path="/family-finance" element={<Navigate to="/family" replace />} />
-              <Route path="/personal-finance" element={<Navigate to="/wallet" replace />} />
-              <Route path="/purchase-history" element={<Navigate to="/purchases" replace />} />
-              <Route path="/widget-gallery" element={<Navigate to="/widgets" replace />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Suspense>
-        </AppLayout>
+        <Suspense fallback={<PageLoader />}>
+        <Routes>
+          <Route path="/" element={<SimpleModeHome />} />
+          <Route path="/wallet" element={<Wallet />} />
+          <Route path="/analytics" element={<Analytics />} />
+          <Route path="/menu" element={<Menu />} />
+          <Route path="/family" element={<SimpleModeFamily />} />
+          {/* Simple mode dedicated routes */}
+          <Route path="/simple-menu" element={<SimpleMenu />} />
+          <Route path="/simple-family" element={<SimpleFamily />} />
+          <Route path="/subscription" element={<Subscription />} />
+          <Route path="/purchases" element={<PurchaseHistory />} />
+          <Route path="/notifications" element={<NotificationSettings />} />
+          <Route path="/notification-inbox" element={<NotificationInbox />} />
+          <Route path="/commercial-analytics" element={<CommercialCardAnalytics />} />
+          <Route path="/assets" element={<AssetManagement />} />
+          <Route path="/settings" element={<AccountSettings />} />
+          <Route path="/help" element={<HelpSupport />} />
+          <Route path="/loans" element={<LoanSimulator />} />
+          <Route path="/investments" element={<Investments />} />
+          <Route path="/widgets" element={<WidgetGallery />} />
+          <Route path="/ai-insights" element={<AIInsights />} />
+          {/* Redirects from old/alternate routes */}
+          <Route path="/finance" element={<Navigate to="/wallet" replace />} />
+          <Route path="/family-finance" element={<Navigate to="/family" replace />} />
+          <Route path="/personal-finance" element={<Navigate to="/wallet" replace />} />
+          <Route path="/purchase-history" element={<Navigate to="/purchases" replace />} />
+          <Route path="/widget-gallery" element={<Navigate to="/widgets" replace />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
       </BrowserRouter>
     </>
   );

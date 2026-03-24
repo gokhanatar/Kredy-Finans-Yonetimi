@@ -60,7 +60,6 @@ export function useRecurringBills(storageKey?: string, scope: 'personal' | 'fami
           case 'daily': return sum + cost * 30.44;
           case 'weekly': return sum + cost * 4.33;
           case 'monthly': return sum + cost;
-          case 'yearly': return sum + cost / 12;
           default: return sum;
         }
       }, 0);

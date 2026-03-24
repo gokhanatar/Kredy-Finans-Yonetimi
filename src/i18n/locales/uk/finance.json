@@ -1,0 +1,152 @@
+{
+  "incomeCategories": {
+    "maas": "Зарплата",
+    "ek-gelir": "Додатковий дохід",
+    "kira-gelir": "Дохід від оренди",
+    "yatirim-gelir": "Інвестиційний дохід",
+    "diger-gelir": "Інший дохід"
+  },
+  "expenseCategories": {
+    "market": "Продукти",
+    "kira": "Оренда",
+    "fatura": "Комунальні",
+    "ulasim": "Транспорт",
+    "saglik": "Здоров'я",
+    "egitim": "Освіта",
+    "eglence": "Розваги",
+    "giyim": "Одяг",
+    "yemek": "Їжа",
+    "ev": "Дім і декор",
+    "cocuk": "Діти",
+    "evcil": "Домашні тварини",
+    "bakim": "Особистий догляд",
+    "hediye": "Подарунки",
+    "tasit": "Транспортний засіб",
+    "sigorta": "Страхування",
+    "diger-gider": "Інше"
+  },
+  "subscriptionCategories": {
+    "dijital": "Цифрові послуги",
+    "muzik": "Музика",
+    "video": "Відео/Кіно",
+    "oyun": "Ігри",
+    "bulut": "Хмарне сховище",
+    "spor": "Спорт/Зал",
+    "egitim-abo": "Освіта",
+    "haber": "Новини/Журнали",
+    "yazilim": "Програмне забезпечення",
+    "diger-abo": "Інше"
+  },
+  "recurringExpensePresets": {
+    "yol": "Дорога/Транспорт",
+    "sigara": "Цигарки",
+    "kahve": "Кава",
+    "ogle": "Обід",
+    "akaryakit": "Пальне",
+    "otopark": "Парковка"
+  },
+  "incomeFrequency": {
+    "monthly": "Щомісячно",
+    "weekly": "Щотижнево",
+    "biweekly": "Раз на два тижні",
+    "yearly": "Щорічно",
+    "one-time": "Одноразово"
+  },
+  "recurringIncomePresets": {
+    "maas": "Зарплата",
+    "kira": "Дохід від оренди",
+    "freelance": "Фріланс / Підробіток",
+    "yatirim": "Інвестиційний дохід / Відсотки",
+    "emekli": "Пенсія",
+    "burs": "Стипендія / Допомога"
+  },
+  "defaultBudgetCategories": {
+    "kira": "Оренда",
+    "market": "Продукти",
+    "fatura": "Комунальні",
+    "ulasim": "Транспорт",
+    "yemek": "Їжа",
+    "eglence": "Розваги",
+    "saglik": "Здоров'я",
+    "giyim": "Одяг",
+    "tasarruf": "Заощадження",
+    "diger": "Інше"
+  },
+  "installmentCategories": {
+    "gida": "Продукти",
+    "akaryakit": "Пальне",
+    "telekom": "Телекомунікації",
+    "yurtdisi": "Закордонні витрати",
+    "tv_elektronik": "Телевізор",
+    "cep_telefonu": "Мобільний телефон (новий)",
+    "yenilenmis_telefon": "Відновлений телефон",
+    "tablet": "Планшет",
+    "bilgisayar": "Комп'ютер",
+    "mobilya": "Меблі",
+    "beyaz_esya": "Побутова техніка",
+    "giyim": "Одяг",
+    "saglik": "Здоров'я",
+    "egitim": "Освіта",
+    "kuyum": "Ювелірні вироби",
+    "yurtici_seyahat": "Внутрішні подорожі",
+    "kktc": "Подорож до ТРПК",
+    "diger": "Інше",
+    "elektronik": "Електроніка",
+    "eglence": "Розваги"
+  },
+  "installmentConditions": {
+    "noInstallment": "Розстрочка заборонена",
+    "aboveAmount": "Від {{amount}} TL",
+    "noAmountLimit": "Без обмеження суми"
+  },
+  "bankOptions": {
+    "yapikredi": "Yapı Kredi",
+    "garanti": "Garanti BBVA",
+    "isbank": "İş Bankası",
+    "akbank": "Akbank",
+    "ziraat": "Ziraat Bankası",
+    "halkbank": "Halkbank",
+    "vakifbank": "Vakıfbank",
+    "qnb": "QNB Finansbank",
+    "denizbank": "Denizbank",
+    "teb": "TEB",
+    "ing": "ING",
+    "hsbc": "HSBC",
+    "sekerbank": "Şekerbank",
+    "anadolubank": "Anadolubank",
+    "fibabanka": "Fibabanka",
+    "odeabank": "Odeabank",
+    "turkishbank": "Turkish Bank",
+    "alternatifbank": "Alternatifbank",
+    "burganbank": "Burgan Bank",
+    "icbc": "ICBC Turkey",
+    "kuveytturk": "Kuveyt Türk",
+    "turkiyefinans": "Türkiye Finans",
+    "albaraka": "Albaraka Türk",
+    "ziraatkatilim": "Ziraat Katılım",
+    "vakifkatilim": "Vakıf Katılım",
+    "emlakkatilim": "Emlak Katılım",
+    "hayatfinans": "Hayat Finans",
+    "enpara": "Enpara.com",
+    "papara": "Papara",
+    "diger": "Інший"
+  },
+  "wallet": {
+    "title": "Гаманець",
+    "tabs": {
+      "accounts": "Рахунки",
+      "cards": "Картки",
+      "debts": "Борги",
+      "budget": "Бюджет"
+    }
+  },
+  "analytics": {
+    "title": "Аналітика",
+    "tabs": {
+      "charts": "Графіки",
+      "calendar": "Календар"
+    },
+    "chartsPlaceholder": "Графіки з'являться тут",
+    "calendarPlaceholder": "Календар з'явиться тут"
+  }
+}

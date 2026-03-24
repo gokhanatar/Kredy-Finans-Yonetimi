@@ -78,12 +78,7 @@ export function checkOverdueStatus(
 
   const today = startOfDay(new Date());
   const due = startOfDay(typeof dueDate === 'string' ? new Date(dueDate) : dueDate);
-
-  // Guard: invalid date string → safe default
-  if (isNaN(due.getTime())) {
-    return { isOverdue: false, overdueDays: 0, severity: 'none' };
-  }
-
+  
   if (!isBefore(due, today)) {
     return { isOverdue: false, overdueDays: 0, severity: 'none' };
   }
@@ -210,10 +205,9 @@ export function calculateMonthlyPayment(
  * Efektif faiz hesaplama (KKDF + BSMV dahil)
  */
 export function calculateEffectiveRate(baseRate: number): number {
-  // Additive approach (matches financeUtils and standard Turkish banking practice):
-  // taxMultiplier = 1 + KKDF/100 + BSMV/100
-  const taxMultiplier = 1 + (LOAN_CONSTANTS.KKDF_RATE / 100) + (LOAN_CONSTANTS.BSMV_RATE / 100);
-  return baseRate * taxMultiplier;
+  const kkdfMultiplier = 1 + (LOAN_CONSTANTS.KKDF_RATE / 100);
+  const bsmvMultiplier = 1 + (LOAN_CONSTANTS.BSMV_RATE / 100);
+  return baseRate * kkdfMultiplier * bsmvMultiplier;
 }
 
 /**
@@ -247,23 +241,14 @@ export function generateAmortizationSchedule(
 
   for (let month = 1; month <= termMonths; month++) {
     const interestPayment = balance * r;
-    let principalPayment = monthlyPayment - interestPayment;
-
-    // Last installment: force remaining balance to zero to avoid rounding residual
-    if (month === termMonths) {
-      principalPayment = balance;
-      balance = 0;
-    } else {
-      balance = Math.max(0, balance - principalPayment);
-    }
-
-    const actualPayment = month === termMonths ? principalPayment + interestPayment : monthlyPayment;
+    const principalPayment = monthlyPayment - interestPayment;
+    balance = Math.max(0, balance - principalPayment);
     cumulativeInterest += interestPayment;
-    cumulativePayment += actualPayment;
+    cumulativePayment += monthlyPayment;
 
     schedule.push({
       month,
-      payment: actualPayment,
+      payment: monthlyPayment,
       principal: principalPayment,
       interest: interestPayment,
       balance,

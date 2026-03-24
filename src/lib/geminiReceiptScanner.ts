@@ -1,12 +1,6 @@
 import type { ParsedReceipt } from './receiptParser';
 
 const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent';
-// SECURITY TRADE-OFF: The API key is stored in localStorage because it is a user-provided
-// personal key (not an app secret). This avoids a backend proxy but means the key is accessible
-// to any JS running on the same origin. Acceptable here because:
-// 1. The key belongs to the user, not the app.
-// 2. There is no server-side backend to proxy through.
-// 3. The user explicitly opts in by entering their own key.
 const STORAGE_KEY = 'kredi-pusula-gemini-api-key';
 
 export function getGeminiApiKey(): string | null {
@@ -51,9 +45,6 @@ export async function scanReceiptWithGemini(base64Image: string): Promise<Parsed
   const timeoutId = setTimeout(() => controller.abort(), 15000);
 
   try {
-    // NOTE: API key is sent as a query parameter per Google's API convention.
-    // This means the key may appear in server access logs and browser history.
-    // Acceptable for a user-provided personal key with no backend proxy available.
     const response = await fetch(`${GEMINI_API_URL}?key=${apiKey}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },

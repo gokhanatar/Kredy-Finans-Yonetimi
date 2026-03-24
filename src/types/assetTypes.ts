@@ -1,438 +1,7 @@
+// Asset types for property, vehicle, and business tracking
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74
-75
-76
-77
-78
-79
-80
-81
-82
-83
-84
-85
-86
-87
-88
-89
-90
-91
-92
-93
-94
-95
-96
-97
-98
-99
-100
-101
-102
-103
-104
-105
-106
-107
-108
-109
-110
-111
-112
-113
-114
-115
-116
-117
-118
-119
-120
-121
-122
-123
-124
-125
-126
-127
-128
-129
-130
-131
-132
-133
-134
-135
-136
-137
-138
-139
-140
-141
-142
-143
-144
-145
-146
-147
-148
-149
-150
-151
-152
-153
-154
-155
-156
-157
-158
-159
-160
-161
-162
-163
-164
-165
-166
-167
-168
-169
-170
-171
-172
-173
-174
-175
-176
-177
-178
-179
-180
-181
-182
-183
-184
-185
-186
-187
-188
-189
-190
-191
-192
-193
-194
-195
-196
-197
-198
-199
-200
-201
-202
-203
-204
-205
-206
-207
-208
-209
-210
-211
-212
-213
-214
-215
-2161x
- 
-1x
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-1x
- 
-1x
-1x
-1x
-1x
-1x
-1x
-1x
- 
-1x
-1x
- 
-1x
-1x
-1x
-1x
-1x
- 
-1x
-1x
-1x
-1x
-1x
-1x
-1x
-1x
- 
-1x
-1x
-1x
- 
-1x
-1x
-1x
-1x
-1x
-1x
- 
-1x
-1x
-1x
-1x
-1x
-1x
- 
-1x
-1x
- 
-1x
-1x
-1x
-1x
-1x
-1x
-1x
-1x
- 
-1x
-1x
-1x
-1x
-1x
-1x
-1x
- 
-1x
-1x
-1x
- 
-1x
-1x
-1x
-1x
-1x
-1x
- 
-1x
-1x
-1x
- 
-1x
-1x
- 
-1x
-1x
-1x
- 
-1x
- 
-1x
-1x
-1x
-1x
-1x
- 
-1x
-1x
-1x
-1x
- 
-1x
-1x
-1x
-1x
-1x
- 
-1x
-1x
-1x
-1x
-1x
-1x
-1x
-1x
- // Asset types for property, vehicle, and business tracking
- 
 // ============= Gayrimenkul (Property) Types =============
- 
+
 export interface Property {
   id: string;
   name: string;                              // "Kadıköy Daire", "Ofis"
@@ -454,12 +23,12 @@ export interface Property {
   hasOtherIncome: boolean;                   // Faiz geliri vb. var mı?
   createdAt: Date;
 }
- 
+
 export type PropertyType = Property['type'];
 export type LocationType = Property['location'];
- 
+
 // ============= Araç (Vehicle) Types =============
- 
+
 export interface Vehicle {
   id: string;
   name: string;                              // "Audi A4", "Honda Civic"
@@ -474,11 +43,11 @@ export interface Vehicle {
   disabledExemptDate?: Date;                 // Muafiyet tarihi (10 yıl satış yasağı)
   createdAt: Date;
 }
- 
+
 export type VehicleType = Vehicle['vehicleType'];
- 
+
 // ============= İş Yeri (Business) Types =============
- 
+
 export interface Business {
   id: string;
   name: string;
@@ -486,11 +55,11 @@ export interface Business {
   hasAnnualFee: boolean;                     // Yıllık harç gerekiyor mu?
   createdAt: Date;
 }
- 
+
 export type ProfessionType = Business['profession'];
- 
+
 // ============= Tax Calculation Results =============
- 
+
 export interface PropertyTaxResult {
   annualTax: number;
   installment1: number;
@@ -500,7 +69,7 @@ export interface PropertyTaxResult {
   value2026: number;
   taxRate: number;
 }
- 
+
 export interface RentalDeclarationResult {
   required: boolean;
   exemptAmount: number;
@@ -508,7 +77,7 @@ export interface RentalDeclarationResult {
   declarationDeadline: Date;
   warning?: string;
 }
- 
+
 export interface VehicleTaxResult {
   annualTax: number;
   installment1: number;
@@ -516,21 +85,21 @@ export interface VehicleTaxResult {
   nextInspectionDate: Date;
   inspectionDaysRemaining: number;
 }
- 
+
 export interface DisabledSaleRestrictionResult {
   isBanned: boolean;
   banEndDate: Date;
   yearsRemaining: number;
   penalty?: string;
 }
- 
+
 export interface VehicleSaleFeeResult {
   notaryFee: number;
   totalFee: number;
 }
- 
+
 // ============= Tax Constants =============
- 
+
 export const ASSET_TAX_CONSTANTS = {
   // Emlak Vergisi Oranları (Binde)
   PROPERTY_TAX_RATES: {
@@ -567,7 +136,7 @@ export const ASSET_TAX_CONSTANTS = {
     MAX_OTHER_INCOME: 230000,                // 2024 için 230.000 TL faiz geliri sınırı
   },
 };
- 
+
 export const VEHICLE_TAX_CONSTANTS = {
   // MTV Taksit Tarihleri
   MTV_DEADLINES: {
@@ -598,14 +167,14 @@ export const VEHICLE_TAX_CONSTANTS = {
   // Araç Satış Harcı (2026)
   SALE_NOTARY_FEE_RATE: 2,                   // Binde 2
   SALE_NOTARY_FEE_MIN: 1000,                 // Minimum 1.000 TL
- 
+
   // Muayene uyarıları
   INSPECTION_WARNINGS: {
     MTV_DEBT_WARNING: "MTV borcunuz veya trafik cezanız varsa muayene randevusu alamazsınız!",
     DAYS_BEFORE_WARNING: 30,                 // 30 gün önce uyarı
   },
 };
- 
+
 export const BUSINESS_TAX_CONSTANTS = {
   // 4. Dönem Geçici Vergi (geri getirildi)
   QUARTERLY_TAX_4TH_PERIOD: { month: 2 },    // Şubat
@@ -616,26 +185,26 @@ export const BUSINESS_TAX_CONSTANTS = {
   // Harç ödeme ayı
   ANNUAL_FEE_MONTH: 1,                       // Ocak ayı
 };
- 
+
 // ============= UI Labels =============
- 
+
 export const PROPERTY_TYPE_LABELS: Record<PropertyType, string> = {
   konut: 'Konut',
   isyeri: 'İş Yeri',
   arsa: 'Arsa',
 };
- 
+
 export const LOCATION_LABELS: Record<LocationType, string> = {
   buyuksehir: 'Büyükşehir',
   diger: 'Diğer İl',
 };
- 
+
 export const VEHICLE_TYPE_LABELS: Record<VehicleType, string> = {
   otomobil: 'Otomobil',
   ticari: 'Ticari Araç',
   motosiklet: 'Motosiklet',
 };
- 
+
 export const PROFESSION_LABELS: Record<ProfessionType, string> = {
   kuyumcu: 'Kuyumcu',
   oto_galeri: 'Oto Galeri',
@@ -644,4 +213,3 @@ export const PROFESSION_LABELS: Record<ProfessionType, string> = {
   muayenehane: 'Muayenehane',
   diger: 'Diğer',
 };
- 

@@ -121,14 +121,11 @@ function parseTurkishDate(text: string): string | null {
     return dayBefore.toISOString().split('T')[0];
   }
 
-  // "geçen hafta" → previous Monday
+  // "geçen hafta" (7 gün önce)
   if (/geçen\s*hafta|gecen\s*hafta/.test(lower)) {
-    const lastMonday = new Date(today);
-    const dayOfWeek = lastMonday.getDay(); // 0=Sun, 1=Mon, ...
-    // Go back to this Monday, then one more week
-    const daysToLastMonday = dayOfWeek === 0 ? 6 : dayOfWeek - 1;
-    lastMonday.setDate(lastMonday.getDate() - daysToLastMonday - 7);
-    return lastMonday.toISOString().split('T')[0];
+    const lastWeek = new Date(today);
+    lastWeek.setDate(lastWeek.getDate() - 7);
+    return lastWeek.toISOString().split('T')[0];
   }
 
   // Türkçe ay isimleri
@@ -152,8 +149,6 @@ function parseTurkishDate(text: string): string | null {
 
     if (day >= 1 && day <= 31 && month !== undefined) {
       const d = new Date(year, month, day);
-      // Verify month didn't overflow (e.g. "30 Subat" → March)
-      if (d.getMonth() !== month) return null;
       return d.toISOString().split('T')[0];
     }
   }

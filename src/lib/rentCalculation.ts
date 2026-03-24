@@ -157,11 +157,7 @@ async function fetchFromWorldBank(): Promise<number | null> {
     // Find latest non-null value
     for (const item of data[1]) {
       if (item?.value != null && typeof item.value === 'number' && item.value > 0) {
-        const rounded = Math.round(item.value * 100) / 100;
-        // Range validation: World Bank returns annual lagged data that may differ
-        // wildly from current monthly TUFE. Reject unreasonable values.
-        if (rounded > 100 || rounded < 0) return null;
-        return rounded;
+        return Math.round(item.value * 100) / 100;
       }
     }
     return null;

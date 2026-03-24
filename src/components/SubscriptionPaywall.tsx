@@ -76,7 +76,6 @@ export function SubscriptionPaywall({ onClose, showCloseButton = true, context =
   const { startTrial } = useSubscription();
   const [isPurchasing, setIsPurchasing] = useState(false);
   const [isRestoring, setIsRestoring] = useState(false);
-  const [isRedeeming, setIsRedeeming] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState<SelectedPlan>('yearly');
   const [products, setProducts] = useState<IAPProduct[]>([]);
 
@@ -90,11 +89,11 @@ export function SubscriptionPaywall({ onClose, showCloseButton = true, context =
   const monthlyProduct = products.find(p => p.period === 'monthly');
   const yearlyProduct = products.find(p => p.period === 'yearly');
 
-  const monthlyPrice = monthlyProduct?.price || '$1,99';
-  const yearlyPrice = yearlyProduct?.price || '$19,99';
+  const monthlyPrice = monthlyProduct?.price || '₺39,99';
+  const yearlyPrice = yearlyProduct?.price || '₺399,99';
   const yearlyMonthlyPrice = yearlyProduct
-    ? `$${(yearlyProduct.priceAmount / 12).toFixed(2).replace('.', ',')}`
-    : '$1,67';
+    ? `₺${(yearlyProduct.priceAmount / 12).toFixed(2).replace('.', ',')}`
+    : '₺33,33';
 
   const handlePurchase = async () => {
     setIsPurchasing(true);
@@ -146,25 +145,6 @@ export function SubscriptionPaywall({ onClose, showCloseButton = true, context =
 
   const handleManageSubscription = async () => {
     await iapService.manageSubscriptions();
-  };
-
-  const handleRedeemCode = async () => {
-    setIsRedeeming(true);
-    try {
-      const success = await iapService.redeemOfferCode();
-      if (success) {
-        await checkPremiumAccess();
-        toast({ title: t('actions.redeemSuccess', { defaultValue: 'Kod kullanıldı!' }) });
-        if (onClose) onClose();
-      }
-    } catch (err: any) {
-      const msg = err?.message || '';
-      if (!msg.includes('cancel')) {
-        toast({ title: t('errors.redeemFailed', { defaultValue: 'Kod kullanılamadı' }), variant: 'destructive' });
-      }
-    } finally {
-      setIsRedeeming(false);
-    }
   };
 
   const handleStartTrial = async () => {
@@ -363,36 +343,19 @@ export function SubscriptionPaywall({ onClose, showCloseButton = true, context =
             )}
           </Button>
 
-          {/* Restore + Redeem Code */}
-          <div className="flex items-center justify-center gap-4">
-            <button
-              onClick={handleRestore}
-              disabled={isRestoring}
-              className="flex items-center gap-1.5 py-2 text-xs text-muted-foreground hover:text-foreground transition-colors"
-            >
-              {isRestoring ? (
-                <Loader2 className="h-3 w-3 animate-spin" />
-              ) : (
-                <RotateCcw className="h-3 w-3" />
-              )}
-              {isRestoring ? t('actions.restoring') : t('actions.restore')}
-            </button>
-
-            <span className="text-muted-foreground/40">|</span>
-
-            <button
-              onClick={handleRedeemCode}
-              disabled={isRedeeming}
-              className="flex items-center gap-1.5 py-2 text-xs text-muted-foreground hover:text-foreground transition-colors"
-            >
-              {isRedeeming ? (
-                <Loader2 className="h-3 w-3 animate-spin" />
-              ) : (
-                <Gift className="h-3 w-3" />
-              )}
-              {isRedeeming ? t('actions.redeeming', { defaultValue: 'Kontrol ediliyor...' }) : t('actions.redeemCode', { defaultValue: 'Promosyon Kodu' })}
-            </button>
-          </div>
+          {/* Restore */}
+          <button
+            onClick={handleRestore}
+            disabled={isRestoring}
+            className="flex w-full items-center justify-center gap-2 py-2 text-xs text-muted-foreground hover:text-foreground transition-colors"
+          >
+            {isRestoring ? (
+              <Loader2 className="h-3 w-3 animate-spin" />
+            ) : (
+              <RotateCcw className="h-3 w-3" />
+            )}
+            {isRestoring ? t('actions.restoring') : t('actions.restore')}
+          </button>
         </div>
       )}
 

@@ -1,289 +1,12 @@
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74
-75
-76
-77
-78
-79
-80
-81
-82
-83
-84
-85
-86
-87
-88
-89
-90
-91
-92
-93
-94
-95
-96
-97
-98
-99
-100
-101
-102
-103
-104
-105
-106
-107
-108
-109
-110
-111
-112
-113
-114
-115
-116
-117
-118
-119
-120
-121
-122
-123
-124
-125
-126
-127
-128
-129
-130
-131
-132
-133
-134
-135
-136
-137
-138
-139 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- /**
+/**
  * Notification Sound Service
  * Web Audio API ile melodili bildirim sesleri uretir.
  * 5 ses grubu: positive, info, reminder, warning, urgent
  * Harici ses dosyasi gerektirmez (uygulama icindeyken).
  */
- 
+
 export type SoundGroup = 'positive' | 'info' | 'reminder' | 'warning' | 'urgent';
- 
+
 interface NoteConfig {
   freq: number;
   duration: number;
@@ -294,11 +17,11 @@ interface NoteConfig {
   sustainLevel: number;
   release: number;
 }
- 
+
 interface SoundGroupConfig {
   notes: (NoteConfig | { rest: number })[];
 }
- 
+
 const SOUND_GROUPS: Record<SoundGroup, SoundGroupConfig> = {
   // Pozitif — Yukselen C major arpej (C5 E5 G5), triangle, parlak
   positive: {
@@ -341,9 +64,9 @@ const SOUND_GROUPS: Record<SoundGroup, SoundGroupConfig> = {
     ],
   },
 };
- 
+
 let audioCtx: AudioContext | null = null;
- 
+
 function getAudioContext(): AudioContext | null {
   if (audioCtx) return audioCtx;
   try {
@@ -353,39 +76,39 @@ function getAudioContext(): AudioContext | null {
     return null;
   }
 }
- 
+
 function isNote(item: NoteConfig | { rest: number }): item is NoteConfig {
   return 'freq' in item;
 }
- 
+
 export async function playNotificationSound(group: SoundGroup = 'info'): Promise<void> {
   const ctx = getAudioContext();
   if (!ctx) return;
- 
+
   // iOS WKWebView icin gerekli
   if (ctx.state === 'suspended') {
     try { await ctx.resume(); } catch { return; }
   }
- 
+
   const config = SOUND_GROUPS[group];
   let currentTime = ctx.currentTime;
- 
+
   for (const item of config.notes) {
     if (!isNote(item)) {
       // Rest (silence)
       currentTime += item.rest;
       continue;
     }
- 
+
     const { freq, duration, waveType, gain, attack, decay, sustainLevel, release } = item;
     const sustainDur = Math.max(0, duration - attack - decay - release);
- 
+
     const osc = ctx.createOscillator();
     const gainNode = ctx.createGain();
- 
+
     osc.type = waveType;
     osc.frequency.value = freq;
- 
+
     // ADSR envelope
     const t0 = currentTime;
     gainNode.gain.setValueAtTime(0, t0);
@@ -393,17 +116,17 @@ export async function playNotificationSound(group: SoundGroup = 'info'): Promise
     gainNode.gain.linearRampToValueAtTime(gain * sustainLevel, t0 + attack + decay);
     gainNode.gain.setValueAtTime(gain * sustainLevel, t0 + attack + decay + sustainDur);
     gainNode.gain.linearRampToValueAtTime(0, t0 + duration);
- 
+
     osc.connect(gainNode);
     gainNode.connect(ctx.destination);
- 
+
     osc.start(t0);
     osc.stop(t0 + duration);
- 
+
     currentTime += duration;
   }
 }
- 
+
 /** Backward-compatible alias — eski SoundProfile parametresi de calisir */
 export function playNotificationSoundLegacy(profile: 'gentle' | 'alert' | 'urgent'): Promise<void> {
   const mapping: Record<string, SoundGroup> = {
@@ -413,4 +136,3 @@ export function playNotificationSoundLegacy(profile: 'gentle' | 'alert' | 'urgen
   };
   return playNotificationSound(mapping[profile] || 'info');
 }
- 
